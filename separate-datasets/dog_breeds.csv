@@ -1,4 +1,4 @@
-Breed, Adaptability, All Around Friendliness, Exercise Needs, Health Grooming, Trainability,Adapts Well to Apartment Living,Affectionate with Family,Amount Of Shedding,Dog Friendly,Drooling Potential,Easy To Groom,Easy To Train,Energy Level,Exercise Needs,Friendly Toward Strangers,General Health,Good For Novice Owners,Incredibly Kid Friendly Dogs,Intelligence,Intensity,Potential For Mouthiness,Potential For Playfulness,Potential For Weight Gain,Prey Drive,Sensitivity Level,Size,Tendency To Bark Or Howl,Tolerates Being Alone,Tolerates Cold Weather,Tolerates Hot Weather,Wanderlust Potential
+Breed,Adaptability,All Around Friendliness,Exercise Needs,Health Grooming,Trainability,Adapts Well to Apartment Living,Affectionate with Family,Amount Of Shedding,Dog Friendly,Drooling Potential,Easy To Groom,Easy To Train,Energy Level,Exercise Needs,Friendly Toward Strangers,General Health,Good For Novice Owners,Incredibly Kid Friendly Dogs,Intelligence,Intensity,Potential For Mouthiness,Potential For Playfulness,Potential For Weight Gain,Prey Drive,Sensitivity Level,Size,Tendency To Bark Or Howl,Tolerates Being Alone,Tolerates Cold Weather,Tolerates Hot Weather,Wanderlust Potential
 Affenpinscher,3.0,3.0,4.0,2.0,3.0,5.0,5.0,1.0,4.0,1.0,3.0,2.0,4.0,3.0,3.0,4.0,4.0,1.0,4.0,3.0,4.0,4.0,3.0,3.0,3.0,1.0,2.0,1.0,3.0,3.0,2.0
 Afghan Hound,4.0,4.0,4.0,2.0,3.0,5.0,5.0,4.0,4.0,1.0,1.0,1.0,5.0,4.0,2.0,3.0,3.0,5.0,4.0,2.0,3.0,4.0,1.0,5.0,5.0,4.0,2.0,2.0,5.0,5.0,5.0
 Airedale Terrier,2.0,4.0,5.0,3.0,5.0,1.0,4.0,2.0,4.0,1.0,2.0,4.0,5.0,5.0,3.0,3.0,2.0,4.0,5.0,3.0,5.0,5.0,4.0,5.0,3.0,3.0,4.0,2.0,3.0,3.0,4.0
@@ -125,7 +125,6 @@ Keeshond,4.0,5.0,4.0,3.0,3.0,4.0,5.0,5.0,4.0,1.0,3.0,4.0,4.0,3.0,4.0,3.0,4.0,5.0
 Kerry Blue Terrier,3.0,4.0,4.0,2.0,4.0,3.0,4.0,1.0,2.0,1.0,2.0,4.0,4.0,5.0,5.0,3.0,2.0,4.0,4.0,4.0,4.0,4.0,3.0,3.0,3.0,3.0,4.0,3.0,4.0,3.0,3.0
 Komondor,3.0,3.0,3.0,3.0,4.0,2.0,5.0,3.0,1.0,2.0,2.0,4.0,2.0,4.0,1.0,2.0,1.0,3.0,4.0,1.0,3.0,4.0,3.0,2.0,4.0,4.0,5.0,1.0,4.0,3.0,4.0
 Kooikerhondje,3.0,2.0,5.0,3.0,3.0,4.0,3.0,3.0,2.0,1.0,2.0,1.0,4.0,5.0,2.0,5.0,3.0,2.0,4.0,5.0,3.0,4.0,3.0,3.0,4.0,3.0,3.0,2.0,4.0,3.0,3.0
-Korean Jindo Dog,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Kuvasz,3.0,2.0,4.0,4.0,2.0,1.0,5.0,4.0,2.0,3.0,4.0,2.0,4.0,5.0,1.0,4.0,1.0,1.0,4.0,4.0,1.0,4.0,4.0,1.0,5.0,5.0,3.0,1.0,5.0,2.0,3.0
 Labradoodle,4.0,5.0,5.0,3.0,3.0,3.0,5.0,3.0,5.0,1.0,4.0,4.0,5.0,5.0,5.0,4.0,4.0,4.0,4.0,4.0,1.0,5.0,3.0,2.0,3.0,4.0,2.0,4.0,5.0,4.0,3.0
 Labrador Retriever,3.0,5.0,5.0,4.0,4.0,1.0,5.0,5.0,5.0,3.0,5.0,5.0,5.0,5.0,5.0,3.0,3.0,5.0,5.0,5.0,5.0,5.0,5.0,2.0,5.0,4.0,4.0,2.0,3.0,3.0,3.0
@@ -212,6 +211,5 @@ Welsh Terrier,3.0,5.0,5.0,3.0,4.0,3.0,4.0,2.0,5.0,1.0,2.0,3.0,5.0,5.0,4.0,5.0,3.
 West Highland White Terrier,4.0,4.0,4.0,3.0,4.0,4.0,5.0,4.0,5.0,1.0,3.0,4.0,4.0,4.0,3.0,3.0,4.0,4.0,4.0,4.0,2.0,4.0,4.0,4.0,4.0,2.0,4.0,2.0,4.0,3.0,3.0
 Whippet,3.0,5.0,4.0,3.0,4.0,5.0,5.0,2.0,4.0,1.0,5.0,4.0,5.0,5.0,4.0,4.0,3.0,5.0,4.0,2.0,4.0,5.0,1.0,5.0,5.0,3.0,1.0,2.0,1.0,4.0,4.0
 Wirehaired Pointing Griffon,3.0,5.0,4.0,3.0,4.0,1.0,5.0,1.0,4.0,1.0,3.0,5.0,5.0,4.0,5.0,4.0,3.0,5.0,5.0,3.0,3.0,5.0,3.0,4.0,4.0,3.0,4.0,1.0,4.0,3.0,4.0
-Xoloitzcuintli,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Yorkipoo,4.0,4.0,4.0,2.0,4.0,5.0,5.0,1.0,3.0,1.0,4.0,4.0,5.0,3.0,2.0,3.0,5.0,4.0,4.0,3.0,3.0,4.0,2.0,3.0,4.0,1.0,5.0,3.0,2.0,3.0,2.0
 Yorkshire Terrier,3.0,3.0,5.0,2.0,3.0,5.0,4.0,2.0,3.0,1.0,1.0,3.0,5.0,4.0,2.0,4.0,4.0,2.0,3.0,4.0,2.0,5.0,2.0,2.0,5.0,1.0,3.0,2.0,2.0,2.0,3.0
