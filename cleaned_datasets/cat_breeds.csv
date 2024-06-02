@@ -1,0 +1,78 @@
+Breed,length,origin,min_life_expectancy,max_life_expectancy,min_weight,max_weight,family_friendly,shedding,general_health,playfulness,children_friendly,grooming,intelligence,other_pets_friendly,friendly_toward_strangers,tendency_to_vocalize
+Abyssinian,12 to 16 inches,Southeast Asia,9.0,15.0,6.0,10.0,3.0,3.0,2.0,5.0,5.0,3.0,5.0,5.0,,
+Aegean,Medium,Greece,9.0,10.0,7.0,10.0,5.0,3.0,4.0,4.0,5.0,4.0,4.0,3.0,,
+American Bobtail,Medium,United States and Canada,11.0,15.0,8.0,13.0,4.0,4.0,4.0,4.0,4.0,3.0,4.0,4.0,4.0,3.0
+American Shorthair,12 to 15 inches,United States,15.0,20.0,7.0,12.0,3.0,3.0,4.0,2.0,4.0,4.0,4.0,3.0,4.0,
+American Wirehair,Medium to large,United States,14.0,18.0,8.0,15.0,4.0,3.0,5.0,3.0,4.0,5.0,4.0,3.0,3.0,
+Aphrodite Giant,Large,Cyprus,12.0,15.0,11.0,24.0,4.0,4.0,3.0,4.0,5.0,2.0,4.0,4.0,,
+Arabian Mau,Medium,Saudi Arabia,12.0,14.0,8.0,16.0,4.0,2.0,4.0,4.0,4.0,5.0,4.0,3.0,,
+Asian,Medium,Great Britain,15.0,15.0,10.0,10.0,5.0,1.0,4.0,4.0,5.0,3.0,4.0,4.0,,
+Australian Mist,Medium,Australia,15.0,18.0,8.0,15.0,5.0,2.0,4.0,4.0,4.0,4.0,4.0,3.0,,
+Bambino,Short,United States,9.0,15.0,4.0,9.0,4.0,1.0,3.0,4.0,4.0,2.0,3.0,3.0,,
+Bengal Cats,17 to 22 inches,USA,10.0,16.0,8.0,17.0,5.0,2.0,3.0,5.0,5.0,4.0,5.0,5.0,,2.0
+Birman,15 to 18 inches,Unknown,12.0,16.0,6.0,12.0,5.0,3.0,2.0,4.0,5.0,2.0,4.0,5.0,,4.0
+Bombay,13 to 20 inches,USA,12.0,20.0,8.0,15.0,4.0,2.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,3.0
+Brazilian Shorthair,Medium to large,Brazil,14.0,20.0,10.0,22.0,4.0,1.0,3.0,4.0,5.0,4.0,4.0,4.0,,
+British Longhair,Medium to Large,Great Britain,15.0,17.0,9.0,18.0,4.0,4.0,3.0,3.0,4.0,2.0,4.0,3.0,,
+British Shorthair,22 to 25 inches,Great Britain,12.0,17.0,7.0,17.0,3.0,3.0,4.0,2.0,4.0,4.0,3.0,5.0,4.0,4.0
+Burmese,15 to 18 inches,Burma and Thailand,10.0,16.0,8.0,12.0,5.0,2.0,2.0,4.0,5.0,5.0,5.0,4.0,5.0,
+Burmilla,Medium,England,10.0,15.0,6.5,13.0,4.0,3.0,3.0,5.0,4.0,4.0,3.0,4.0,,
+California Spangled,Medium to Large,USA,9.0,16.0,8.0,15.0,4.0,2.0,4.0,4.0,4.0,5.0,4.0,3.0,,
+Chantilly-Tiffany,Medium,United States,7.0,16.0,6.0,12.0,4.0,3.0,4.0,4.0,4.0,2.0,4.0,3.0,,
+Chausie,Large,Egypt,12.0,14.0,15.0,30.0,4.0,1.0,4.0,4.0,1.0,5.0,5.0,4.0,,
+Colorpoint Shorthair,Small to medium,England,12.0,17.0,5.0,10.0,5.0,2.0,2.0,5.0,4.0,4.0,4.0,4.0,,1.0
+Cornish Rex,Small,United Kingdom,11.0,15.0,6.0,10.0,5.0,2.0,3.0,5.0,5.0,5.0,4.0,5.0,5.0,2.0
+Cyprus,Medium,Cyprus,12.0,15.0,8.0,16.0,4.0,2.0,4.0,5.0,4.0,4.0,4.0,4.0,,
+Devon Rex,15 to 18 inches,England,9.0,15.0,5.0,10.0,5.0,1.0,1.0,4.0,5.0,5.0,4.0,4.0,5.0,3.0
+Donskoy,Medium,Russia,12.0,15.0,6.0,15.0,4.0,1.0,3.0,4.0,4.0,2.0,4.0,4.0,,
+European Shorthair,Medium,Italy,15.0,20.0,8.0,15.0,4.0,2.0,4.0,4.0,5.0,5.0,4.0,4.0,,
+Foldex,Medium,Canada,12.0,15.0,5.0,14.0,5.0,3.0,4.0,4.0,5.0,3.0,4.0,4.0,,
+German Rex,Small to medium,Germany,9.0,14.0,5.0,8.0,4.0,2.0,3.0,4.0,4.0,2.0,4.0,4.0,,
+Highlander,Medium to large,United States,10.0,15.0,10.0,20.0,4.0,2.0,4.0,4.0,4.0,3.0,4.0,5.0,,
+Japanese Bobtail,Medium,China and Japan,9.0,15.0,6.0,10.0,5.0,3.0,4.0,5.0,5.0,4.0,4.0,5.0,,1.0
+Javanese,Small to medium,United States and Canada,10.0,15.0,5.0,10.0,5.0,3.0,2.0,4.0,4.0,4.0,4.0,4.0,4.0,1.0
+Khao Manee,10 to 12 inches,Thailand,10.0,12.0,8.0,10.0,4.0,1.0,3.0,5.0,5.0,4.0,4.0,4.0,,
+Kurilian Bobtail,Medium to large,Kuril Islands,15.0,20.0,8.0,15.0,4.0,2.0,3.0,4.0,4.0,5.0,4.0,4.0,,
+Lykoi,Short to Medium,United States,12.0,15.0,4.0,7.0,4.0,4.0,3.0,4.0,4.0,2.0,5.0,3.0,,
+Maine Coon,30 to 40 inches,USA,9.0,15.0,9.0,18.0,3.0,4.0,3.0,4.0,5.0,4.0,4.0,5.0,2.0,4.0
+Manx,14 to 16 inches,UK,8.0,14.0,8.0,12.0,4.0,3.0,3.0,3.0,2.0,3.0,4.0,2.0,3.0,2.0
+Mekong Bobtail,Medium,Southeast Asia,15.0,18.0,8.0,10.0,4.0,2.0,3.0,4.0,4.0,5.0,4.0,4.0,,
+Nebelung,Medium to long,United States,11.0,18.0,7.0,15.0,4.0,4.0,4.0,4.0,2.0,2.0,4.0,3.0,2.0,
+Oriental Bicolor,Medium,United States,8.0,12.0,8.0,12.0,4.0,1.0,3.0,4.0,5.0,4.0,4.0,3.0,,
+Persian,14 to 18 inches,Persia (known as Iran today),10.0,15.0,7.0,12.0,3.0,5.0,2.0,2.0,2.0,2.0,3.0,2.0,2.0,3.0
+Peterbald,Medium,Russia,12.0,15.0,6.0,10.0,5.0,1.0,3.0,4.0,4.0,2.0,3.0,4.0,,
+Pixie-Bob,20 to 24 inches,USA,13.0,15.0,8.0,17.0,5.0,4.0,5.0,4.0,5.0,2.0,4.0,4.0,3.0,3.0
+Ragdoll Cats,17 to 21 inches,USA,12.0,17.0,10.0,20.0,5.0,4.0,3.0,4.0,5.0,1.0,4.0,4.0,,4.0
+Russian Blue,15 to 18 inches,Russia,10.0,15.0,7.0,15.0,4.0,4.0,4.0,2.0,3.0,2.0,4.0,4.0,2.0,
+Savannah,13 to 20 inches,USA,17.0,20.0,8.0,20.0,4.0,3.0,5.0,5.0,4.0,4.0,5.0,5.0,5.0,3.0
+Scottish Fold,10 to 12 inches,Scotland,11.0,14.0,6.0,13.0,5.0,3.0,3.0,3.0,5.0,2.0,4.0,4.0,,
+Serengeti,Medium,United States,10.0,15.0,8.0,15.0,4.0,1.0,3.0,4.0,4.0,4.0,4.0,4.0,,
+Siamese Cat,15 to 20 inches,Thailand,8.0,15.0,6.0,14.0,5.0,2.0,3.0,4.0,4.0,4.0,5.0,4.0,,
+Siberian,17 to 25 inches,Russia,11.0,18.0,8.0,17.0,5.0,4.0,4.0,5.0,5.0,2.0,4.0,4.0,4.0,2.0
+Singapura,Small,Singapore,11.0,15.0,4.0,7.0,5.0,2.0,4.0,4.0,4.0,4.0,5.0,4.0,4.0,5.0
+Snowshoe,Medium to long,USA,14.0,19.0,7.0,12.0,5.0,3.0,5.0,5.0,5.0,5.0,5.0,4.0,4.0,2.0
+Sokoke,Medium,Kenya,9.0,15.0,6.0,10.0,4.0,1.0,3.0,4.0,5.0,4.0,4.0,4.0,,
+Somali,11 to 14 inches,United States,11.0,16.0,6.0,10.0,5.0,4.0,2.0,5.0,5.0,3.0,5.0,5.0,4.0,
+Sphynx,13 to 15 inches,Canada,8.0,14.0,6.0,12.0,5.0,1.0,2.0,4.0,5.0,2.0,4.0,5.0,5.0,
+American Shorthair,12 to 15 inches,United States,15.0,20.0,7.0,12.0,3.0,3.0,4.0,2.0,4.0,4.0,4.0,3.0,,
+Tonkinese,12 to 15 inches,United States and Thailand,10.0,16.0,6.0,12.0,5.0,2.0,2.0,5.0,5.0,4.0,5.0,4.0,3.0,1.0
+Toyger,Medium,United States,10.0,15.0,7.0,15.0,5.0,1.0,3.0,4.0,4.0,4.0,4.0,4.0,,
+Turkish Angora,Medium,Turkey,12.0,18.0,5.0,9.0,5.0,2.0,3.0,5.0,3.0,4.0,4.0,3.0,4.0,
+Turkish Van,14 to 17 inches,Turkey,12.0,17.0,10.0,18.0,3.0,2.0,4.0,4.0,3.0,4.0,5.0,3.0,2.0,
+Ukrainian Levkoy,Medium,Russia,9.0,15.0,8.0,12.0,5.0,1.0,3.0,4.0,5.0,2.0,5.0,4.0,,
+York Chocolate,Large,United States,13.0,15.0,10.0,18.0,4.0,4.0,3.0,4.0,4.0,2.0,4.0,3.0,,
+American Curl,,,,,,,5.0,4.0,5.0,4.0,4.0,4.0,,4.0,4.0,5.0
+Balinese,,,,,,,4.0,3.0,2.0,4.0,4.0,4.0,,4.0,4.0,1.0
+Chartreux,,,,,,,3.0,4.0,4.0,3.0,3.0,2.0,,4.0,3.0,5.0
+Cymric,,,,,,,5.0,4.0,3.0,,3.0,2.0,4.0,3.0,4.0,2.0
+Egyptian Mau,,,,,,,5.0,3.0,4.0,4.0,4.0,4.0,,3.0,2.0,2.0
+European Burmese,,,,,,,5.0,2.0,1.0,5.0,5.0,5.0,5.0,5.0,5.0,1.0
+Exotic,,,,,,,4.0,3.0,2.0,4.0,3.0,2.0,3.0,3.0,,5.0
+Havana Brown,,,,,,,5.0,3.0,4.0,3.0,4.0,5.0,,4.0,3.0,
+Himalayan,,,,,,,4.0,5.0,2.0,1.0,2.0,1.0,,2.0,2.0,
+Korat,,,,,,,5.0,1.0,4.0,,3.0,5.0,,3.0,2.0,5.0
+LaPerm,,,,,,,4.0,2.0,4.0,5.0,4.0,4.0,,4.0,4.0,5.0
+Norwegian Forest,,,,,,,2.0,4.0,2.0,,4.0,2.0,,4.0,2.0,4.0
+Ocicat,,,,,,,4.0,2.0,3.0,,4.0,4.0,4.0,3.0,4.0,2.0
+Ragamuffin,,,,,,,5.0,4.0,4.0,3.0,5.0,4.0,4.0,5.0,4.0,
+Selkirk Rex,,,,,,,4.0,4.0,3.0,4.0,5.0,2.0,,4.0,,2.0
