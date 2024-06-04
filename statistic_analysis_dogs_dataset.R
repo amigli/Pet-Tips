@@ -11,7 +11,7 @@ View(data)
 family_friendly <- data[, "Affectionate.with.Family"]
 family_friendly
 
-intervals <- c(1, 2, 3, 4, 5)
+intervals <- c(0, 1, 2, 3, 4, 5)
 abs_frequence <- table(cut(family_friendly, breaks = intervals))
 abs_frequence
 
@@ -20,7 +20,7 @@ hist(
   breaks = intervals,
   freq = TRUE,
   ylim = c(0, max(abs_frequence) + 1),
-  col = c("red", "blue", "green", "orange"),
+  col = c("orange", "yellow", "green", "blue", "red"),
   border = "black", main = "Affectionate With Family Attribute Frequencies",
   xlab = "Family Friendly Values", ylab = "Absolute Frequency"
 )
@@ -39,7 +39,7 @@ longevity_per_year_mean
 playfullness <- data[, "Potential.For.Playfulness"]
 playfullness
 
-intervals <- c(1, 2, 3, 4, 5)
+intervals <- c(0, 1, 2, 3, 4, 5)
 abs_frequence <- table(cut(playfullness, breaks = intervals))
 abs_frequence
 
@@ -47,7 +47,7 @@ hist(playfullness,
      breaks = intervals,
      freq = TRUE,
      ylim = c(0, max(abs_frequence) + 8),
-     col = c("red", "blue", "green", "orange"),
+     col = c("orange", "yellow", "green", "blue", "red"),
      border = "black",
      main = "Potential For Playfulness Attribute Frequencies",
      xlab = "Potential For Playfulness Values",
@@ -62,7 +62,7 @@ playfullness_mean
 kid_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
 kid_friendly
 
-intervals <- c(1, 2, 3, 4, 5)
+intervals <- c(0, 1, 2, 3, 4, 5)
 abs_frequence <- table(cut(kid_friendly, breaks = intervals))
 abs_frequence
 
@@ -70,7 +70,7 @@ hist(kid_friendly,
      breaks = intervals,
      freq = TRUE,
      ylim = c(0, max(abs_frequence) + 8),
-     col = c("red", "blue", "green", "orange"),
+     col = c("orange", "yellow", "green", "blue", "red"),
      border = "black",
      main = "Kid Friendly Attribute Frequencies",
      xlab = "Kid Friendly Values",
@@ -85,7 +85,7 @@ kid_friendly_mean
 intelligence <- data[, "Intelligence"]
 intelligence
 
-intervals <- c(1, 2, 3, 4, 5)
+intervals <- c(0, 1, 2, 3, 4, 5)
 abs_frequence <- table(cut(intelligence, breaks = intervals))
 abs_frequence
 
@@ -93,7 +93,7 @@ hist(intelligence,
      breaks = intervals,
      freq = TRUE,
      ylim = c(0, max(abs_frequence) + 17),
-     col = c("red", "blue", "green", "orange"),
+     col = c("orange", "yellow", "green", "blue", "red"),
      border = "black",
      main = "Intelligence Attribute Frequencies",
      xlab = "Intelligence Values",
@@ -154,7 +154,7 @@ print(breeds_with_highest_food_cost)
 easy_to_train <- data[, "Easy.To.Train"]
 easy_to_train
 
-intervals <- c(1, 2, 3, 4, 5)
+intervals <- c(0, 1, 2, 3, 4, 5)
 abs_frequence <- table(cut(easy_to_train, breaks = intervals))
 abs_frequence
 
@@ -162,7 +162,7 @@ hist(easy_to_train,
      breaks = intervals,
      freq = TRUE,
      ylim = c(0, max(abs_frequence) + 17),
-     col = c("red", "blue", "green", "orange"),
+     col = c("orange", "yellow", "green", "blue", "red"),
      border = "black",
      main = "Easy To Train Attribute Frequencies",
      xlab = "Easy To Train Values",
