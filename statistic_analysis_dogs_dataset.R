@@ -3,7 +3,11 @@ library(utils)
 data <- read.csv("cleaned_datasets/dog_breeds.csv")
 View(data)
 
-# Affectionate with Family Frequencies
+#________________________________________________________________________
+#                             ANALISI IN COMUNE
+#________________________________________________________________________
+
+# Affectionate with Family Attribute Frequencies
 family_friendly <- data[, "Affectionate.with.Family"]
 family_friendly
 
@@ -11,15 +15,100 @@ intervals <- c(1, 2, 3, 4, 5)
 abs_frequence <- table(cut(family_friendly, breaks = intervals))
 abs_frequence
 
-hist(family_fiendly, breaks = intervals, freq = TRUE,
-     ylim = c(0, max(abs_frequence) + 1), col = c("red", "blue", "green", "orange"),
-     border = "black", main = "Affectionate With Family Attribute Frequencies",
-     xlab = "Family Friendly Values", ylab = "Absolute Frequency")
+hist(
+  family_friendly,
+  breaks = intervals,
+  freq = TRUE,
+  ylim = c(0, max(abs_frequence) + 1),
+  col = c("red", "blue", "green", "orange"),
+  border = "black", main = "Affectionate With Family Attribute Frequencies",
+  xlab = "Family Friendly Values", ylab = "Absolute Frequency"
+)
 
-mean_family_friendly <- mean(family_fiendly)
+mean_family_friendly <- mean(family_friendly)
 mean_family_friendly
 
-# Boxplot food costs per year
+
+# Longevity Year Attribute
+longevity_per_year <- data[, "Longevity..years."]
+longevity_per_year_mean <- mean(longevity_per_year, na.rm = TRUE)
+longevity_per_year_mean
+
+
+# Playfullnes Attribute
+playfullness <- data[, "Potential.For.Playfulness"]
+playfullness
+
+intervals <- c(1, 2, 3, 4, 5)
+abs_frequence <- table(cut(playfullness, breaks = intervals))
+abs_frequence
+
+hist(playfullness,
+     breaks = intervals,
+     freq = TRUE,
+     ylim = c(0, max(abs_frequence) + 8),
+     col = c("red", "blue", "green", "orange"),
+     border = "black",
+     main = "Potential For Playfulness Attribute Frequencies",
+     xlab = "Potential For Playfulness Values",
+     ylab = "Absolute Frequency"
+)
+
+playfullness_mean <- mean(playfullness, na.rm = TRUE)
+playfullness_mean
+
+
+# Kid Friendly Attribute
+kid_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
+kid_friendly
+
+intervals <- c(1, 2, 3, 4, 5)
+abs_frequence <- table(cut(kid_friendly, breaks = intervals))
+abs_frequence
+
+hist(kid_friendly,
+     breaks = intervals,
+     freq = TRUE,
+     ylim = c(0, max(abs_frequence) + 8),
+     col = c("red", "blue", "green", "orange"),
+     border = "black",
+     main = "Kid Friendly Attribute Frequencies",
+     xlab = "Kid Friendly Values",
+     ylab = "Absolute Frequency"
+)
+
+kid_friendly_mean <- mean(kid_friendly, na.rm = TRUE)
+kid_friendly_mean
+
+
+# Intelligence Attribute
+intelligence <- data[, "Intelligence"]
+intelligence
+
+intervals <- c(1, 2, 3, 4, 5)
+abs_frequence <- table(cut(intelligence, breaks = intervals))
+abs_frequence
+
+hist(intelligence,
+     breaks = intervals,
+     freq = TRUE,
+     ylim = c(0, max(abs_frequence) + 17),
+     col = c("red", "blue", "green", "orange"),
+     border = "black",
+     main = "Intelligence Attribute Frequencies",
+     xlab = "Intelligence Values",
+     ylab = "Absolute Frequency"
+)
+
+intelligence_mean <- mean(intelligence, na.rm = TRUE)
+intelligence_mean
+
+
+#________________________________________________________________________
+#                           ANALISI CANI
+#________________________________________________________________________
+
+# Food Costs Per Year Attribute Boxplot
 food_costs_per_year <- data[, "X.Food.Costs.Per.Year"]
 food_costs_per_year
 
@@ -40,7 +129,6 @@ stats
 high_limit <- stats$stats[5]
 high_limit
 
-# verificare le razze che hanno un valore > 674 in Food Costs Per Year
 food_costs_per_year_breed <- data[, c("Breed", "X.Food.Costs.Per.Year")]
 View(food_costs_per_year_breed)
 
@@ -61,74 +149,27 @@ for (i in 1:nrow(df)){
 
 print(breeds_with_highest_food_cost)
 
-# longevity per year
-longevity_per_year <- data[, "Longevity..years."]
-longevity_per_year_mean <- mean(longevity_per_year, na.rm = TRUE)
-longevity_per_year_mean
 
-# playfullnes
-playfullness <- data[, "Potential.For.Playfulness"]
-playfullness
+# Easy To Train Attribute Frequencies
+easy_to_train <- data[, "Easy.To.Train"]
+easy_to_train
 
 intervals <- c(1, 2, 3, 4, 5)
-abs_frequence <- table(cut(playfullness, breaks = intervals))
+abs_frequence <- table(cut(easy_to_train, breaks = intervals))
 abs_frequence
 
-hist(playfullness, breaks = intervals, freq = TRUE,
-     ylim = c(0, max(abs_frequence) + 8), col = c("red", "blue", "green", "orange"),
-     border = "black", main = "Potential For Playfulness Attribute Frequencies",
-     xlab = "Potential For Playfulness Values", ylab = "Absolute Frequency")
+hist(easy_to_train,
+     breaks = intervals,
+     freq = TRUE,
+     ylim = c(0, max(abs_frequence) + 17),
+     col = c("red", "blue", "green", "orange"),
+     border = "black",
+     main = "Easy To Train Attribute Frequencies",
+     xlab = "Kid Friendly Values",
+     ylab = "Absolute Frequency")
 
-playfullness_mean <- mean(playfullness, na.rm = TRUE)
-playfullness_mean
-
-# kid friendly
-kid_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
-kid_friendly
-
-intervals <- c(1, 2, 3, 4, 5)
-abs_frequence <- table(cut(kid_friendly, breaks = intervals))
-abs_frequence
-
-hist(kid_friendly, breaks = intervals, freq = TRUE,
-     ylim = c(0, max(abs_frequence) + 8), col = c("red", "blue", "green", "orange"),
-     border = "black", main = "Kid Friendly Attribute Frequencies",
-     xlab = "Kid Friendly Values", ylab = "Absolute Frequency")
-
-kid_friendly_mean <- mean(kid_friendly, na.rm = TRUE)
-kid_friendly_mean
-
-# intelligence
-intelligence <- data[, "Incredibly.Kid.Friendly.Dogs"]
-intelligence
-
-intervals <- c(1, 2, 3, 4, 5)
-abs_frequence <- table(cut(intelligence, breaks = intervals))
-abs_frequence
-
-hist(intelligence, breaks = intervals, freq = TRUE,
-     ylim = c(0, max(abs_frequence) + 17), col = c("red", "blue", "green", "orange"),
-     border = "black", main = "Kid Friendly Attribute Frequencies",
-     xlab = "Kid Friendly Values", ylab = "Absolute Frequency")
-
-intelligence_mean <- mean(intelligence, na.rm = TRUE)
-intelligence_mean
-
-# dog friendly
-dog_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
-dog_friendly
-
-intervals <- c(1, 2, 3, 4, 5)
-abs_frequence <- table(cut(dog_friendly, breaks = intervals))
-abs_frequence
-
-hist(dog_friendly, breaks = intervals, freq = TRUE,
-     ylim = c(0, max(abs_frequence) + 17), col = c("red", "blue", "green", "orange"),
-     border = "black", main = "Kid Friendly Attribute Frequencies",
-     xlab = "Kid Friendly Values", ylab = "Absolute Frequency")
-
-dog_friendly_mean <- mean(dog_friendly, na.rm = TRUE)
-dog_friendly_mean
+easy_to_train <- mean(easy_to_train, na.rm = TRUE)
+easy_to_train
 
 
 # Amount of shadding (max, min) - breeds
