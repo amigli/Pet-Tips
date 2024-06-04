@@ -4,7 +4,7 @@ data <- read.csv("cleaned_datasets/dog_breeds.csv")
 View(data)
 
 #________________________________________________________________________
-#                             ANALISI IN COMUNE
+#                             SHARED ANALYSIS
 #________________________________________________________________________
 
 # Affectionate with Family Attribute Frequencies
@@ -29,13 +29,13 @@ mean_family_friendly <- mean(family_friendly)
 mean_family_friendly
 
 
-# Longevity Year Attribute
+# Longevity Years Attribute Frequencies
 longevity_per_year <- data[, "Longevity..years."]
 longevity_per_year_mean <- mean(longevity_per_year, na.rm = TRUE)
 longevity_per_year_mean
 
 
-# Playfullnes Attribute
+# Potential For Playfulness Attribute Frequencies
 playfullness <- data[, "Potential.For.Playfulness"]
 playfullness
 
@@ -58,7 +58,7 @@ playfullness_mean <- mean(playfullness, na.rm = TRUE)
 playfullness_mean
 
 
-# Kid Friendly Attribute
+# Kid Friendly Attribute Frequencies
 kid_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
 kid_friendly
 
@@ -81,7 +81,7 @@ kid_friendly_mean <- mean(kid_friendly, na.rm = TRUE)
 kid_friendly_mean
 
 
-# Intelligence Attribute
+# Intelligence Attribute Frequencies
 intelligence <- data[, "Intelligence"]
 intelligence
 
@@ -105,7 +105,7 @@ intelligence_mean
 
 
 #________________________________________________________________________
-#                           ANALISI CANI
+#                           DOG ANALYSIS
 #________________________________________________________________________
 
 # Food Costs Per Year Attribute Boxplot
@@ -165,7 +165,7 @@ hist(easy_to_train,
      col = c("red", "blue", "green", "orange"),
      border = "black",
      main = "Easy To Train Attribute Frequencies",
-     xlab = "Kid Friendly Values",
+     xlab = "Easy To Train Values",
      ylab = "Absolute Frequency")
 
 easy_to_train <- mean(easy_to_train, na.rm = TRUE)
