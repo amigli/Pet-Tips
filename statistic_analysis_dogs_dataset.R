@@ -214,5 +214,3 @@ for (i in 1:nrow(df)){
 print(breeds_with_highest_purchase_price)
 
 
-
-
