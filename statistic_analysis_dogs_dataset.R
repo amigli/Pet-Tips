@@ -172,79 +172,47 @@ easy_to_train <- mean(easy_to_train, na.rm = TRUE)
 easy_to_train
 
 
-# Amount of shadding (max, min) - breeds
-amount_of_shedding <- data[, "Amount.Of.Shedding"]
-amount_of_shedding_max <- max(amount_of_shedding, na.rm = TRUE)
-amount_of_shedding_min <- min(amount_of_shedding, na.rm = TRUE)
+# Purchase Price Attribute Boxplot
+purchase_price <- data[, "X.Purchase.Price"]
+purchase_price
+
+quantile(purchase_price, na.rm = TRUE)
+summary(purchase_price)
+
+boxplot(
+  purchase_price,
+  main = "Boxplot Purchase Price",
+  ylab = "Values",
+  col = "lightblue",
+  border = "black"
+)
+
+stats <- boxplot.stats(purchase_price)
+stats
+
+high_limit <- stats$stats[5]
+high_limit
+
+purchase_price <- data[, c("Breed", "X.Purchase.Price")]
+View(purchase_price)
 
 df <- data.frame(
   breed = data[, "Breed"],
-  shedding = data[, "Amount.Of.Shedding"]
+  purchase_price = data[, "X.Purchase.Price"]
 )
 
-breeds_with_highest_shedding <- c()
-breeds_with_lowest_shedding <- c()
+breeds_with_highest_purchase_price <- c()
 for (i in 1:nrow(df)){
   breed <- df$breed[i]
-  shedding <- df$shedding[i]
-  if (shedding == amount_of_shedding_max)
-    breeds_with_highest_shedding <- c(breeds_with_highest_shedding, breed)
-  else if (shedding == amount_of_shedding_min)
-    breeds_with_lowest_shedding <- c(breeds_with_lowest_shedding, breed)
+  purchase_price <- df$purchase_price[i]
+  if (is.na(purchase_price))
+    next
+  else if (purchase_price > high_limit)
+    breeds_with_highest_purchase_price <- c(breeds_with_highest_purchase_price, breed)
 }
 
-print(breeds_with_highest_shedding)
-print(breeds_with_lowest_shedding)
+print(breeds_with_highest_purchase_price)
 
-
-# Tolerates Cold Weather (max, min) - breeds
-tolerates_cold_weather <- data[, "Tolerates.Cold.Weather"]
-tolerates_cold_weather_max <- max(tolerates_cold_weather, na.rm = TRUE)
-tolerates_cold_weather_min <- min(tolerates_cold_weather, na.rm = TRUE)
-
-df <- data.frame(
-  breed = data[, "Breed"],
-  cold = data[, "Tolerates.Cold.Weather"]
-)
-
-breeds_with_highest_cold <- c()
-breeds_with_lowest_cold <- c()
-for (i in 1:nrow(df)){
-  breed <- df$breed[i]
-  cold <- df$cold[i]
-  if (cold == tolerates_cold_weather_max)
-    breeds_with_highest_cold <- c(breeds_with_highest_cold, breed)
-  else if (cold == tolerates_cold_weather_min)
-    breeds_with_lowest_cold <- c(breeds_with_lowest_cold, breed)
-}
-
-print(breeds_with_highest_cold)
-print(breeds_with_lowest_cold)
-
-
-# Tolerates Hot Weather (max, min) - breeds
-tolerates_hot_weather <- data[, "Tolerates.Hot.Weather"]
-tolerates_hot_weather_max <- max(tolerates_hot_weather, na.rm = TRUE)
-tolerates_hot_weather_min <- min(tolerates_hot_weather, na.rm = TRUE)
-
-df <- data.frame(
-  breed = data[, "Breed"],
-  hot = data[, "Tolerates.Hot.Weather"]
-)
-
-breeds_with_highest_hot <- c()
-breeds_with_lowest_hot <- c()
-for (i in 1:nrow(df)){
-  breed <- df$breed[i]
-  hot <- df$hot[i]
-  if (hot == tolerates_hot_weather_max)
-    breeds_with_highest_hot <- c(breeds_with_highest_hot, breed)
-  else if (hot == tolerates_hot_weather_min)
-    breeds_with_lowest_hot <- c(breeds_with_lowest_hot, breed)
-}
-
-print(breeds_with_highest_hot)
-print(breeds_with_lowest_hot)
 
 
 
