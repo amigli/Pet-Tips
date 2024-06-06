@@ -21,6 +21,13 @@ mongoose.connect(process.env.MONGO_URI) // return a promise
         console.log(error)
     })
 
+app.use(express.json())
+
+// middleware used to log the request method and request path
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
+})
+
 app.use('/api/dogs', dogRoutes)
 app.use('/api/cats', catRoutes)
-app.use(express.json())

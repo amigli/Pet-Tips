@@ -10,13 +10,11 @@ const catSchema = new Schema ({
     },
     length: {
         type: String,
-        required: true,
-        unique: true
+        required: false,
     },
     origin: {
         type: String,
-        required: true,
-        unique: true
+        required: false,
     },
     min_life_expectancy:{
         type: Number,
