@@ -8,7 +8,7 @@ View(data)
 #________________________________________________________________________
 
 # Affectionate with Family Attribute Frequencies
-family_friendly <- data[, "Affectionate.with.Family"]
+family_friendly <- data[, "Affectionate_with_Family"]
 family_friendly
 
 intervals <- c(0, 1, 2, 3, 4, 5)
@@ -30,13 +30,13 @@ mean_family_friendly
 
 
 # Longevity Years Attribute Frequencies
-longevity_per_year <- data[, "Longevity..years."]
+longevity_per_year <- data[, "Longevity_Years"]
 longevity_per_year_mean <- mean(longevity_per_year, na.rm = TRUE)
 longevity_per_year_mean
 
 
 # Potential For Playfulness Attribute Frequencies
-playfullness <- data[, "Potential.For.Playfulness"]
+playfullness <- data[, "Potential_For_Playfulness"]
 playfullness
 
 intervals <- c(0, 1, 2, 3, 4, 5)
@@ -59,7 +59,7 @@ playfullness_mean
 
 
 # Kid Friendly Attribute Frequencies
-kid_friendly <- data[, "Incredibly.Kid.Friendly.Dogs"]
+kid_friendly <- data[, "Incredibly_Kid_Friendly_Dogs"]
 kid_friendly
 
 intervals <- c(0, 1, 2, 3, 4, 5)
@@ -109,7 +109,7 @@ intelligence_mean
 #________________________________________________________________________
 
 # Food Costs Per Year Attribute Boxplot
-food_costs_per_year <- data[, "X.Food.Costs.Per.Year"]
+food_costs_per_year <- data[, "Food_Costs_Per_Year"]
 food_costs_per_year
 
 quantile(food_costs_per_year, na.rm = TRUE)
@@ -129,12 +129,12 @@ stats
 high_limit <- stats$stats[5]
 high_limit
 
-food_costs_per_year_breed <- data[, c("Breed", "X.Food.Costs.Per.Year")]
+food_costs_per_year_breed <- data[, c("Breed", "Food_Costs_Per_Year")]
 View(food_costs_per_year_breed)
 
 df <- data.frame(
   breed = data[, "Breed"],
-  food_costs = data[, "X.Food.Costs.Per.Year"]
+  food_costs = data[, "Food_Costs_Per_Year"]
 )
 
 breeds_with_highest_food_cost <- c()
@@ -151,7 +151,7 @@ print(breeds_with_highest_food_cost)
 
 
 # Easy To Train Attribute Frequencies
-easy_to_train <- data[, "Easy.To.Train"]
+easy_to_train <- data[, "Easy_To_Train"]
 easy_to_train
 
 intervals <- c(0, 1, 2, 3, 4, 5)
@@ -173,7 +173,7 @@ easy_to_train
 
 
 # Purchase Price Attribute Boxplot
-purchase_price <- data[, "X.Purchase.Price"]
+purchase_price <- data[, "Purchase_Price"]
 purchase_price
 
 quantile(purchase_price, na.rm = TRUE)
@@ -193,12 +193,12 @@ stats
 high_limit <- stats$stats[5]
 high_limit
 
-purchase_price <- data[, c("Breed", "X.Purchase.Price")]
+purchase_price <- data[, c("Breed", "Purchase_Price")]
 View(purchase_price)
 
 df <- data.frame(
   breed = data[, "Breed"],
-  purchase_price = data[, "X.Purchase.Price"]
+  purchase_price = data[, "Purchase_Price"]
 )
 
 breeds_with_highest_purchase_price <- c()
