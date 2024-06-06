@@ -1,3 +1,6 @@
 \.venv
 \.idea
 \venv
+webapp/backend/.env
+webapp/backend/node_modules
+
