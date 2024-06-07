@@ -9,6 +9,7 @@ const app = express()
 // import routes
 const dogRoutes = require('./routes/dog')
 const catRoutes = require('./routes/cat')
+const userRoutes = require('./routes/user')
 
 // connect to DB
 mongoose.connect(process.env.MONGO_URI) // return a promise
@@ -29,5 +30,6 @@ app.use((req, res, next) => {
     next()
 })
 
+app.use('/api/user', userRoutes)
 app.use('/api/dogs', dogRoutes)
 app.use('/api/cats', catRoutes)

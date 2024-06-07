@@ -10,6 +10,12 @@ const {
     updateDogById
 } = require("../controllers/DogController")
 
+// middleware
+const requireAuthAdmin = require('../middleware/requireAuthAdmin')
+router.use(requireAuthAdmin)
+
+// if authentication has success
+
 // GET ALL DOGS
 router.get('/', getAllDogs)
 

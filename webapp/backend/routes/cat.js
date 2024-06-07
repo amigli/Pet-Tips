@@ -10,6 +10,12 @@ const {
     updateCatById
 } = require("../controllers/CatController")
 
+// middleware
+const requireAuthAdmin = require('../middleware/requireAuthAdmin')
+router.use(requireAuthAdmin)
+
+// if authentication has success
+
 // GET ALL CATS
 router.get('/', getAllCats)
 
