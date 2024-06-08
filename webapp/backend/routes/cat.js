@@ -31,6 +31,4 @@ router.delete('/:id', deleteCatById)
 // UPDATE A SINGLE CAT
 router.patch('/:id', updateCatById)
 
-// QUERY
-
 module.exports = router

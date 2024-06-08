@@ -7,7 +7,7 @@ const {
     getDogById,
     insertDog,
     deleteDogById,
-    updateDogById
+    updateDogById,
 } = require("../controllers/DogController")
 
 // middleware
@@ -30,7 +30,5 @@ router.delete('/:id', deleteDogById)
 
 // UPDATE A SINGLE DOG
 router.patch('/:id', updateDogById)
-
-// QUERY
 
 module.exports = router

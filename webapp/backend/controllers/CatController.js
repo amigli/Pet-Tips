@@ -76,6 +76,7 @@ const updateCatById = async (req, res) => {
 
 // QUERY
 
+
 module.exports = {
     getAllCats,
     getCatById,
