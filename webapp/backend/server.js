@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
-const cors = require('cors')
+// const cors = require('cors')
 
 // instance of app
 const app = express()
@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI) // return a promise
 app.use(express.json())
 
 // ability cross-origin request
-app.use(cors)
+// app.use(cors)
 
 // middleware used to log the request method and request path
 app.use((req, res, next) => {
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use('/api/user', userRoutesc)
+app.use('/api/user', userRoutes)
 app.use('/api/dogfilter',dogfilterRoutes)
 app.use('/api/catfilter',catfilterRoutes)
 app.use('/api/dogs', dogRoutes)
