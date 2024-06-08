@@ -1,6 +1,31 @@
+# ide files
 \.venv
 \.idea
 \venv
+
+# backend
 webapp/backend/.env
 webapp/backend/node_modules
+
+# frontend
+webapp/frontend/node_modules
+webapp/frontend/.pnp
+webapp/frontend/.pnp.js
+
+webapp/frontend/coverage
+webapp/frontend/build
+
+webapp/frontend/.DS_Store
+webapp/frontend/.env.local
+webapp/frontend/.env.development.local
+webapp/frontend/.env.test.local
+webapp/frontend/.env.production.local
+
+webapp/frontend/npm-debug.log*
+webapp/frontend/yarn-debug.log*
+webapp/frontend/yarn-error.log*
+
+webapp/frontend/src/.env
+
+
 
