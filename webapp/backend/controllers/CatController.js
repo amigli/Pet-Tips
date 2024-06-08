@@ -75,12 +75,36 @@ const updateCatById = async (req, res) => {
 }
 
 // QUERY
+const filterCatByAttributes = async (req, res) => {
+    const {family_friendly, playfulness, children_friendly, grooming, intelligence, other_pets_friendly,
+        friendly_toward_strangers, tendency_to_vocalize} = req.body;
 
+    const query = {};
+
+    if (family_friendly !== undefined) query.family_friendly = family_friendly;
+    if (playfulness !== undefined) query.playfulness = playfulness;
+    if (children_friendly !== undefined) query.children_friendly = children_friendly;
+    if (grooming !== undefined) query.grooming = grooming;
+    if (intelligence !== undefined) query.intelligence = intelligence;
+    if (other_pets_friendly !== undefined) query.other_pets_friendly = other_pets_friendly;
+    if (friendly_toward_strangers !== undefined) query.friendly_toward_strangers = friendly_toward_strangers;
+    if (tendency_to_vocalize !== undefined) query.tendency_to_vocalize = tendency_to_vocalize;
+
+    const cats = await Cat.find(query)
+
+    if (!cats){
+        return res.status(404).json({error: "No such cat (filterCat)"})
+    }
+
+    return res.status(200).json(cats)
+
+}
 
 module.exports = {
     getAllCats,
     getCatById,
     insertCat,
     deleteCatById,
-    updateCatById
+    updateCatById,
+    filterCatByAttributes
 }

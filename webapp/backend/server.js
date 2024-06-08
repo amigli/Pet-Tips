@@ -11,6 +11,7 @@ const dogRoutes = require('./routes/dog')
 const catRoutes = require('./routes/cat')
 const userRoutes = require('./routes/user')
 const dogfilterRoutes = require('./routes/dogfilter')
+const catfilterRoutes = require('./routes/catfilter')
 
 // connect to DB
 mongoose.connect(process.env.MONGO_URI) // return a promise
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 
 app.use('/api/user', userRoutes)
 app.use('/api/dogfilter',dogfilterRoutes)
+app.use('/api/catfilter',catfilterRoutes)
 app.use('/api/dogs', dogRoutes)
 app.use('/api/cats', catRoutes)
