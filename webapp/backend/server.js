@@ -2,7 +2,6 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
-// const cors = require('cors')
 
 // instance of app
 const app = express()
@@ -11,8 +10,8 @@ const app = express()
 const dogRoutes = require('./routes/dog')
 const catRoutes = require('./routes/cat')
 const userRoutes = require('./routes/user')
-const dogfilterRoutes = require('./routes/dogfilter')
-const catfilterRoutes = require('./routes/catfilter')
+const dogOperationsRoutes = require('./routes/dogOperations')
+const catOperationsRoutes = require('./routes/catOperations')
 
 // connect to DB
 mongoose.connect(process.env.MONGO_URI) // return a promise
@@ -28,9 +27,6 @@ mongoose.connect(process.env.MONGO_URI) // return a promise
 // use req.body
 app.use(express.json())
 
-// ability cross-origin request
-// app.use(cors)
-
 // middleware used to log the request method and request path
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -38,7 +34,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/user', userRoutes)
-app.use('/api/dogfilter',dogfilterRoutes)
-app.use('/api/catfilter',catfilterRoutes)
+app.use('/api/dogOperations',dogOperationsRoutes)
+app.use('/api/catOperations',catOperationsRoutes)
 app.use('/api/dogs', dogRoutes)
 app.use('/api/cats', catRoutes)

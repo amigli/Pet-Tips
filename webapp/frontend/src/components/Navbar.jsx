@@ -22,16 +22,22 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
-                            <span>{user.email}</span>
+                            <span>{user.user.email}</span>
                             <button onClick={handleClick}>Logout</button>
                         </div>
                     )}
                     {!user && (
                         <div>
-                            <Link to="/">Login</Link>
+                            <Link to="/login">Login</Link>
                             <Link to="/signup">Signup</Link>
                         </div>
                     )}
+                    {user && user.user.role && (
+                        <div>
+                            <Link to="/admin">Admin</Link>
+                        </div>
+                        )
+                    }
                 </nav>
             </div>
         </header>

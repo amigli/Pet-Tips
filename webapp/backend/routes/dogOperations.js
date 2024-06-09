@@ -1,13 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-const {filterCatByAttributes} = require("../controllers/CatController");
+const {filterDogByAttributes} = require("../controllers/DogController");
+const {saveFavouriteDogById} = require("../controllers/UserController")
 const requireAuthUser = require("../middleware/requireAuthUser");
 
 // authentication route for User
 router.use(requireAuthUser)
 
 // QUERY
-router.get('/', filterCatByAttributes)
+router.get('/', filterDogByAttributes)
+
+router.post('/save', saveFavouriteDogById)
 
 module.exports = router

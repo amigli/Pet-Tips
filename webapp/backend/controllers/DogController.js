@@ -132,5 +132,5 @@ module.exports = {
     insertDog,
     deleteDogById,
     updateDogById,
-    filterDogByAttributes
+    filterDogByAttributes,
 }
