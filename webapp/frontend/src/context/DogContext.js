@@ -1,5 +1,4 @@
 import { createContext, useReducer } from "react";
-import {CatContext} from "./CatContext";
 
 export const DogContext = createContext()
 
