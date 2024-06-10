@@ -32,6 +32,7 @@ const CatUpdate = () => {
     const [error, setError] = useState(null)
 
     if (!cat) {
+        console.log('ciao')
         return <Navigate to="/admin" replace />;
     }
 
