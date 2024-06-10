@@ -26,8 +26,8 @@ const Login = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                 <div className="col-md-12" style={{ textAlign: "center" }}> {/* Aggiunto inline style */}
-                    <h1 className="display-4" style={{ margin: "0 auto" }}>Login</h1> {/* Aggiunto inline style */}
+                 <div className="col-md-12" style={{ textAlign: "center" }}>
+                    <h1 className="display-4" style={{ margin: "0 auto" }}>Login</h1>
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit} className="row g-3" style={formStyle}>
