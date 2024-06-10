@@ -37,6 +37,16 @@ const insertDog = async (req, res) => {
         Tolerates_Hot_Weather, Wanderlust_Potential, Type, Congenital_Ailments, Lifetime_Cost, Longevity_Years,
         Number_of_Congenital_Ailments, Purchase_Price, Food_Costs_Per_Year, Grooming_Frequency } = req.body;
 
+    const emptyFields = []
+
+    if (!Breed) {
+        emptyFields.push('Breed')
+    }
+
+    if (emptyFields.length > 0){
+        return res.status(400).json({error: 'Please fill in all the fields', emptyFields})
+    }
+
     try {
         const dog = await Dog.create({ Breed, Adaptability, Exercise_Needs, Health_Grooming, Trainability,
             Adapts_Well_to_Apartment_Living, Affectionate_with_Family, Amount_Of_Shedding, Dog_Friendly,

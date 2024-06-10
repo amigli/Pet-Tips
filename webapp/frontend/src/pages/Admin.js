@@ -5,6 +5,8 @@ import { useCatContext} from '../hooks/useCatContext'
 import DogDetails from "../components/DogDetails";
 import CatDetails from "../components/CatDetails";
 import {useAuthContext} from "../hooks/useAuthContext";
+import DogForm from "../components/DogForm";
+import CatForm from "../components/CatForm";
 
 const Admin = () => {
 
@@ -56,7 +58,8 @@ const Admin = () => {
     return (
         <section>
             <h1> Admin </h1>
-
+            <DogForm/>
+            <CatForm/>
             <div className="Dogs">
                 <h1>Dogs</h1>
                 {dogs && dogs.map((dog) => (
