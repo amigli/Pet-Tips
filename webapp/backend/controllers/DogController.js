@@ -89,7 +89,7 @@ const updateDogById = async (req, res) => {
         return res.status(400).json({error: "Invalid Dog ID (deleteDogById)"})
     }
 
-    const dog = await Dog.findOneAndUpdate({_id: id}, {...req.body})
+    const dog = await Dog.findOneAndUpdate({_id: id}, {...req.body}, {new: true})
 
     if (!dog){
         return res.status(404).json({error: "No such dog (deleteDogById)"})

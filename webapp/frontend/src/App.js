@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin"
 import Navbar from "./components/Navbar"
+import CatUpdate from "./pages/CatUpdate";
+import DogUpdate from "./pages/DogUpdate";
 
 function App() {
 
@@ -32,7 +34,15 @@ function App() {
             />
             <Route
               path="/admin"
-              element={user && user.user.role ? <Admin/> : <Navigate to="/"/>}
+              element={user && user.user.role ? <Admin/> : <Navigate to="/login"/>}
+            />
+            <Route
+              path="/update-cat"
+              element={user && user.user.role ? <CatUpdate/> : <Navigate to="/login"/>}
+            />
+            <Route
+              path="/update-dog"
+              element={user && user.user.role ? <DogUpdate/> : <Navigate to="/login"/>}
             />
           </Routes>
         </div>

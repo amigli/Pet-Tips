@@ -10,6 +10,14 @@ export const catReducer = (state, action) => {
             return { cats: [action.payload, ...state.cats] }
         case 'DELETE_CAT':
             return { cats: state.cats.filter((cat) => cat._id !== action.payload._id)}
+        case 'UPDATE_CATS':
+            const index = state.cats.findIndex((cat) => cat._id === action.payload._id)
+            if (index !== -1) {
+                const updatedCats = [...state.cats]
+                updatedCats[index] = action.payload
+                return { cats: updatedCats };
+            }
+            return state
         default:
             return state
     }
@@ -19,8 +27,6 @@ export const CatContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(catReducer, {
         user: null
     })
-
-    console.log(CatContext)
 
     return (
         <CatContext.Provider value={{...state, dispatch}}>

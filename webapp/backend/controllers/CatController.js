@@ -65,7 +65,7 @@ const updateCatById = async (req, res) => {
         return res.status(400).json({error: "Invalid Cat ID (deleteCatById)"})
     }
 
-    const cat = await Cat.findOneAndUpdate({_id: id}, {...req.body})
+    const cat = await Cat.findOneAndUpdate({_id: id}, {...req.body}, {new: true})
 
     if (!cat){
         return res.status(404).json({error: "No such cat (deleteCatById)"})
