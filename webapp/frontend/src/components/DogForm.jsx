@@ -7,6 +7,17 @@ const DogForm = () => {
     const { user } = useAuthContext()
     const {dispatch} = useDogContext()
 
+    const formStyle = {
+        backgroundColor: '#e3f2fd',
+        margin: '20px',
+        padding: '20px',
+        borderRadius: '10px'
+    }
+
+    const labelStyle = {
+    fontSize: '1.2em',
+  }
+
     // dog attributes
     const [Breed, setBreed] = useState('')
     const [Adaptability, setAdaptability] = useState(null)
@@ -143,285 +154,420 @@ const DogForm = () => {
     }
 
     return (
-        <form className="create" onSubmit={handleSubmit}>
-            <h3>Add a New Dog</h3>
-
-            <label>Breed:</label>
-            <input
-                type="text"
+        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+            <div className="col-md-12" style={{ textAlign: "center" }}>
+                <h1 className="display-4" style={{ margin: "0 auto" }}>Add a new dog</h1>
+                {error && <div className={error} class="alert alert-danger" role="alert">{error}</div>}
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputState" className="form-label">Breed</label>
+                <input type="text" class="form-control"
                 onChange={(e) => setBreed(e.target.value)}
                 value={Breed}
-                className={emptyFields.includes('Breed') ? 'error' : ''}
             />
-
-            <label>Adaptability:</label>
-            <input
-                type="number"
-                onChange={(e) => setAdaptability(e.target.value)}
-                value={Adaptability}
-            />
-
-            <label>All Around Friendliness:</label>
-            <input
-                type="number"
-                onChange={(e) => setAllAroundFriendliness(e.target.value)}
-                value={All_Around_Friendliness}
-            />
-
-            <label>Exercise Needs:</label>
-            <input
-                type="number"
-                onChange={(e) => setExerciseNeeds(e.target.value)}
-                value={Exercise_Needs}
-            />
-
-            <label>Health Grooming:</label>
-            <input
-                type="number"
-                onChange={(e) => setHealthGrooming(e.target.value)}
-                value={Health_Grooming}
-            />
-
-            <label>Trainability:</label>
-            <input
-                type="number"
-                onChange={(e) => setTrainability(e.target.value)}
-                value={Trainability}
-            />
-
-            <label>Adapts Well To Apartment Living:</label>
-            <input
-                type="number"
-                onChange={(e) => setAdaptsWellToApartmentLiving(e.target.value)}
-                value={Adapts_Well_To_Apartment_Living}
-            />
-
-            <label>Affectionate with Family:</label>
-            <input
-                type="number"
-                onChange={(e) => setAffectionateWithFamily(e.target.value)}
-                value={Affectionate_with_Family}
-            />
-
-            <label>Amount Of Shedding:</label>
-            <input
-                type="number"
-                onChange={(e) => setAmountOfShedding(e.target.value)}
-                value={Amount_Of_Shedding}
-            />
-
-            <label>Dog Friendly:</label>
-            <input
-                type="number"
-                onChange={(e) => setDogFriendly(e.target.value)}
-                value={Dog_Friendly}
-            />
-
-            <label>Drooling Potential:</label>
-            <input
-                type="number"
-                onChange={(e) => setDroolingPotential(e.target.value)}
-                value={Drooling_Potential}
-            />
-
-            <label>Easy To Groom:</label>
-            <input
-                type="number"
-                onChange={(e) => setEasyToGroom(e.target.value)}
-                value={Easy_To_Groom}
-            />
-
-            <label>Easy To Train:</label>
-            <input
-                type="number"
-                onChange={(e) => setEasyToTrain(e.target.value)}
-                value={Easy_To_Train}
-            />
-
-            <label>Energy Level:</label>
-            <input
-                type="number"
-                onChange={(e) => setEnergyLevel(e.target.value)}
-                value={Energy_Level}
-            />
-
-            <label>Friendly Toward Strangers:</label>
-            <input
-                type="number"
-                onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
-                value={Friendly_Toward_Strangers}
-            />
-
-            <label>General Health:</label>
-            <input
-                type="number"
-                onChange={(e) => setGeneralHealth(e.target.value)}
-                value={General_Health}
-            />
-
-            <label>Good For Novice Owners:</label>
-            <input
-                type="number"
-                onChange={(e) => setGoodForNoviceOwners(e.target.value)}
-                value={Good_For_Novice_Owners}
-            />
-
-            <label>Incredibly Kid Friendly Dogs:</label>
-            <input
-                type="number"
-                onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
-                value={Incredibly_Kid_Friendly_Dogs}
-            />
-
-            <label>Intelligence:</label>
-            <input
-                type="number"
-                onChange={(e) => setIntelligence(e.target.value)}
-                value={Intelligence}
-            />
-
-            <label>Intensity:</label>
-            <input
-                type="number"
-                onChange={(e) => setIntensity(e.target.value)}
-                value={Intensity}
-            />
-
-            <label>Potential For Mouthiness:</label>
-            <input
-                type="number"
-                onChange={(e) => setPotentialForMouthiness(e.target.value)}
-                value={Potential_For_Mouthiness}
-            />
-
-            <label>Potential For Playfulness:</label>
-            <input
-                type="number"
-                onChange={(e) => setPotentialForPlayfulness(e.target.value)}
-                value={Potential_For_Playfulness}
-            />
-
-            <label>Potential For Weight Gain:</label>
-            <input
-                type="number"
-                onChange={(e) => setPotentialForWeightGain(e.target.value)}
-                value={Potential_For_Weight_Gain}
-            />
-
-            <label>Prey Drive:</label>
-            <input
-                type="number"
-                onChange={(e) => setPreyDrive(e.target.value)}
-                value={Prey_Drive}
-            />
-
-            <label>Sensitivity Level:</label>
-            <input
-                type="number"
-                onChange={(e) => setSensitivityLevel(e.target.value)}
-                value={Sensitivity_Level}
-            />
-
-            <label>Size:</label>
-            <input
-                type="number"
-                onChange={(e) => setSize(e.target.value)}
-                value={Size}
-            />
-
-            <label>Tendency To Bark Or Howl:</label>
-            <input
-                type="number"
-                onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
-                value={Tendency_To_Bark_Or_Howl}
-            />
-
-            <label>Tolerates Being Alone:</label>
-            <input
-                type="number"
-                onChange={(e) => setToleratesBeingAlone(e.target.value)}
-                value={Tolerates_Being_Alone}
-            />
-
-            <label>Tolerates Cold Weather:</label>
-            <input
-                type="number"
-                onChange={(e) => setToleratesColdWeather(e.target.value)}
-                value={Tolerates_Cold_Weather}
-            />
-
-            <label>Tolerates Hot Weather:</label>
-            <input
-                type="number"
-                onChange={(e) => setToleratesHotWeather(e.target.value)}
-                value={Tolerates_Hot_Weather}
-            />
-
-            <label>Wanderlust Potential:</label>
-            <input
-                type="number"
-                onChange={(e) => setWanderlustPotential(e.target.value)}
-                value={Wanderlust_Potential}
-            />
-
-            <label>Type:</label>
-            <input
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputState" className="form-label">Adaptability</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAdaptability(e.target.value)}
+                value={Adaptability}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">All Around Friendliness</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAllAroundFriendliness(e.target.value)}
+                value={All_Around_Friendliness}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Exercise Needs</label>
+                <select id="inputState" className="form-select" onChange={(e) => setExerciseNeeds(e.target.value)}
+                value={Exercise_Needs}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Health Grooming</label>
+                <select id="inputState" className="form-select" onChange={(e) => setHealthGrooming(e.target.value)}
+                value={Health_Grooming}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Trainability</label>
+                <select id="inputState" className="form-select" onChange={(e) => setTrainability(e.target.value)}
+                value={Trainability}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Adapts Well To Apartment Living</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAdaptsWellToApartmentLiving(e.target.value)}
+                value={Adapts_Well_To_Apartment_Living}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Affectionate with Family</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAffectionateWithFamily(e.target.value)}
+                value={Affectionate_with_Family}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Amount Of Shedding</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAmountOfShedding(e.target.value)}
+                value={Amount_Of_Shedding}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Dog Friendly</label>
+                <select id="inputState" className="form-select" onChange={(e) => setDogFriendly(e.target.value)}
+                value={Dog_Friendly}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Drooling Potential</label>
+                <select id="inputState" className="form-select" onChange={(e) => setDroolingPotential(e.target.value)}
+                value={Drooling_Potential}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Easy To Groom</label>
+                <select id="inputState" className="form-select" onChange={(e) => setEasyToGroom(e.target.value)}
+                value={Easy_To_Groom}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Easy To Train</label>
+                <select id="inputState" className="form-select" onChange={(e) => setAdaptsWellToApartmentLiving(e.target.value)}
+                value={Adapts_Well_To_Apartment_Living}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Energy Level</label>
+                <select id="inputState" className="form-select" onChange={(e) => setEnergyLevel(e.target.value)}
+                value={Energy_Level}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Friendly Toward Strangers</label>
+                <select id="inputState" className="form-select" onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
+                value={Friendly_Toward_Strangers}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">General Health</label>
+                <select id="inputState" className="form-select" onChange={(e) => setGeneralHealth(e.target.value)}
+                value={General_Health}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Good For Novice Owners</label>
+                <select id="inputState" className="form-select" onChange={(e) => setGoodForNoviceOwners(e.target.value)}
+                value={Good_For_Novice_Owners}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Incredibly Kid Friendly Dogs</label>
+                <select id="inputState" className="form-select" onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
+                value={Incredibly_Kid_Friendly_Dogs}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Intelligence</label>
+                <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
+                value={Intelligence}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Intensity</label>
+                <select id="inputState" className="form-select" onChange={(e) => setIntensity(e.target.value)}
+                value={Intensity}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Potential For Mouthiness</label>
+                <select id="inputState" className="form-select" onChange={(e) => setPotentialForMouthiness(e.target.value)}
+                value={Potential_For_Mouthiness}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Potential For Playfulness</label>
+                <select id="inputState" className="form-select" onChange={(e) => setPotentialForPlayfulness(e.target.value)}
+                value={Potential_For_Playfulness}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Potential For Weight Gain</label>
+                <select id="inputState" className="form-select" onChange={(e) => setPotentialForWeightGain(e.target.value)}
+                value={Potential_For_Weight_Gain}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Prey Drive</label>
+                <select id="inputState" className="form-select" onChange={(e) => setPreyDrive(e.target.value)}
+                value={Prey_Drive}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Sensitivity Level</label>
+                <select id="inputState" className="form-select" onChange={(e) => setSensitivityLevel(e.target.value)}
+                value={Sensitivity_Level}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Size</label>
+                <select id="inputState" className="form-select" onChange={(e) => setSize(e.target.value)}
+                value={Size}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Tendency To Bark Or Howl</label>
+                <select id="inputState" className="form-select" onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
+                value={Tendency_To_Bark_Or_Howl}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Tolerates Being Alone</label>
+                <select id="inputState" className="form-select" onChange={(e) => setToleratesBeingAlone(e.target.value)}
+                value={Tolerates_Being_Alone}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Tolerates Cold Weather</label>
+                <select id="inputState" className="form-select" onChange={(e) => setToleratesColdWeather(e.target.value)}
+                value={Tolerates_Cold_Weather}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Tolerates Hot Weather</label>
+                <select id="inputState" className="form-select" onChange={(e) => setToleratesHotWeather(e.target.value)}
+                value={Tolerates_Hot_Weather}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Wanderlust Potential</label>
+                <select id="inputState" className="form-select" onChange={(e) => setWanderlustPotential(e.target.value)}
+                value={Wanderlust_Potential}>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Type</label>
+                <select id="inputState" className="form-select" onChange={(e) => setType(e.target.value)}
+                value={Type}>
+                    <option>herding</option>
+                    <option>non-sporting</option>
+                    <option>hound</option>
+                    <option>sporting</option>
+                    <option>terrier</option>
+                    <option>toy</option>
+                    <option>working</option>
+                </select>
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Congenital Ailments</label>
+                <input
                 type="text"
-                onChange={(e) => setType(e.target.value)}
-                value={Type}
-            />
-
-            <label>Congenital Ailments:</label>
-            <input
-                type="text"
+                class="form-control"
                 onChange={(e) => setCongenitalAilments(e.target.value)}
                 value={Congenital_Ailments}
             />
-
-            <label>Lifetime Cost:</label>
-            <input
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="inputEmail4" className="form-label">Lifetime Cost</label>
+                <input
                 type="number"
+                class="form-control"
                 onChange={(e) => setLifetimeCost(e.target.value)}
                 value={Lifetime_Cost}
-            />
-
-            <label>Longevity (Years):</label>
+                />
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputEmail4" className="form-label">Longevity (Years):</label>
             <input
                 type="number"
+                class="form-control"
                 onChange={(e) => setLongevityYears(e.target.value)}
                 value={Longevity_Years}
             />
-
-            <label>Number Of Congenital Ailments:</label>
-            <input
-                type="number"
-                onChange={(e) => setNumberOfCongenitalAilments(e.target.value)}
-                value={Number_Of_Congenital_Ailments}
-            />
-
+            </div>
+            <div className="col-md-2">
             <label>Purchase Price:</label>
             <input
                 type="number"
+                class="form-control"
                 onChange={(e) => setPurchasePrice(e.target.value)}
                 value={Purchase_Price}
             />
-
+            </div>
+            <div className="col-md-2">
             <label>Food Costs Per Year:</label>
             <input
                 type="number"
+                class="form-control"
                 onChange={(e) => setFoodCostsPerYear(e.target.value)}
                 value={Food_Costs_Per_Year}
             />
-
+            </div>
+            <div className="col-md-2">
             <label>Grooming Frequency:</label>
             <input
                 type="text"
+                class="form-control"
                 onChange={(e) => setGroomingFrequency(e.target.value)}
                 value={Grooming_Frequency}
             />
+            </div>
+            <div className="col-12 d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
+            </div>
 
-            <button>Add Dog</button>
-            {showError(error)}
+
         </form>
     );
 }
