@@ -7,7 +7,9 @@ export const catReducer = (state, action) => {
         case 'SET_CATS':
             return { cats: action.payload}
         case 'INSERT_CAT':
-            return { cats: [action.payload, ...state.cats] }
+            let catsArray = [action.payload, ...state.dogs]
+            catsArray.sort((a, b) => a.Breed.localeCompare(b.Breed));
+            return { cats:  catsArray}
         case 'DELETE_CAT':
             return { cats: state.cats.filter((cat) => cat._id !== action.payload._id)}
         case 'UPDATE_CATS':
