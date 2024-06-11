@@ -6,9 +6,9 @@ const {saveFavouriteCatById} = require("../controllers/UserController")
 const requireAuthUser = require("../middleware/requireAuthUser");
 
 // QUERY
-router.get('/', filterCatByAttributes)
+router.post('/', filterCatByAttributes)
 
 // authentication route for User
-router.post('/save', requireAuthUser,saveFavouriteCatById)
+router.post('/save', requireAuthUser, saveFavouriteCatById)
 
 module.exports = router

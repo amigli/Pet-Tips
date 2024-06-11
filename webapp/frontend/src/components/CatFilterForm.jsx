@@ -34,11 +34,6 @@ const CatFilterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!user){
-            setError('You must be logged in')
-            return
-        }
-
         const cat = {family_friendly, playfulness, children_friendly, grooming, intelligence, other_pets_friendly,
         friendly_toward_strangers, tendency_to_vocalize}
 
@@ -49,17 +44,19 @@ const CatFilterForm = () => {
             body: JSON.stringify(cat),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${user.token}`
             }
         })
 
         const json = await response.json()
 
         if (!response.ok) {
+            setCats(null)
             setError(json.error)
         }
 
         if (response.ok){
+            setError(null)
+            setCats(json)
             console.log(json)
         }
     }

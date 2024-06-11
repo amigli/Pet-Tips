@@ -62,10 +62,12 @@ const DogFilterForm = () => {
         console.log(json)
 
         if (!response.ok) {
+            setDogs(null)
             setError(json.error)
         }
 
         if (response.ok){
+            setError(null)
             setDogs(json)
             console.log(json)
         }
