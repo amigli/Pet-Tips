@@ -25,7 +25,7 @@ const DogForm = () => {
     const [Exercise_Needs, setExerciseNeeds] = useState(null)
     const [Health_Grooming, setHealthGrooming] = useState(null)
     const [Trainability, setTrainability] = useState(null)
-    const [Adapts_Well_To_Apartment_Living, setAdaptsWellToApartmentLiving] = useState(null)
+    const [Adapts_Well_to_Apartment_Living, setAdapts_Well_to_Apartment_Living] = useState(null)
     const [Affectionate_with_Family, setAffectionateWithFamily] = useState(null)
     const [Amount_Of_Shedding, setAmountOfShedding] = useState(null)
     const [Dog_Friendly, setDogFriendly] = useState(null)
@@ -72,7 +72,7 @@ const DogForm = () => {
         }
 
         const dog = { Breed, Adaptability, All_Around_Friendliness, Exercise_Needs, Health_Grooming, Trainability,
-            Adapts_Well_To_Apartment_Living, Affectionate_with_Family, Amount_Of_Shedding, Dog_Friendly, Drooling_Potential,
+            Adapts_Well_To_Apartment_Living: Adapts_Well_to_Apartment_Living, Affectionate_with_Family, Amount_Of_Shedding, Dog_Friendly, Drooling_Potential,
             Easy_To_Groom, Easy_To_Train, Energy_Level, Friendly_Toward_Strangers, General_Health, Good_For_Novice_Owners,
             Incredibly_Kid_Friendly_Dogs, Intelligence, Intensity, Potential_For_Mouthiness, Potential_For_Playfulness,
             Potential_For_Weight_Gain, Prey_Drive, Sensitivity_Level, Size, Tendency_To_Bark_Or_Howl, Tolerates_Being_Alone,
@@ -103,7 +103,7 @@ const DogForm = () => {
             setExerciseNeeds(null)
             setHealthGrooming(null)
             setTrainability(null)
-            setAdaptsWellToApartmentLiving(null)
+            setAdapts_Well_to_Apartment_Living(null)
             setAffectionateWithFamily(null)
             setAmountOfShedding(null)
             setDogFriendly(null)
@@ -142,15 +142,6 @@ const DogForm = () => {
             setEmptyFields([])
         }
 
-    }
-
-    const showError = (error) => {
-        let errorMessage = ''
-        if (error){
-            errorMessage = <div className="error"> {error} </div>
-        }
-
-        return errorMessage
     }
 
     return (
@@ -223,8 +214,8 @@ const DogForm = () => {
             </div>
             <div className="col-md-2">
                 <label htmlFor="inputEmail4" className="form-label">Adapts Well To Apartment Living</label>
-                <select id="inputState" className="form-select" onChange={(e) => setAdaptsWellToApartmentLiving(e.target.value)}
-                value={Adapts_Well_To_Apartment_Living}>
+                <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
+                value={Adapts_Well_to_Apartment_Living}>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -289,8 +280,8 @@ const DogForm = () => {
             </div>
             <div className="col-md-2">
                 <label htmlFor="inputEmail4" className="form-label">Easy To Train</label>
-                <select id="inputState" className="form-select" onChange={(e) => setAdaptsWellToApartmentLiving(e.target.value)}
-                value={Adapts_Well_To_Apartment_Living}>
+                <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
+                value={Adapts_Well_to_Apartment_Living}>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

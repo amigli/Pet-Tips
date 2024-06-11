@@ -15,7 +15,7 @@ const CatForm = () => {
     }
 
     const labelStyle = {
-    fontSize: '1.2em',
+        fontSize: '1.2em',
     }
 
     // cat attributes
@@ -108,15 +108,6 @@ const CatForm = () => {
             setEmptyFields([])
         }
 
-    }
-
-    const showError = (error) => {
-        let errorMessage = ''
-        if (error){
-            errorMessage = <div className="error"> {error} </div>
-        }
-
-        return errorMessage
     }
 
     return (

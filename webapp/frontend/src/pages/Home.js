@@ -1,7 +1,12 @@
+import DogFilterForm from "../components/DogFilterForm";
+
 const Home = () => {
 
     return (
-        <h1>Home</h1>
+        <div>
+            <h1>Home</h1>
+            <DogFilterForm/>
+        </div>
     )
 }
 

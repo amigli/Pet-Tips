@@ -9,7 +9,7 @@ const requireAuthUser = require("../middleware/requireAuthUser");
 router.use(requireAuthUser)
 
 // QUERY
-router.get('/', filterDogByAttributes)
+router.post('/', filterDogByAttributes)
 
 router.post('/save', saveFavouriteDogById)
 
