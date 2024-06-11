@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {useSignup} from "../hooks/useSignup";
+import {useNavigate} from "react-router-dom";
 
 // file of form
 const Signup = () => {
@@ -20,8 +21,8 @@ const Signup = () => {
     }
 
     const labelStyle = {
-    fontSize: '1.2em',
-  }
+        fontSize: '1.2em',
+    }
 
     return (
         <div className="container">

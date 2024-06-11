@@ -17,7 +17,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        required: false
+        required: true
     },
     favourite_dogs:  [{ type: Schema.Types.ObjectId, ref: 'Dog', required: false}],
     favourite_cats: [{ type: Schema.Types.ObjectId, ref: 'Cat', required: false}]
@@ -53,7 +53,7 @@ userSchema.statics.signup = async function(email, password) {
     const hash = await bcrypt.hash(password, salt)
 
     // create user
-    const user = await this.create({email, password: hash})
+    const user = await this.create({email, password: hash, role: "simple"})
     console.log('signup', user)
     return user
 }

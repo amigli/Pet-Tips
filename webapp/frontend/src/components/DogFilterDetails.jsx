@@ -1,8 +1,31 @@
-import {Navigate} from "react-router-dom";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const DogFilterDetails = ({dog}) => {
 
-    const handleSaveDog = () => {
+    const { user, dispatch } = useAuthContext()
+
+    const handleSaveDog = async (e) => {
+        e.preventDefault()
+
+        const response = await fetch('/api/dogOperations/save', {
+            method: 'POST',
+            body: JSON.stringify({"id_dog": dog._id}),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            }
+        })
+
+        const json = await response.json()
+
+        // update user
+        dispatch({type: 'UPDATE', payload: json})
+
+        // update localStorage
+        localStorage.setItem('user', JSON.stringify(json))
+    }
+
+    const handleRemoveSavedDog = async (e) => {
 
     }
 
@@ -15,7 +38,14 @@ const DogFilterDetails = ({dog}) => {
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
-                            <button onClick={handleSaveDog} type="button" className="btn btn-primary">Save</button>
+                            {user && user.user.role==="simple" && !user.user.favourite_dogs.includes(dog._id) &&
+                                <button onClick={handleSaveDog} type="button"
+                                        className="btn btn-primary">Save</button>
+                            }
+                            {user && user.user.role==="simple" && user.user.favourite_dogs.includes(dog._id) &&
+                                <button onClick={handleRemoveSavedDog} type="button"
+                                        className="btn btn-primary">Removed</button>
+                            }
                         </div>
                     </div>
                 </div>

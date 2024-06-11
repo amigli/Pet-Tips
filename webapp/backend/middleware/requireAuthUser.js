@@ -17,7 +17,7 @@ const requireAuthUser = async (req, res, next) => {
         user = await User.findOne({_id})
         req.user = user
 
-        if (user.role){
+        if (user.role !== "simple"){
             throw Error('Request is authorized for simply user!')
         }
 

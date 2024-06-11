@@ -45,7 +45,7 @@ const saveFavouriteDogById = async (req, res) => {
         return res.status(400).json({error: "Invalid Dog ID (saveFavouriteDogById)"})
     }
 
-    const user = await User.findOneAndUpdate({_id: id}, {'$addToSet': {favourite_dogs: id_dog}})
+    const user = await User.findOneAndUpdate({_id: id}, {'$addToSet': {favourite_dogs: id_dog}}, {new: true})
 
     if (!user){
         return res.status(404).json({error: "No such user (saveFavoriteDogById)"})
@@ -62,7 +62,7 @@ const saveFavouriteCatById = async (req, res) => {
         return res.status(400).json({error: "Invalid Cat ID (saveFavouriteCatById)"})
     }
 
-    const user = await User.findOneAndUpdate({_id: id}, {'$addToSet': {favourite_cats: id_cat}})
+    const user = await User.findOneAndUpdate({_id: id}, {'$addToSet': {favourite_cats: id_cat}}, {new: true})
 
     if (!user){
         return res.status(404).json({error: "No such user (saveFavouriteCatById)"})

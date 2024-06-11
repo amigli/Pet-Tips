@@ -12,13 +12,13 @@ const Navbar = () => {
     }
 
     const linkStyle = {
-    fontSize: '1.5em',
-  }
+        fontSize: '1.5em',
+    }
 
-   const brandStyle = {
-    fontFamily: "'Comic Sans MS', cursive, sans-serif",
-    display: 'flex'
-  }
+    const brandStyle = {
+        fontFamily: "'Comic Sans MS', cursive, sans-serif",
+        display: 'flex'
+    }
 
     console.log(user)
 
@@ -66,7 +66,7 @@ const Navbar = () => {
               </Link>
             </div>
           )}
-          {user && user.user.role && (
+          {user && user.user.role === "admin" && (
             <div className="d-flex">
               <Link className="btn btn-outline-warning ms-2" to="/admin">
                 Admin Page
