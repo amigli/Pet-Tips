@@ -34,15 +34,15 @@ function App() {
             />
             <Route
               path="/admin"
-              element={(user && user.user.role==="admin") ? <Admin/> : <Navigate to="/login"/>}
+              element={!user ? <Login/> : (user && user.user.role === "admin") ? <Admin/> : <Home/>}
             />
             <Route
               path="/update-cat"
-              element={(user && user.user.role==="admin") ? <CatUpdate/> : <Navigate to="/login"/>}
+              element={!user ? <Login/> : (user && user.user.role === "admin") ? <CatUpdate/> : <Home/>}
             />
             <Route
               path="/update-dog"
-              element={(user && user.user.role==="admin") ? <DogUpdate/> : <Navigate to="/login"/>}
+              element={!user ? <Login/> : (user && user.user.role === "admin") ? <DogUpdate/> : <Home/>}
             />
           </Routes>
         </div>
