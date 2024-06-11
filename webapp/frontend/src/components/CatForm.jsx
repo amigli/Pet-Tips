@@ -176,6 +176,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Family Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setFamilyFriendly(e.target.value)}
                 value={Family_Friendly}>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -187,6 +188,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Shedding</label>
             <select id="inputState" className="form-select" onChange={(e) => setShedding(e.target.value)}
                 value={Shedding}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -198,6 +200,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">General Health</label>
             <select id="inputState" className="form-select" onChange={(e) => setGeneralHealth(e.target.value)}
                 value={General_Health}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -209,6 +212,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Playfulness</label>
             <select id="inputState" className="form-select" onChange={(e) => setPlayfulness(e.target.value)}
                 value={Playfulness}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -220,6 +224,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Children Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setChildrenFriendly(e.target.value)}
                 value={Children_Friendly}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -231,6 +236,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Grooming</label>
             <select id="inputState" className="form-select" onChange={(e) => setGrooming(e.target.value)}
                 value={Grooming}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -243,6 +249,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Intelligence</label>
             <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
                 value={Intelligence}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -254,6 +261,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Other Pets Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setOtherPetsFriendly(e.target.value)}
                 value={Other_Pets_Friendly}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -265,6 +273,7 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Friendly Toward Strangers</label>
             <select id="inputState" className="form-select" onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
                 value={Friendly_Toward_Strangers}>
+                <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -276,12 +285,13 @@ const CatForm = () => {
             <label htmlFor="inputState" className="form-label">Tendency To Vocalize</label>
             <select id="inputState" className="form-select" onChange={(e) => setTendencyToVocalize(e.target.value)}
                 value={Tendency_To_Vocalize}>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
             </div>
 
             <div className="col-12 d-flex justify-content-center">

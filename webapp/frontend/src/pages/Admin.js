@@ -59,20 +59,27 @@ const Admin = () => {
 
     return (
         <section>
-            <h1> Admin </h1>
             <DogForm/>
             <CatForm/>
             <div className="Dogs">
-                <h1>Dogs</h1>
-                {dogs && dogs.map((dog) => (
-                    <DogDetails key={dog._id} dog={dog}/>
-                ))}
+                <div className="col-md-12" style={{ textAlign: "center" }}>
+                    <h1 className="display-4" style={{marginBottom: "20px" }}>Dog List</h1>
+                </div>
+                <div className="row" style={{margin: "20px"}}>
+                    {dogs && dogs.map((dog) => (
+                        <DogDetails key={dog._id} dog={dog} />
+                    ))}
+                </div>
             </div>
             <div className="Cats">
-                <h1>Cats</h1>
+                <div className="col-md-12" style={{textAlign: "center"}}>
+                <h1 className="display-4" style={{marginBottom: "20px" }}>Cat List</h1>
+                </div>
+                <div className="row" style={{margin: "20px"}}>
                 {cats && cats.map((cat) => (
                     <CatDetails key={cat._id} cat={cat}/>
                 ))}
+                </div>
             </div>
 
         </section>

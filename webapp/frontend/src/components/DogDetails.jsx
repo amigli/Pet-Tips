@@ -37,12 +37,21 @@ const DogDetails = ({dog}) => {
     }
 
     return (
-        <div>
-            <h4>{dog.Breed}</h4>
-            <button onClick={handleClick}>Delete</button>
-            <button onClick={updateClick}>Update</button>
-            <p>{dog.Grooming_Frequency}</p>
-            {isClickUpdate && <Navigate to="/update-dog" state={{dog}}/>}
+        <div className="col-md-3 mb-3">
+            <div className="card">
+                <div className="card-body">
+                    <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
+                        <h5 className="card-title">{dog.Breed}</h5>
+                    </div>
+                    <div className="card-body">
+                        <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
+                        <button onClick={handleClick} type="button" class="btn btn-primary" style={{margin: "10px"}}>Delete</button>
+                        <button onClick={updateClick} type="button" class="btn btn-primary">Update</button>
+                        </div>
+                        {isClickUpdate && <Navigate to="/update-dog" state={{ dog }} />}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
