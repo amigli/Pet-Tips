@@ -5,11 +5,10 @@ const {filterCatByAttributes} = require("../controllers/CatController");
 const {saveFavouriteCatById} = require("../controllers/UserController")
 const requireAuthUser = require("../middleware/requireAuthUser");
 
-// authentication route for User
-router.use(requireAuthUser)
-
 // QUERY
 router.get('/', filterCatByAttributes)
-router.post('/save', saveFavouriteCatById)
+
+// authentication route for User
+router.post('/save', requireAuthUser,saveFavouriteCatById)
 
 module.exports = router

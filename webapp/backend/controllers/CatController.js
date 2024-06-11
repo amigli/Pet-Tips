@@ -81,14 +81,17 @@ const filterCatByAttributes = async (req, res) => {
 
     const query = {};
 
-    if (family_friendly !== undefined && family_friendly !== null) query.family_friendly = family_friendly;
-    if (playfulness !== undefined && playfulness !== null) query.playfulness = playfulness;
-    if (children_friendly !== undefined && children_friendly !== null) query.children_friendly = children_friendly;
-    if (grooming !== undefined && grooming !== null) query.grooming = grooming;
-    if (intelligence !== undefined && intelligence !== null) query.intelligence = intelligence;
-    if (other_pets_friendly !== undefined && other_pets_friendly !== null) query.other_pets_friendly = other_pets_friendly;
-    if (friendly_toward_strangers !== undefined && friendly_toward_strangers !== null) query.friendly_toward_strangers = friendly_toward_strangers;
-    if (tendency_to_vocalize !== undefined && tendency_to_vocalize !== null) query.tendency_to_vocalize = tendency_to_vocalize;
+    if (family_friendly !== undefined
+        && family_friendly !== null && family_friendly !== "") query.family_friendly = family_friendly;
+    if (playfulness !== undefined
+        && playfulness !== null && playfulness !== "") query.playfulness = playfulness;
+    if (children_friendly !== undefined
+        && children_friendly !== null && children_friendly !== "") query.children_friendly = children_friendly;
+    if (grooming !== undefined && grooming !== null && grooming !== "") query.grooming = grooming;
+    if (intelligence !== undefined && intelligence !== null && intelligence !== "") query.intelligence = intelligence;
+    if (other_pets_friendly !== undefined && other_pets_friendly !== null && other_pets_friendly !== "") query.other_pets_friendly = other_pets_friendly;
+    if (friendly_toward_strangers !== undefined && friendly_toward_strangers !== null && friendly_toward_strangers !== "") query.friendly_toward_strangers = friendly_toward_strangers;
+    if (tendency_to_vocalize !== undefined && tendency_to_vocalize !== null && tendency_to_vocalize !== "") query.tendency_to_vocalize = tendency_to_vocalize;
 
     const cats = await Cat.find(query)
 

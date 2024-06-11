@@ -5,12 +5,10 @@ const {filterDogByAttributes} = require("../controllers/DogController");
 const {saveFavouriteDogById} = require("../controllers/UserController")
 const requireAuthUser = require("../middleware/requireAuthUser");
 
-// authentication route for User
-router.use(requireAuthUser)
-
 // QUERY
 router.post('/', filterDogByAttributes)
 
-router.post('/save', saveFavouriteDogById)
+// authentication route for User
+router.post('/save', requireAuthUser, saveFavouriteDogById)
 
 module.exports = router

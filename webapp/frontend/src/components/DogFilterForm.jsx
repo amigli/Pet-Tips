@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import DogFilterDetails from "./DogFilterDetails";
-import CatDetails from "./CatDetails";
 
 const DogFilterForm = () => {
 
@@ -44,11 +43,6 @@ const DogFilterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!user){
-            setError('You must be logged in')
-            return
-        }
-
         const dog = { Adapts_Well_to_Apartment_Living, Affectionate_with_Family, Dog_Friendly, Easy_To_Groom, Easy_To_Train,
         Friendly_Toward_Strangers, Incredibly_Kid_Friendly_Dogs, Intelligence, Potential_For_Playfulness,
         Prey_Drive, Size, Tendency_To_Bark_Or_Howl, Tolerates_Being_Alone, Tolerates_Cold_Weather,
@@ -59,11 +53,13 @@ const DogFilterForm = () => {
             body: JSON.stringify(dog),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${user.token}`
             }
         })
 
         const json = await response.json()
+
+        console.log(dog)
+        console.log(json)
 
         if (!response.ok) {
             setError(json.error)
