@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
+import DogFilterDetails from "./DogFilterDetails";
+import CatDetails from "./CatDetails";
 
 const DogFilterForm = () => {
 
@@ -32,11 +34,12 @@ const DogFilterForm = () => {
     const [Tolerates_Being_Alone, setToleratesBeingAlone] = useState(null)
     const [Tolerates_Cold_Weather, setToleratesColdWeather] = useState(null)
     const [Tolerates_Hot_Weather, setToleratesHotWeather] = useState(null)
-    const [Type, setType] = useState('')
+    const [Type, setType] = useState(null)
     const [Purchase_Price, setPurchasePrice] = useState(null)
 
     const [error, setError] = useState(null)
 
+    const [dogs, setDogs] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -50,8 +53,6 @@ const DogFilterForm = () => {
         Friendly_Toward_Strangers, Incredibly_Kid_Friendly_Dogs, Intelligence, Potential_For_Playfulness,
         Prey_Drive, Size, Tendency_To_Bark_Or_Howl, Tolerates_Being_Alone, Tolerates_Cold_Weather,
         Tolerates_Hot_Weather, Type, Purchase_Price }
-
-        console.log(dog)
 
         const response = await fetch('/api/dogOperations/', {
             method: 'POST',
@@ -69,11 +70,13 @@ const DogFilterForm = () => {
         }
 
         if (response.ok){
+            setDogs(json)
             console.log(json)
         }
     }
 
     return (
+        <div>
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
                 <h1 className="display-4" style={{ margin: "0 auto" }}>Filter dogs</h1>
@@ -86,15 +89,15 @@ const DogFilterForm = () => {
                         onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}>
                     <option selected></option>
                     <optgroup label="Low">
-                        <option>1</option>
-                        <option>2</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                     </optgroup>
                     <optgroup label="Mean">
-                        <option>3</option>
+                        <option value="3">3</option>
                     </optgroup>
                     <optgroup label="Top">
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </optgroup>
                 </select>
             </div>
@@ -140,7 +143,7 @@ const DogFilterForm = () => {
 
             <div className="col-md-2">
                 <label htmlFor="inputEmail4" className="form-label">Easy To Train</label>
-                <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
+                <select id="inputState" className="form-select" onChange={(e) => setEasyToTrain(e.target.value)}
                 value={Easy_To_Train}>
                     <option selected></option>
                     <option>1</option>
@@ -310,6 +313,8 @@ const DogFilterForm = () => {
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
             </div>
         </form>
+        {dogs && dogs.map((dog) => ( <DogFilterDetails key={dog._id} dog={dog}/> ))}
+        </div>
     );
 }
 

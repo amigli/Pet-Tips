@@ -109,23 +109,23 @@ const filterDogByAttributes = async (req, res) => {
     const query = {};
 
     // Add attributes not null in query
-    if (Adapts_Well_to_Apartment_Living !== undefined) query.Adapts_Well_to_Apartment_Living = Adapts_Well_to_Apartment_Living;
-    if (Affectionate_with_Family !== undefined) query.Affectionate_with_Family = Affectionate_with_Family;
-    if (Dog_Friendly !== undefined) query.Dog_Friendly = Dog_Friendly;
-    if (Easy_To_Groom !== undefined) query.Easy_To_Groom = Easy_To_Groom;
-    if (Easy_To_Train !== undefined) query.Easy_To_Train = Easy_To_Train;
-    if (Friendly_Toward_Strangers !== undefined) query.Friendly_Toward_Strangers = Friendly_Toward_Strangers;
-    if (Incredibly_Kid_Friendly_Dogs !== undefined) query.Incredibly_Kid_Friendly_Dogs = Incredibly_Kid_Friendly_Dogs;
-    if (Intelligence !== undefined) query.Intelligence = Intelligence;
-    if (Potential_For_Playfulness !== undefined) query.Potential_For_Playfulness = Potential_For_Playfulness;
-    if (Prey_Drive !== undefined) query.Prey_Drive = Prey_Drive;
-    if (Size !== undefined) query.Size = Size;
-    if (Tendency_To_Bark_Or_Howl !== undefined) query.Tendency_To_Bark_Or_Howl = Tendency_To_Bark_Or_Howl;
-    if (Tolerates_Being_Alone !== undefined) query.Tolerates_Being_Alone = Tolerates_Being_Alone;
-    if (Tolerates_Cold_Weather !== undefined) query.Tolerates_Cold_Weather = Tolerates_Cold_Weather;
-    if (Tolerates_Hot_Weather !== undefined) query.Tolerates_Hot_Weather = Tolerates_Hot_Weather;
-    if (Type !== undefined) query.Type = Type;
-    if (Purchase_Price !== undefined) query.Purchase_Price = {$lte: Purchase_Price};
+    if (Adapts_Well_to_Apartment_Living !== undefined && Adapts_Well_to_Apartment_Living !== null) query.Adapts_Well_to_Apartment_Living = Adapts_Well_to_Apartment_Living;
+    if (Affectionate_with_Family !== undefined && Affectionate_with_Family !== null) query.Affectionate_with_Family = Affectionate_with_Family;
+    if (Dog_Friendly !== undefined && Dog_Friendly !== null) query.Dog_Friendly = Dog_Friendly;
+    if (Easy_To_Groom !== undefined && Easy_To_Groom !== null) query.Easy_To_Groom = Easy_To_Groom;
+    if (Easy_To_Train !== undefined && Easy_To_Train !== null) query.Easy_To_Train = Easy_To_Train;
+    if (Friendly_Toward_Strangers !== undefined && Friendly_Toward_Strangers !== null) query.Friendly_Toward_Strangers = Friendly_Toward_Strangers;
+    if (Incredibly_Kid_Friendly_Dogs !== undefined && Incredibly_Kid_Friendly_Dogs !== null) query.Incredibly_Kid_Friendly_Dogs = Incredibly_Kid_Friendly_Dogs;
+    if (Intelligence !== undefined && Intelligence !== null) query.Intelligence = Intelligence;
+    if (Potential_For_Playfulness !== undefined && Potential_For_Playfulness !== null) query.Potential_For_Playfulness = Potential_For_Playfulness;
+    if (Prey_Drive !== undefined && Prey_Drive !== null) query.Prey_Drive = Prey_Drive;
+    if (Size !== undefined && Size !== null) query.Size = Size;
+    if (Tendency_To_Bark_Or_Howl !== undefined && Tendency_To_Bark_Or_Howl !== null) query.Tendency_To_Bark_Or_Howl = Tendency_To_Bark_Or_Howl;
+    if (Tolerates_Being_Alone !== undefined && Tolerates_Being_Alone !== null) query.Tolerates_Being_Alone = Tolerates_Being_Alone;
+    if (Tolerates_Cold_Weather !== undefined && Tolerates_Cold_Weather !== null) query.Tolerates_Cold_Weather = Tolerates_Cold_Weather;
+    if (Tolerates_Hot_Weather !== undefined && Tolerates_Hot_Weather !== null) query.Tolerates_Hot_Weather = Tolerates_Hot_Weather;
+    if (Type !== undefined && Type !== null) query.Type = Type;
+    if (Purchase_Price !== undefined && Purchase_Price !== null) query.Purchase_Price = {$lte: Purchase_Price};
 
     const dogs = await Dog.find(query)
 

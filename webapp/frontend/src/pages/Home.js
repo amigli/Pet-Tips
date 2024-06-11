@@ -1,4 +1,5 @@
 import DogFilterForm from "../components/DogFilterForm";
+import DogFilterDetails from "../components/DogFilterDetails";
 
 const Home = () => {
 

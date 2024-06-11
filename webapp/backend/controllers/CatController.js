@@ -81,14 +81,14 @@ const filterCatByAttributes = async (req, res) => {
 
     const query = {};
 
-    if (family_friendly !== undefined) query.family_friendly = family_friendly;
-    if (playfulness !== undefined) query.playfulness = playfulness;
-    if (children_friendly !== undefined) query.children_friendly = children_friendly;
-    if (grooming !== undefined) query.grooming = grooming;
-    if (intelligence !== undefined) query.intelligence = intelligence;
-    if (other_pets_friendly !== undefined) query.other_pets_friendly = other_pets_friendly;
-    if (friendly_toward_strangers !== undefined) query.friendly_toward_strangers = friendly_toward_strangers;
-    if (tendency_to_vocalize !== undefined) query.tendency_to_vocalize = tendency_to_vocalize;
+    if (family_friendly !== undefined && family_friendly !== null) query.family_friendly = family_friendly;
+    if (playfulness !== undefined && playfulness !== null) query.playfulness = playfulness;
+    if (children_friendly !== undefined && children_friendly !== null) query.children_friendly = children_friendly;
+    if (grooming !== undefined && grooming !== null) query.grooming = grooming;
+    if (intelligence !== undefined && intelligence !== null) query.intelligence = intelligence;
+    if (other_pets_friendly !== undefined && other_pets_friendly !== null) query.other_pets_friendly = other_pets_friendly;
+    if (friendly_toward_strangers !== undefined && friendly_toward_strangers !== null) query.friendly_toward_strangers = friendly_toward_strangers;
+    if (tendency_to_vocalize !== undefined && tendency_to_vocalize !== null) query.tendency_to_vocalize = tendency_to_vocalize;
 
     const cats = await Cat.find(query)
 
