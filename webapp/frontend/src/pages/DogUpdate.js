@@ -9,6 +9,17 @@ const DogUpdate = () => {
     const {user} = useAuthContext();
     const {dispatch} = useDogContext();
 
+    const formStyle = {
+        backgroundColor: '#e3f2fd',
+        margin: '20px',
+        padding: '20px',
+        borderRadius: '10px'
+    }
+
+    const labelStyle = {
+    fontSize: '1.2em',
+  }
+
     // dog attributes
     const [Breed, setBreed] = useState(dog ? dog.Breed : "");
     const [Adaptability, setAdaptability] = useState(dog ? dog.Adaptability : null);
@@ -136,277 +147,319 @@ const DogUpdate = () => {
     };
 
     return (
-        <form className="create" onSubmit={handleSubmit}>
-            <h3>{dog.Breed}</h3>
+        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+            <div className="col-md-12" style={{textAlign: "center"}}>
+                <h1 className="display-4" style={{marginBottom: "20px"}}>{dog.Breed}</h1>
+                {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+            </div>
 
-            <label>Adaptability:</label>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Adaptability</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setAdaptability(e.target.value)}
                 value={Adaptability}
             />
-
-            <label>All Around Friendliness:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">All Around Friendliness:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setAllAroundFriendliness(e.target.value)}
                 value={All_Around_Friendliness}
             />
-
-            <label>Exercise Needs:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Exercise Needs:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setExerciseNeeds(e.target.value)}
                 value={Exercise_Needs}
             />
-
-            <label>Health Grooming:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Health Grooming:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setHealthGrooming(e.target.value)}
                 value={Health_Grooming}
             />
-
-            <label>Trainability:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Trainability:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setTrainability(e.target.value)}
                 value={Trainability}
             />
-
-            <label>Adapts Well To Apartment Living:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Adapts Well To Apartment Living:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
                 value={Adapts_Well_to_Apartment_Living}
             />
-
-            <label>Affectionate with Family:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Affectionate with Family:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setAffectionateWithFamily(e.target.value)}
                 value={Affectionate_with_Family}
             />
-
-            <label>Amount Of Shedding:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Amount Of Shedding:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setAmountOfShedding(e.target.value)}
                 value={Amount_Of_Shedding}
             />
-
-            <label>Dog Friendly:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Dog Friendly:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setDogFriendly(e.target.value)}
                 value={Dog_Friendly}
             />
-
-            <label>Drooling Potential:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Drooling Potential:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setDroolingPotential(e.target.value)}
                 value={Drooling_Potential}
             />
-
-            <label>Easy To Groom:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Easy To Groom:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setEasyToGroom(e.target.value)}
                 value={Easy_To_Groom}
             />
-
-            <label>Easy To Train:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Easy To Train:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setEasyToTrain(e.target.value)}
                 value={Easy_To_Train}
             />
-
-            <label>Energy Level:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Energy Level:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setEnergyLevel(e.target.value)}
                 value={Energy_Level}
             />
-
-            <label>Friendly Toward Strangers:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Friendly Toward Strangers:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
                 value={Friendly_Toward_Strangers}
             />
-
-            <label>General Health:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">General Health:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setGeneralHealth(e.target.value)}
                 value={General_Health}
             />
-
-            <label>Good For Novice Owners:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Good For Novice Owners:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setGoodForNoviceOwners(e.target.value)}
                 value={Good_For_Novice_Owners}
             />
-
-            <label>Incredibly Kid Friendly Dogs:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Incredibly Kid Friendly Dogs:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
                 value={Incredibly_Kid_Friendly_Dogs}
             />
-
-            <label>Intelligence:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Intelligence:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setIntelligence(e.target.value)}
                 value={Intelligence}
             />
-
-            <label>Intensity:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Intensity:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setIntensity(e.target.value)}
                 value={Intensity}
             />
-
-            <label>Potential For Mouthiness:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Potential For Mouthiness:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setPotentialForMouthiness(e.target.value)}
                 value={Potential_For_Mouthiness}
             />
-
-            <label>Potential For Playfulness:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Potential For Playfulness:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setPotentialForPlayfulness(e.target.value)}
                 value={Potential_For_Playfulness}
             />
-
-            <label>Potential For Weight Gain:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Potential For Weight Gain:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setPotentialForWeightGain(e.target.value)}
                 value={Potential_For_Weight_Gain}
             />
-
-            <label>Prey Drive:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Prey Drive:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setPreyDrive(e.target.value)}
                 value={Prey_Drive}
             />
-
-            <label>Sensitivity Level:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Sensitivity Level:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setSensitivityLevel(e.target.value)}
                 value={Sensitivity_Level}
             />
-
-            <label>Size:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Size:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setSize(e.target.value)}
                 value={Size}
             />
-
-            <label>Tendency To Bark Or Howl:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Tendency To Bark Or Howl:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
                 value={Tendency_To_Bark_Or_Howl}
             />
-
-            <label>Tolerates Being Alone:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Tolerates Being Alone:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setToleratesBeingAlone(e.target.value)}
                 value={Tolerates_Being_Alone}
             />
-
-            <label>Tolerates Cold Weather:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Tolerates Cold Weather:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setToleratesColdWeather(e.target.value)}
                 value={Tolerates_Cold_Weather}
             />
-
-            <label>Tolerates Hot Weather:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Tolerates Hot Weather:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setToleratesHotWeather(e.target.value)}
                 value={Tolerates_Hot_Weather}
             />
-
-            <label>Wanderlust Potential:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Wanderlust Potential:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setWanderlustPotential(e.target.value)}
                 value={Wanderlust_Potential}
             />
-
-            <label>Type:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Type:</label>
             <input
-                type="text"
+                type="text" class="form-control"
                 onChange={(e) => setType(e.target.value)}
                 value={Type}
             />
-
-            <label>Congenital Ailments:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Congenital Ailments:</label>
             <input
-                type="text"
+                type="text" class="form-control"
                 onChange={(e) => setCongenitalAilments(e.target.value)}
                 value={Congenital_Ailments}
             />
-
-            <label>Lifetime Cost:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Lifetime Cost:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setLifetimeCost(e.target.value)}
                 value={Lifetime_Cost}
             />
-
-            <label>Longevity (Years):</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Longevity (Years):</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setLongevityYears(e.target.value)}
                 value={Longevity_Years}
             />
-
-            <label>Number Of Congenital Ailments:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Number Of Congenital Ailments:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setNumberOfCongenitalAilments(e.target.value)}
                 value={Number_Of_Congenital_Ailments}
             />
-
-            <label>Purchase Price:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Purchase Price:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setPurchasePrice(e.target.value)}
                 value={Purchase_Price}
             />
-
-            <label>Food Costs Per Year:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Food Costs Per Year:</label>
             <input
-                type="number"
+                type="number" class="form-control"
                 onChange={(e) => setFoodCostsPerYear(e.target.value)}
                 value={Food_Costs_Per_Year}
             />
-
-            <label>Grooming Frequency:</label>
+            </div>
+            <div className="col-md-2">
+            <label htmlFor="inputState" className="form-label">Grooming Frequency:</label>
             <input
-                type="text"
+                type="text" class="form-control"
                 onChange={(e) => setGroomingFrequency(e.target.value)}
                 value={Grooming_Frequency}
             />
-
-            <button>Update Dog</button>
-            {showError(error)}
+            </div>
+            <div className="col-12 d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary" style={labelStyle}>Update Dog</button>
+            </div>
         </form>
     );
 
