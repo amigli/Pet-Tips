@@ -1,8 +1,6 @@
 import {useState} from 'react'
 import {useSignup} from "../hooks/useSignup";
-import {useNavigate} from "react-router-dom";
 
-// file of form
 const Signup = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()

@@ -9,7 +9,7 @@ const CatFilterDetails = ({cat}) => {
 
         const response = await fetch('/api/catOperations/save', {
             method: 'POST',
-            body: JSON.stringify({"id_cat": cat._id}),
+            body: JSON.stringify({"idCat": cat._id}),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -26,7 +26,23 @@ const CatFilterDetails = ({cat}) => {
     }
 
     const handleRemoveSavedCat = async (e) => {
+        e.preventDefault()
 
+        const response = await fetch('/api/catOperations/' + cat._id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            }
+        })
+
+        const json = await response.json()
+
+        // update user
+        dispatch({type: 'UPDATE', payload: json})
+
+        // update localStorage
+        localStorage.setItem('user', JSON.stringify(json))
     }
 
     return (

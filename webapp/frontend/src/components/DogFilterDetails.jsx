@@ -5,11 +5,33 @@ const DogFilterDetails = ({dog}) => {
     const { user, dispatch } = useAuthContext()
 
     const handleSaveDog = async (e) => {
+        console.log("saveDog")
         e.preventDefault()
 
         const response = await fetch('/api/dogOperations/save', {
             method: 'POST',
-            body: JSON.stringify({"id_dog": dog._id}),
+            body: JSON.stringify({"idDog": dog._id}),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            }
+        })
+
+        const json = await response.json()
+
+        console.log(json)
+        // update user
+        dispatch({type: 'UPDATE', payload: json})
+
+        // update localStorage
+        localStorage.setItem('user', JSON.stringify(json))
+    }
+
+    const handleRemoveSavedDog = async (e) => {
+        e.preventDefault()
+
+        const response = await fetch('/api/dogOperations/' + dog._id, {
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -23,10 +45,6 @@ const DogFilterDetails = ({dog}) => {
 
         // update localStorage
         localStorage.setItem('user', JSON.stringify(json))
-    }
-
-    const handleRemoveSavedDog = async (e) => {
-
     }
 
     return (

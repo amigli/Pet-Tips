@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import {useLogin} from "../hooks/useLogin";
-import {Navigate, useNavigate} from "react-router-dom";
 
 // file of form
 const Login = () => {

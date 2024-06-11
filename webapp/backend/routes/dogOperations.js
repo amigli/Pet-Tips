@@ -1,14 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-const {filterDogByAttributes} = require("../controllers/DogController");
-const {saveFavouriteDogById} = require("../controllers/UserController")
+const {filterDogByAttributes, deleteDogById} = require("../controllers/DogController");
+const {saveFavouriteDogById, deleteFavouriteDogById} = require("../controllers/UserController")
 const requireAuthUser = require("../middleware/requireAuthUser");
 
 // QUERY
 router.post('/', filterDogByAttributes)
 
-// authentication route for User
+// SAVE A FAVOURITE DOG
 router.post('/save', requireAuthUser, saveFavouriteDogById)
+
+// DELETE A FAVOURITE DOG
+router.delete('/:idDog', requireAuthUser, deleteFavouriteDogById)
 
 module.exports = router
