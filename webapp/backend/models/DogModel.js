@@ -12,6 +12,10 @@ const dogSchema = new Schema({
         type: Number,
         required: false,
     },
+    All_Around_Friendliness: {
+        type: Number,
+        required: false,
+    },
     Exercise_Needs: {
         type: Number,
         required: false,
@@ -136,11 +140,11 @@ const dogSchema = new Schema({
         type: Number,
         required: false
     },
-    Longevity_Years : {
+    Number_of_Congenital_Ailments : {
         type: Number,
         required: false
     },
-    Number_of_Congenital_Ailments : {
+    Longevity_Years : {
         type: Number,
         required: false
     },

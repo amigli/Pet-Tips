@@ -17,8 +17,8 @@ const DogUpdate = () => {
     }
 
     const labelStyle = {
-    fontSize: '1.2em',
-  }
+        fontSize: '1.2em',
+    }
 
     // dog attributes
     const [Breed, setBreed] = useState(dog ? dog.Breed : "");
@@ -130,22 +130,16 @@ const DogUpdate = () => {
         const json = await response.json();
 
         if (!response.ok) {
+            setCorrect(null)
             setError(json.error);
         }
 
         if (response.ok) {
+            setError(null)
             setCorrect('ok')
             console.log('update dog: ', json);
             dispatch({type: 'UPDATE_DOGS', payload: json});
         }
-    };
-
-    const showError = (error) => {
-        let errorMessage = '';
-        if (error) {
-            errorMessage = <div className="error"> {error} </div>;
-        }
-        return errorMessage;
     };
 
     return (
@@ -153,13 +147,14 @@ const DogUpdate = () => {
             <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{marginBottom: "20px"}}>{dog.Breed}</h1>
                 {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+                {correct && <div className={correct} class="alert alert-success" role="alert">Dog updated!</div>}
             </div>
 
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Adaptability</label>
             <select id="inputState" className="form-select" onChange={(e) => setAdaptability(e.target.value)}
                 value={Adaptability}>
-            <option selected>{Adaptability}</option>
+            <option selected></option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -582,7 +577,6 @@ const DogUpdate = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Update Dog</button>
             </div>
-            {correct && <div className={correct} class="alert alert-success" role="alert">Dog updated!</div>}
         </form>
     );
 
