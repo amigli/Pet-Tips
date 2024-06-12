@@ -62,6 +62,7 @@ const DogUpdate = () => {
     const [Grooming_Frequency, setGroomingFrequency] = useState(dog ? dog.Grooming_Frequency : null);
 
     const [error, setError] = useState(null);
+    const [correct, setCorrect] = useState(null)
 
     if (!dog) {
         return <Navigate to="/admin" replace/>;
@@ -133,6 +134,7 @@ const DogUpdate = () => {
         }
 
         if (response.ok) {
+            setCorrect('ok')
             console.log('update dog: ', json);
             dispatch({type: 'UPDATE_DOGS', payload: json});
         }
@@ -460,6 +462,7 @@ const DogUpdate = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Update Dog</button>
             </div>
+            {correct && <div className={correct} class="alert alert-success" role="alert">Dog updated!</div>}
         </form>
     );
 

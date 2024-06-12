@@ -39,6 +39,7 @@ const CatForm = () => {
 
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
+    const [correct, setCorrect] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -85,6 +86,7 @@ const CatForm = () => {
         }
 
         if (response.ok){
+            setCorrect('Cat inserted successfully!')
             setBreed('')
             setLength('')
             setOrigin('')
@@ -297,6 +299,8 @@ const CatForm = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
             </div>
+
+            {correct && <div className={correct} class="alert alert-success" role="alert">Cat inserted!</div>}
         </form>
     );
 }

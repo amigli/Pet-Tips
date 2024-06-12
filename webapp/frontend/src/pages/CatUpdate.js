@@ -30,6 +30,7 @@ const CatUpdate = () => {
 
 
     const [error, setError] = useState(null)
+    const [correct, setCorrect] = useState(null)
 
     if (!cat) {
         return <Navigate to="/admin" replace />;
@@ -78,6 +79,7 @@ const CatUpdate = () => {
         }
 
         if (response.ok){
+            setCorrect('ok')
             setLength(catForm.length)
             setOrigin(catForm.origin)
             setMinLifeExpectancy(catForm.min_life_expectancy)
@@ -112,7 +114,10 @@ const CatUpdate = () => {
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3>{cat.Breed}</h3>
+            <div className="col-md-12" style={{textAlign: "center"}}>
+                <h1 className="display-4" style={{marginBottom: "20px"}}>{cat.Breed}</h1>
+                {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+            </div>
 
             <label>Length:</label>
             <input
@@ -226,8 +231,10 @@ const CatUpdate = () => {
                 value={Tendency_To_Vocalize}
             />
 
-            <button>Update Cat</button>
-            {showError(error)}
+            <div className="col-12 d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary" style={labelStyle}>Update Cat</button>
+            </div>
+            {correct && <div className={correct} class="alert alert-success" role="alert">Cat updated!</div>}
         </form>
     );
 }

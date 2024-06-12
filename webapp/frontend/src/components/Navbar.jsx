@@ -52,7 +52,6 @@ const Navbar = () => {
           </ul>
           {user && (
             <div className="d-flex align-items-center">
-              <span className="me-3">{user.user.email}</span>
               <button className="btn btn-outline-danger" onClick={handleClick}>
                 Logout
               </button>

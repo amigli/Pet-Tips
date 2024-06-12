@@ -61,6 +61,7 @@ const DogForm = () => {
 
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
+    const [correct, setCorrect] = useState(null)
 
 
     const handleSubmit = async (e) => {
@@ -97,6 +98,7 @@ const DogForm = () => {
         }
 
         if (response.ok){
+            setCorrect('ok')
             setBreed('')
             setAdaptability(null)
             setAllAroundFriendliness(null)
@@ -170,7 +172,7 @@ const DogForm = () => {
                 </select>
             </div>
             <div className="col-md-2">
-                <label htmlFor="inputEmail4" className="form-label">All Around Friendliness</label>
+                <label htmlFor="inputState" className="form-label">All Around Friendliness</label>
                 <select id="inputState" className="form-select" onChange={(e) => setAllAroundFriendliness(e.target.value)}
                 value={All_Around_Friendliness}>
                     <option selected></option>
@@ -291,8 +293,8 @@ const DogForm = () => {
             </div>
             <div className="col-md-2">
                 <label htmlFor="inputEmail4" className="form-label">Easy To Train</label>
-                <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
-                value={Adapts_Well_to_Apartment_Living}>
+                <select id="inputState" className="form-select" onChange={(e) => setEasyToTrain(e.target.value)}
+                value={Easy_To_Train}>
                     <option selected></option>
                     <option>1</option>
                     <option>2</option>
@@ -588,6 +590,8 @@ const DogForm = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
             </div>
+
+            {correct && <div className={correct} class="alert alert-success" role="alert">Dog inserted!</div>}
 
 
         </form>

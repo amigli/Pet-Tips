@@ -60,7 +60,7 @@ const Admin = () => {
     return (
         <section>
             <DogForm/>
-            <CatForm/>
+
             <div className="Dogs">
                 <div className="col-md-12" style={{ textAlign: "center" }}>
                     <h1 className="display-4" style={{marginBottom: "20px" }}>Dog List</h1>
@@ -71,6 +71,7 @@ const Admin = () => {
                     ))}
                 </div>
             </div>
+            <CatForm/>
             <div className="Cats">
                 <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{marginBottom: "20px" }}>Cat List</h1>
