@@ -157,246 +157,366 @@ const DogUpdate = () => {
 
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Adaptability</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setAdaptability(e.target.value)}
-                value={Adaptability}
-            />
+            <select id="inputState" className="form-select" onChange={(e) => setAdaptability(e.target.value)}
+                value={Adaptability}>
+            <option selected>{Adaptability}</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">All Around Friendliness:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setAllAroundFriendliness(e.target.value)}
-                value={All_Around_Friendliness}
-            />
+            <label htmlFor="inputState" className="form-label">All Around Friendliness</label>
+            <select id="inputState" className="form-select" onChange={(e) => setAllAroundFriendliness(e.target.value)}
+                value={All_Around_Friendliness}>
+                <option selected>{All_Around_Friendliness}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Exercise Needs:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setExerciseNeeds(e.target.value)}
-                value={Exercise_Needs}
-            />
+            <label htmlFor="inputState" className="form-label">Exercise Needs</label>
+            <select id="inputState" className="form-select" onChange={(e) => setExerciseNeeds(e.target.value)}
+                value={Exercise_Needs}>
+            <option selected>{Exercise_Needs}</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Health Grooming:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setHealthGrooming(e.target.value)}
-                value={Health_Grooming}
-            />
+            <label htmlFor="inputState" className="form-label">Health Grooming</label>
+            <select id="inputState" className="form-select" onChange={(e) => setHealthGrooming(e.target.value)}
+                value={Health_Grooming}>
+                <option selected>{Health_Grooming}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Trainability:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setTrainability(e.target.value)}
-                value={Trainability}
-            />
+            <label htmlFor="inputState" className="form-label">Trainability</label>
+            <select id="inputState" className="form-select" onChange={(e) => setTrainability(e.target.value)}
+                value={Trainability}>
+                <option selected>{Trainability}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Adapts Well To Apartment Living:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
-                value={Adapts_Well_to_Apartment_Living}
-            />
+            <label htmlFor="inputState" className="form-label">Adapts Well To Apartment Living</label>
+            <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
+                value={Adapts_Well_to_Apartment_Living}>
+                <option selected>{Adapts_Well_to_Apartment_Living}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Affectionate with Family:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setAffectionateWithFamily(e.target.value)}
-                value={Affectionate_with_Family}
-            />
+            <label htmlFor="inputState" className="form-label">Affectionate with Family</label>
+            <select id="inputState" className="form-select" onChange={(e) => setAffectionateWithFamily(e.target.value)}
+                value={Affectionate_with_Family}>
+                <option selected>{Affectionate_with_Family}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Amount Of Shedding:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setAmountOfShedding(e.target.value)}
-                value={Amount_Of_Shedding}
-            />
+            <label htmlFor="inputState" className="form-label">Amount Of Shedding</label>
+            <select id="inputState" className="form-select" onChange={(e) => setAmountOfShedding(e.target.value)}
+                value={Amount_Of_Shedding}>
+                <option selected>{Amount_Of_Shedding}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Dog Friendly:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setDogFriendly(e.target.value)}
-                value={Dog_Friendly}
-            />
+            <label htmlFor="inputState" className="form-label">Dog Friendly</label>
+            <select id="inputState" className="form-select" onChange={(e) => setDogFriendly(e.target.value)}
+                value={Dog_Friendly}>
+                <option selected>{Dog_Friendly}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Drooling Potential:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setDroolingPotential(e.target.value)}
-                value={Drooling_Potential}
-            />
+            <label htmlFor="inputState" className="form-label">Drooling Potential</label>
+            <select id="inputState" className="form-select" onChange={(e) => setDroolingPotential(e.target.value)}
+                value={Drooling_Potential}>
+                <option selected>{Drooling_Potential}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Easy To Groom:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setEasyToGroom(e.target.value)}
-                value={Easy_To_Groom}
-            />
+            <label htmlFor="inputState" className="form-label">Easy To Groom</label>
+            <select id="inputState" className="form-select" onChange={(e) => setEasyToGroom(e.target.value)}
+                value={Easy_To_Groom}>
+                <option selected>{Easy_To_Groom}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Easy To Train:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setEasyToTrain(e.target.value)}
-                value={Easy_To_Train}
-            />
+            <label htmlFor="inputState" className="form-label">Easy To Train</label>
+            <select id="inputState" className="form-select" onChange={(e) => setEasyToTrain(e.target.value)}
+                value={Easy_To_Train}>
+                <option selected>{Easy_To_Train}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Energy Level:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setEnergyLevel(e.target.value)}
-                value={Energy_Level}
-            />
+            <label htmlFor="inputState" className="form-label">Energy Level</label>
+            <select id="inputState" className="form-select" onChange={(e) => setEnergyLevel(e.target.value)}
+                value={Energy_Level}>
+                <option selected>{Energy_Level}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Friendly Toward Strangers:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
-                value={Friendly_Toward_Strangers}
-            />
+            <label htmlFor="inputState" className="form-label">Friendly Toward Strangers</label>
+            <select id="inputState" className="form-select" onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
+                value={Friendly_Toward_Strangers}>
+                <option selected>{Friendly_Toward_Strangers}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">General Health:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setGeneralHealth(e.target.value)}
-                value={General_Health}
-            />
+            <label htmlFor="inputState" className="form-label">General Health</label>
+            <select id="inputState" className="form-select" onChange={(e) => setGeneralHealth(e.target.value)}
+                value={General_Health}>
+                <option selected>{General_Health}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Good For Novice Owners:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setGoodForNoviceOwners(e.target.value)}
-                value={Good_For_Novice_Owners}
-            />
+            <label htmlFor="inputState" className="form-label">Good For Novice Owners</label>
+            <select id="inputState" className="form-select" onChange={(e) => setGoodForNoviceOwners(e.target.value)}
+                value={Good_For_Novice_Owners}>
+                <option selected>{Good_For_Novice_Owners}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Incredibly Kid Friendly Dogs:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
-                value={Incredibly_Kid_Friendly_Dogs}
-            />
+            <label htmlFor="inputState" className="form-label">Incredibly Kid Friendly Dogs</label>
+            <select id="inputState" className="form-select" onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
+                value={Incredibly_Kid_Friendly_Dogs}>
+                <option selected>{Incredibly_Kid_Friendly_Dogs}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Intelligence:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setIntelligence(e.target.value)}
-                value={Intelligence}
-            />
+            <label htmlFor="inputState" className="form-label">Intelligence</label>
+            <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
+                value={Intelligence}>
+                <option selected>{Intelligence}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Intensity:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setIntensity(e.target.value)}
-                value={Intensity}
-            />
+            <label htmlFor="inputState" className="form-label">Intensity</label>
+            <select id="inputState" className="form-select" onChange={(e) => setIntensity(e.target.value)}
+                value={Intensity}>
+                <option selected>{Intensity}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Potential For Mouthiness:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setPotentialForMouthiness(e.target.value)}
-                value={Potential_For_Mouthiness}
-            />
+            <label htmlFor="inputState" className="form-label">Potential For Mouthiness</label>
+            <select id="inputState" className="form-select" onChange={(e) => setPotentialForMouthiness(e.target.value)}
+                value={Potential_For_Mouthiness}>
+                <option selected>{Potential_For_Mouthiness}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Potential For Playfulness:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setPotentialForPlayfulness(e.target.value)}
-                value={Potential_For_Playfulness}
-            />
+            <label htmlFor="inputState" className="form-label">Potential For Playfulness</label>
+            <select id="inputState" className="form-select" onChange={(e) => setPotentialForPlayfulness(e.target.value)}
+                value={Potential_For_Playfulness}>
+                <option selected>{Potential_For_Playfulness}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Potential For Weight Gain:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setPotentialForWeightGain(e.target.value)}
-                value={Potential_For_Weight_Gain}
-            />
+            <label htmlFor="inputState" className="form-label">Potential For Weight Gain</label>
+            <select id="inputState" className="form-select" onChange={(e) => setPotentialForWeightGain(e.target.value)}
+                value={Potential_For_Weight_Gain}>
+                <option selected>{Potential_For_Weight_Gain}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Prey Drive:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setPreyDrive(e.target.value)}
-                value={Prey_Drive}
-            />
+            <label htmlFor="inputState" className="form-label">Prey Drive</label>
+            <select id="inputState" className="form-select" onChange={(e) => setPreyDrive(e.target.value)}
+                value={Prey_Drive}>
+                <option selected>{Prey_Drive}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Sensitivity Level:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setSensitivityLevel(e.target.value)}
-                value={Sensitivity_Level}
-            />
+            <label htmlFor="inputState" className="form-label">Sensitivity Level</label>
+            <select id="inputState" className="form-select" onChange={(e) => setSensitivityLevel(e.target.value)}
+                value={Sensitivity_Level}>
+                <option selected>{Sensitivity_Level}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Size:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setSize(e.target.value)}
-                value={Size}
-            />
+            <label htmlFor="inputState" className="form-label">Size</label>
+            <select id="inputState" className="form-select" onChange={(e) => setSize(e.target.value)}
+                value={Size}>
+                <option selected>{Size}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Tendency To Bark Or Howl:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
-                value={Tendency_To_Bark_Or_Howl}
-            />
+            <label htmlFor="inputState" className="form-label">Tendency To Bark Or Howl</label>
+            <select id="inputState" className="form-select" onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
+                value={Tendency_To_Bark_Or_Howl}>
+                <option selected>{Tendency_To_Bark_Or_Howl}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Tolerates Being Alone:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setToleratesBeingAlone(e.target.value)}
-                value={Tolerates_Being_Alone}
-            />
+            <label htmlFor="inputState" className="form-label">Tolerates Being Alone</label>
+            <select id="inputState" className="form-select" onChange={(e) => setToleratesBeingAlone(e.target.value)}
+                value={Tolerates_Being_Alone}>
+                <option selected>{Tolerates_Being_Alone}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Tolerates Cold Weather:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setToleratesColdWeather(e.target.value)}
-                value={Tolerates_Cold_Weather}
-            />
+            <label htmlFor="inputState" className="form-label">Tolerates Cold Weather</label>
+            <select id="inputState" className="form-select" onChange={(e) => setToleratesColdWeather(e.target.value)}
+                value={Tolerates_Cold_Weather}>
+                <option selected>{Tolerates_Cold_Weather}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Tolerates Hot Weather:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setToleratesHotWeather(e.target.value)}
-                value={Tolerates_Hot_Weather}
-            />
+            <label htmlFor="inputState" className="form-label">Tolerates Hot Weather</label>
+            <select id="inputState" className="form-select" onChange={(e) => setToleratesHotWeather(e.target.value)}
+                value={Tolerates_Hot_Weather}>
+                <option selected>{Tolerates_Hot_Weather}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Wanderlust Potential:</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setWanderlustPotential(e.target.value)}
-                value={Wanderlust_Potential}
-            />
+            <label htmlFor="inputState" className="form-label">Wanderlust Potential</label>
+            <select id="inputState" className="form-select" onChange={(e) => setWanderlustPotential(e.target.value)}
+                value={Wanderlust_Potential}>
+                <option selected>{Wanderlust_Potential}</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Type:</label>
+            <label htmlFor="inputState" className="form-label">Type</label>
             <input
                 type="text" class="form-control"
                 onChange={(e) => setType(e.target.value)}
@@ -404,7 +524,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Congenital Ailments:</label>
+            <label htmlFor="inputState" className="form-label">Congenital Ailments</label>
             <input
                 type="text" class="form-control"
                 onChange={(e) => setCongenitalAilments(e.target.value)}
@@ -412,7 +532,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Lifetime Cost:</label>
+            <label htmlFor="inputState" className="form-label">Lifetime Cost</label>
             <input
                 type="number" class="form-control"
                 onChange={(e) => setLifetimeCost(e.target.value)}
@@ -420,7 +540,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Longevity (Years):</label>
+            <label htmlFor="inputState" className="form-label">Longevity (Years)</label>
             <input
                 type="number" class="form-control"
                 onChange={(e) => setLongevityYears(e.target.value)}
@@ -428,7 +548,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Number Of Congenital Ailments:</label>
+            <label htmlFor="inputState" className="form-label">Number Of Congenital Ailments</label>
             <input
                 type="number" class="form-control"
                 onChange={(e) => setNumberOfCongenitalAilments(e.target.value)}
@@ -436,7 +556,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Purchase Price:</label>
+            <label htmlFor="inputState" className="form-label">Purchase Price</label>
             <input
                 type="number" class="form-control"
                 onChange={(e) => setPurchasePrice(e.target.value)}
@@ -444,7 +564,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Food Costs Per Year:</label>
+            <label htmlFor="inputState" className="form-label">Food Costs Per Year</label>
             <input
                 type="number" class="form-control"
                 onChange={(e) => setFoodCostsPerYear(e.target.value)}
@@ -452,7 +572,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Grooming Frequency:</label>
+            <label htmlFor="inputState" className="form-label">Grooming Frequency</label>
             <input
                 type="text" class="form-control"
                 onChange={(e) => setGroomingFrequency(e.target.value)}
