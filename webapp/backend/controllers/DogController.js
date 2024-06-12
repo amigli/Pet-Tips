@@ -44,12 +44,8 @@ const insertDog = async (req, res) => {
     }
 
     if (emptyFields.length > 0){
-        return res.status(400).json({error: 'Please fill in all the fields', emptyFields})
+        return res.status(400).json({error: 'Please fill the Breed field', emptyFields})
     }
-
-    if (Type === "") Type = null
-    if (Congenital_Ailments === "") Congenital_Ailments = null
-    if (Grooming_Frequency === "") Grooming_Frequency = null
 
     if (Congenital_Ailments){
         Number_of_Congenital_Ailments = Congenital_Ailments.split(',').length

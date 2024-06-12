@@ -26,9 +26,19 @@ const getCatById = async (req, res) => {
 
 // INSERT A SINGLE CAT
 const insertCat = async (req, res) => {
-    const { Breed, length, origin, min_life_expectancy, max_life_expectancy, min_weight, max_weight,
+    let { Breed, length, origin, min_life_expectancy, max_life_expectancy, min_weight, max_weight,
         family_friendly, shedding, general_health, playfulness, children_friendly, grooming, intelligence,
         other_pets_friendly, friendly_toward_strangers, tendency_to_vocalize } = req.body;
+
+    const emptyFields = []
+
+    if (!Breed) {
+        emptyFields.push('Breed')
+    }
+
+    if (emptyFields.length > 0){
+        return res.status(400).json({error: 'Please fill the Breed field', emptyFields})
+    }
 
     try {
         const cat = await Cat.create({ Breed, length, origin, min_life_expectancy, max_life_expectancy,

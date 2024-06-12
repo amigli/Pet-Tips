@@ -18,28 +18,37 @@ const CatForm = () => {
         fontSize: '1.2em',
     }
 
-    // cat attributes
-    const [Breed, setBreed] = useState('')
-    const [Length, setLength] = useState('')
-    const [Origin, setOrigin] = useState('')
-    const [Min_Life_Expectancy, setMinLifeExpectancy] = useState(null)
-    const [Max_Life_Expectancy, setMaxLifeExpectancy] = useState(null)
-    const [Min_Weight, setMinWeight] = useState(null)
-    const [Max_Weight, setMaxWeight] = useState(null)
-    const [Family_Friendly, setFamilyFriendly] = useState(null)
-    const [Shedding, setShedding] = useState(null)
-    const [General_Health, setGeneralHealth] = useState(null)
-    const [Playfulness, setPlayfulness] = useState(null)
-    const [Children_Friendly, setChildrenFriendly] = useState(null)
-    const [Grooming, setGrooming] = useState(null)
-    const [Intelligence, setIntelligence] = useState(null)
-    const [Other_Pets_Friendly, setOtherPetsFriendly] = useState(null)
-    const [Friendly_Toward_Strangers, setFriendlyTowardStrangers] = useState(null)
-    const [Tendency_To_Vocalize, setTendencyToVocalize] = useState(null)
+    const initialFormState = {
+        Breed: null,
+        length: null,
+        origin: null,
+        min_life_expectancy: null,
+        max_life_expectancy: null,
+        min_weight: null,
+        max_weight: null,
+        family_friendly: null,
+        shedding: null,
+        general_health: null,
+        playfulness: null,
+        children_friendly: null,
+        grooming: null,
+        intelligence: null,
+        other_pets_friendly: null,
+        friendly_toward_strangers: null,
+        tendency_to_vocalize: null
+      };
 
-    const [error, setError] = useState(null)
-    const [emptyFields, setEmptyFields] = useState([])
-    const [correct, setCorrect] = useState(null)
+    const [formData, setFormData] = useState(initialFormState);
+    const [error, setError] = useState(null);
+    const [correct, setCorrect] = useState(null);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -49,29 +58,9 @@ const CatForm = () => {
             return
         }
 
-        const cat = {
-            Breed: Breed,
-            length: Length,
-            origin: Origin,
-            min_life_expectancy: Max_Life_Expectancy,
-            max_life_expectancy: Max_Life_Expectancy,
-            min_weight: Min_Weight,
-            max_weight: Max_Weight,
-            family_friendly: Family_Friendly,
-            shedding: Shedding,
-            general_health: General_Health,
-            playfulness: Playfulness,
-            children_friendly: Children_Friendly,
-            grooming: Grooming,
-            intelligence: Intelligence,
-            other_pets_friendly: Other_Pets_Friendly,
-            friendly_toward_strangers: Friendly_Toward_Strangers,
-            tendency_to_vocalize: Tendency_To_Vocalize
-        }
-
         const response = await fetch('/api/cats/', {
             method: 'POST',
-            body: JSON.stringify(cat),
+            body: JSON.stringify(formData),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -81,226 +70,181 @@ const CatForm = () => {
         const json = await response.json()
 
         if (!response.ok) {
-            setError(json.error)
-            setEmptyFields(json.emptyFields)
+            setCorrect(null);
+            setError(json.error);
         }
 
         if (response.ok){
             setCorrect('Cat inserted successfully!')
-            setBreed('')
-            setLength('')
-            setOrigin('')
-            setMinLifeExpectancy(null)
-            setMaxLifeExpectancy(null)
-            setMinWeight(null)
-            setMaxWeight(null)
-            setFamilyFriendly(null)
-            setShedding(null)
-            setGeneralHealth(null)
-            setPlayfulness(null)
-            setChildrenFriendly(null)
-            setGrooming(null)
-            setIntelligence(null)
-            setOtherPetsFriendly(null)
-            setFriendlyTowardStrangers(null)
-            setTendencyToVocalize(null)
-
+            setError(null)
+            setFormData(initialFormState);
             console.log('new cat added: ', json)
             dispatch({type: 'INSERT_CAT', payload: json})
-            setEmptyFields([])
         }
 
     }
+
+    const SelectField = ({ label, name, value }) => (
+        <div className="col-md-2">
+          <label htmlFor={name} className="form-label" style={labelStyle}>
+            {label}
+          </label>
+          <select id={name} name={name} className="form-select" onChange={handleChange} value={value}>
+            <option value=""></option>
+            {[1, 2, 3, 4, 5].map((val) => (
+              <option key={val} value={val}>
+                {val}
+              </option>
+            ))}
+          </select>
+        </div>
+      );
 
     return (
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{margin: "0 auto"}}>Add a new cat</h1>
                 {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+                {correct && <div className={correct} class="alert alert-success" role="alert">{correct}</div>}
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Breed</label>
-            <input
-                type="text" class="form-control"
-                onChange={(e) => setBreed(e.target.value)}
-                value={Breed}
+                <label htmlFor="Breed" className="form-label" style={labelStyle}>
+                  Breed
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="Breed"
+                  onChange={handleChange}
+                  value={formData.Breed}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="length" className="form-label" style={labelStyle}>
+                  Length
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="length"
+                  onChange={handleChange}
+                  value={formData.length}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="origin" className="form-label" style={labelStyle}>
+                  Origin
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="origin"
+                  onChange={handleChange}
+                  value={formData.origin}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="min_life_expectancy" className="form-label" style={labelStyle}>
+                  Min Life Expectancy
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="min_life_expectancy"
+                  onChange={handleChange}
+                  value={formData.min_life_expectancy}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="max_life_expectancy" className="form-label" style={labelStyle}>
+                  Max Life Expectancy
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="max_life_expectancy"
+                  onChange={handleChange}
+                  value={formData.max_life_expectancy}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="min_weight" className="form-label" style={labelStyle}>
+                  Min Weight
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="min_weight"
+                  onChange={handleChange}
+                  value={formData.min_weight}
+                />
+            </div>
+            <div className="col-md-2">
+                <label htmlFor="max_weight" className="form-label" style={labelStyle}>
+                  Max Weight
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="max_weight"
+                  onChange={handleChange}
+                  value={formData.max_weight}
+                />
+            </div>
+            <SelectField
+            label="family_friendly"
+            name="family_friendly"
+            value={formData.family_friendly}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Length</label>
-            <input
-                type="text" class="form-control"
-                onChange={(e) => setLength(e.target.value)}
-                value={Length}
+            <SelectField
+            label="Shedding"
+            name="shedding"
+            value={formData.shedding}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Origin</label>
-            <input
-                type="text" class="form-control"
-                onChange={(e) => setOrigin(e.target.value)}
-                value={Origin}
+            <SelectField
+            label="General Health"
+            name="general_health"
+            value={formData.general_health}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Min Life Expectancy</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setMinLifeExpectancy(e.target.value)}
-                value={Min_Life_Expectancy}
+            <SelectField
+            label="Playfulness"
+            name="playfulness"
+            value={formData.playfulness}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Max Life Expectancy</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setMaxLifeExpectancy(e.target.value)}
-                value={Max_Life_Expectancy}
+            <SelectField
+            label="Children Friendly"
+            name="children_friendly"
+            value={formData.children_friendly}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Min Weight</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setMinWeight(e.target.value)}
-                value={Min_Weight}
+            <SelectField
+            label="Grooming"
+            name="grooming"
+            value={formData.grooming}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Max Weight</label>
-            <input
-                type="number" class="form-control"
-                onChange={(e) => setMaxWeight(e.target.value)}
-                value={Max_Weight}
+            <SelectField
+            label="Intelligence"
+            name="intelligence"
+            value={formData.intelligence}
             />
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Family Friendly</label>
-            <select id="inputState" className="form-select" onChange={(e) => setFamilyFriendly(e.target.value)}
-                value={Family_Friendly}>
-                <option selected></option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Shedding</label>
-            <select id="inputState" className="form-select" onChange={(e) => setShedding(e.target.value)}
-                value={Shedding}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">General Health</label>
-            <select id="inputState" className="form-select" onChange={(e) => setGeneralHealth(e.target.value)}
-                value={General_Health}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Playfulness</label>
-            <select id="inputState" className="form-select" onChange={(e) => setPlayfulness(e.target.value)}
-                value={Playfulness}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Children Friendly</label>
-            <select id="inputState" className="form-select" onChange={(e) => setChildrenFriendly(e.target.value)}
-                value={Children_Friendly}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Grooming</label>
-            <select id="inputState" className="form-select" onChange={(e) => setGrooming(e.target.value)}
-                value={Grooming}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Intelligence</label>
-            <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
-                value={Intelligence}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Other Pets Friendly</label>
-            <select id="inputState" className="form-select" onChange={(e) => setOtherPetsFriendly(e.target.value)}
-                value={Other_Pets_Friendly}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Friendly Toward Strangers</label>
-            <select id="inputState" className="form-select" onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
-                value={Friendly_Toward_Strangers}>
-                <option selected></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            </select>
-            </div>
-            <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Tendency To Vocalize</label>
-            <select id="inputState" className="form-select" onChange={(e) => setTendencyToVocalize(e.target.value)}
-                value={Tendency_To_Vocalize}>
-                <option selected></option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                </select>
-            </div>
+            <SelectField
+            label="Other Pets Friendly"
+            name="other_pets_friendly"
+            value={formData.other_pets_friendly}
+            />
+            <SelectField
+            label="Friendly Toward Strangers"
+            name="friendly_toward_strangers"
+            value={formData.friendly_toward_strangers}
+            />
+            <SelectField
+            label="Tendency to vocalize"
+            name="tendency_to_vocalize"
+            value={formData.tendency_to_vocalize}
+            />
 
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
             </div>
-
-            {correct && <div className={correct} class="alert alert-success" role="alert">Cat inserted!</div>}
         </form>
     );
 }

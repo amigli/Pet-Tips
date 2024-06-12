@@ -19,45 +19,45 @@ const DogForm = () => {
       };
 
       const initialFormState = {
-        Breed: '',
-        Adaptability: '',
-        All_Around_Friendliness: '',
-        Exercise_Needs: '',
-        Health_Grooming: '',
-        Trainability: '',
-        Adapts_Well_to_Apartment_Living: '',
-        Affectionate_with_Family: '',
-        Amount_Of_Shedding: '',
-        Dog_Friendly: '',
-        Drooling_Potential: '',
-        Easy_To_Groom: '',
-        Easy_To_Train: '',
-        Energy_Level: '',
-        Friendly_Toward_Strangers: '',
-        General_Health: '',
-        Good_For_Novice_Owners: '',
-        Incredibly_Kid_Friendly_Dogs: '',
-        Intelligence: '',
-        Intensity: '',
-        Potential_For_Mouthiness: '',
-        Potential_For_Playfulness: '',
-        Potential_For_Weight_Gain: '',
-        Prey_Drive: '',
-        Sensitivity_Level: '',
-        Size: '',
-        Tendency_To_Bark_Or_Howl: '',
-        Tolerates_Being_Alone: '',
-        Tolerates_Cold_Weather: '',
-        Tolerates_Hot_Weather: '',
-        Wanderlust_Potential: '',
-        Type: '',
-        Congenital_Ailments: '',
-        Lifetime_Cost: '',
-        Longevity_Years: '',
-        Number_Of_Congenital_Ailments: '',
-        Purchase_Price: '',
-        Food_Costs_Per_Year: '',
-        Grooming_Frequency: '',
+        Breed: null,
+        Adaptability: null,
+        All_Around_Friendliness: null,
+        Exercise_Needs: null,
+        Health_Grooming: null,
+        Trainability: null,
+        Adapts_Well_to_Apartment_Living: null,
+        Affectionate_with_Family: null,
+        Amount_Of_Shedding: null,
+        Dog_Friendly: null,
+        Drooling_Potential: null,
+        Easy_To_Groom: null,
+        Easy_To_Train: null,
+        Energy_Level: null,
+        Friendly_Toward_Strangers: null,
+        General_Health: null,
+        Good_For_Novice_Owners: null,
+        Incredibly_Kid_Friendly_Dogs: null,
+        Intelligence: null,
+        Intensity: null,
+        Potential_For_Mouthiness: null,
+        Potential_For_Playfulness: null,
+        Potential_For_Weight_Gain: null,
+        Prey_Drive: null,
+        Sensitivity_Level: null,
+        Size: null,
+        Tendency_To_Bark_Or_Howl: null,
+        Tolerates_Being_Alone: null,
+        Tolerates_Cold_Weather: null,
+        Tolerates_Hot_Weather: null,
+        Wanderlust_Potential: null,
+        Type: null,
+        Congenital_Ailments: null,
+        Lifetime_Cost: null,
+        Longevity_Years: null,
+        Number_Of_Congenital_Ailments: null,
+        Purchase_Price: null,
+        Food_Costs_Per_Year: null,
+        Grooming_Frequency: null,
       };
 
       const [formData, setFormData] = useState(initialFormState);
@@ -98,7 +98,7 @@ const DogForm = () => {
 
         if (response.ok) {
           setError(null);
-          setCorrect('ok');
+          setCorrect('Dog inserted successfully!');
           setFormData(initialFormState);
           console.log('new dog added: ', json);
           dispatch({ type: 'INSERT_DOG', payload: json });
@@ -134,7 +134,7 @@ const DogForm = () => {
             )}
             {correct && (
               <div className="alert alert-success" role="alert">
-                Dog inserted!
+                  {correct}
               </div>
             )}
           </div>
