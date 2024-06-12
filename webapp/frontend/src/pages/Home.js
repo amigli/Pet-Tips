@@ -1,5 +1,4 @@
 import DogFilterForm from "../components/DogFilterForm";
-import DogFilterDetails from "../components/DogFilterDetails";
 import CatFilterForm from "../components/CatFilterForm";
 
 const Home = () => {

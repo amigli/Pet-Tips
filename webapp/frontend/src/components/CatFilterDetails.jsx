@@ -60,7 +60,7 @@ const CatFilterDetails = ({cat}) => {
                             }
                             {user && user.user.role==="simple" && user.user.favourite_cats.includes(cat._id) &&
                                 <button onClick={handleRemoveSavedCat} type="button"
-                                        className="btn btn-primary">Removed</button>
+                                        className="btn btn-primary">Remove</button>
                             }
                         </div>
                     </div>

@@ -62,7 +62,7 @@ const DogFilterDetails = ({dog}) => {
                             }
                             {user && user.user.role==="simple" && user.user.favourite_dogs.includes(dog._id) &&
                                 <button onClick={handleRemoveSavedDog} type="button"
-                                        className="btn btn-primary">Removed</button>
+                                        className="btn btn-primary">Remove</button>
                             }
                         </div>
                     </div>

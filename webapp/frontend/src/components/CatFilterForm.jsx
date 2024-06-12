@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import CatFilterDetails from "./CatFilterDetails";
+import CatDetails from "./CatDetails";
 
 const CatFilterForm = () => {
 
@@ -183,7 +184,15 @@ const CatFilterForm = () => {
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
             </div>
         </form>
-        {cats && cats.map((cat) => ( <CatFilterDetails key={cat._id} cat={cat}/> ))}
+            <div className="Cats">
+                <div className="col-md-12" style={{textAlign: "center"}}>
+                <h1 className="display-4" style={{marginBottom: "20px" }}>Cat List</h1>
+                </div>
+                <div className="row" style={{margin: "20px"}}>
+                {cats && cats.map((cat) => ( <CatFilterDetails key={cat._id} cat={cat}/> ))}
+                </div>
+            </div>
+
         </div>
     );
 }
