@@ -122,7 +122,7 @@ const DogForm = () => {
             {label}
           </label>
           <select id={name} name={name} className="form-select" onChange={handleChange} value={value}>
-            <option value=""></option>
+            <option value="">Select a value...</option>
             {[1, 2, 3, 4, 5].map((val) => (
               <option key={val} value={val}>
                 {val}
@@ -159,6 +159,7 @@ const DogForm = () => {
               name="Breed"
               onChange={handleChange}
               value={formData.Breed}
+              placeholder="Insert a name"
             />
           </div>
           <SelectField label="Adaptability" name="Adaptability" value={formData.Adaptability} />
@@ -264,7 +265,7 @@ const DogForm = () => {
               Type
             </label>
             <select id="Type" name="Type" className="form-select" onChange={handleChange} value={formData.Type}>
-                <option selected></option>
+                <option value="" selected>Select a value...</option>
                 <option>herding</option>
                 <option>non-sporting</option>
                 <option>hound</option>
@@ -284,6 +285,7 @@ const DogForm = () => {
               name="Congenital_Ailments"
               onChange={handleChange}
               value={formData.Congenital_Ailments}
+              placeholder="Insert values separated by ,"
             />
           </div>
           <div className="col-md-2">
@@ -296,6 +298,7 @@ const DogForm = () => {
               name="Lifetime_Cost"
               onChange={handleChange}
               value={formData.Lifetime_Cost}
+              placeholder="Insert a value"
             />
           </div>
           <div className="col-md-2">
@@ -308,6 +311,7 @@ const DogForm = () => {
               name="Longevity_Years"
               onChange={handleChange}
               value={formData.Longevity_Years}
+              placeholder="Insert a value"
             />
           </div>
           <div className="col-md-2">
@@ -333,6 +337,7 @@ const DogForm = () => {
               name="Purchase_Price"
               onChange={handleChange}
               value={formData.Purchase_Price}
+              placeholder="Insert a value"
             />
           </div>
           <div className="col-md-2">
@@ -345,6 +350,7 @@ const DogForm = () => {
               name="Food_Costs_Per_Year"
               onChange={handleChange}
               value={formData.Food_Costs_Per_Year}
+              placeholder="Insert a value"
             />
           </div>
           <div className="col-md-2">
@@ -352,7 +358,7 @@ const DogForm = () => {
               Grooming Frequency
             </label>
               <select id="Grooming_Frequency" name="Grooming_Frequency" className="form-select" onChange={handleChange} value={formData.Grooming_Frequency}>
-                <option selected></option>
+                <option value="" selected>Select a value...</option>
                 <option>Once in a few weeks</option>
                 <option>Daily</option>
                 <option>Once a week</option>

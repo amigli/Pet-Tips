@@ -93,7 +93,7 @@ const CatForm = () => {
             {label}
           </label>
           <select id={name} name={name} className="form-select" onChange={handleChange} value={value}>
-            <option value=""></option>
+            <option value="" selected>Select a value...</option>
             {[1, 2, 3, 4, 5].map((val) => (
               <option key={val} value={val}>
                 {val}
@@ -107,8 +107,8 @@ const CatForm = () => {
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{margin: "0 auto"}}>Add a new cat</h1>
-                {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
-                {correct && <div className={correct} class="alert alert-success" role="alert">{correct}</div>}
+                {error && <div className="alert alert-danger error" role="alert">{error}</div>}
+                {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>
             <div className="col-md-2">
                 <label htmlFor="Breed" className="form-label" style={labelStyle}>
@@ -120,6 +120,7 @@ const CatForm = () => {
                   name="Breed"
                   onChange={handleChange}
                   value={formData.Breed}
+                  placeholder="Insert a name"
                 />
             </div>
             <div className="col-md-2">
@@ -132,6 +133,7 @@ const CatForm = () => {
                   name="length"
                   onChange={handleChange}
                   value={formData.length}
+                  placeholder="Insert a value"
                 />
             </div>
             <div className="col-md-2">
@@ -144,6 +146,7 @@ const CatForm = () => {
                   name="origin"
                   onChange={handleChange}
                   value={formData.origin}
+                  placeholder="Insert a value"
                 />
             </div>
             <div className="col-md-2">
@@ -156,6 +159,7 @@ const CatForm = () => {
                   name="min_life_expectancy"
                   onChange={handleChange}
                   value={formData.min_life_expectancy}
+                  placeholder="Insert a value"
                 />
             </div>
             <div className="col-md-2">
@@ -168,6 +172,7 @@ const CatForm = () => {
                   name="max_life_expectancy"
                   onChange={handleChange}
                   value={formData.max_life_expectancy}
+                  placeholder="Insert a value"
                 />
             </div>
             <div className="col-md-2">
@@ -180,6 +185,7 @@ const CatForm = () => {
                   name="min_weight"
                   onChange={handleChange}
                   value={formData.min_weight}
+                  placeholder="Insert a value"
                 />
             </div>
             <div className="col-md-2">
@@ -192,6 +198,7 @@ const CatForm = () => {
                   name="max_weight"
                   onChange={handleChange}
                   value={formData.max_weight}
+                  placeholder="Insert a value"
                 />
             </div>
             <SelectField

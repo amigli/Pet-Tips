@@ -74,17 +74,17 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Family friendly</label>
                 <select id="inputState" className="form-select"
                         onChange={(e) => setFamilyFriendly(e.target.value)} value={family_friendly}>
-                    <option selected></option>
+                    <option value="" selected>Select a value...</option>
                     <optgroup label="Low">
-                        <option>1</option>
-                        <option>2</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                     </optgroup>
                     <optgroup label="Mean">
-                        <option>3</option>
+                        <option value="3">3</option>
                     </optgroup>
                     <optgroup label="Top">
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </optgroup>
                 </select>
             </div>
@@ -93,12 +93,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Playfulness</label>
                 <select id="inputState" className="form-select" onChange={(e) => setPlayfulness(e.target.value)}
                 value={playfulness}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -106,12 +112,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Children friendly</label>
                 <select id="inputState" className="form-select" onChange={(e) => setChildren_friendly(e.target.value)}
                 value={children_friendly}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -119,12 +131,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Grooming</label>
                 <select id="inputState" className="form-select" onChange={(e) => setGrooming(e.target.value)}
                 value={grooming}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -132,12 +150,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Intelligence</label>
                 <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
                 value={intelligence}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -145,12 +169,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Other pets friendly</label>
                 <select id="inputState" className="form-select" onChange={(e) => setOther_pets_friendly(e.target.value)}
                 value={other_pets_friendly}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -158,12 +188,18 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Friendly toward strangers</label>
                 <select id="inputState" className="form-select" onChange={(e) => setFriendly_toward_strangers(e.target.value)}
                 value={friendly_toward_strangers}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -171,17 +207,23 @@ const CatFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Tendency to vocalize</label>
                 <select id="inputState" className="form-select" onChange={(e) => setTendency_to_vocalize(e.target.value)}
                 value={tendency_to_vocalize}>
-                    <option selected></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option value="" selected>Select a value...</option>
+                    <optgroup label="Low">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </optgroup>
+                    <optgroup label="Mean">
+                        <option value="3">3</option>
+                    </optgroup>
+                    <optgroup label="Top">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </optgroup>
                 </select>
             </div>
 
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
+                <button type="submit" className="btn btn-primary" style={labelStyle}>Filter</button>
             </div>
         </form>
             <div className="Cats">
