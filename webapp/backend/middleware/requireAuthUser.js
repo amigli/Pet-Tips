@@ -16,11 +16,6 @@ const requireAuthUser = async (req, res, next) => {
         const {_id} = jwt.verify(token, process.env.SECRET_KEY)
         user = await User.findOne({_id})
         req.user = user
-
-        if (user.role !== "simple"){
-            throw Error('Request is authorized for simply user!')
-        }
-
         next()
     } catch (error) {
         return res.status(401).json({error: error.message})

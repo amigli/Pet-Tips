@@ -56,11 +56,11 @@ const DogFilterDetails = ({dog}) => {
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
-                            {user && user.user.role==="simple" && !user.user.favourite_dogs.includes(dog._id) &&
+                            {user && user.user && !user.user.favourite_dogs.includes(dog._id) &&
                                 <button onClick={handleSaveDog} type="button"
                                         className="btn btn-primary">Save</button>
                             }
-                            {user && user.user.role==="simple" && user.user.favourite_dogs.includes(dog._id) &&
+                            {user && user.user && user.user.favourite_dogs.includes(dog._id) &&
                                 <button onClick={handleRemoveSavedDog} type="button"
                                         className="btn btn-primary">Remove</button>
                             }
