@@ -14,6 +14,8 @@ function App() {
 
   const { user } = useAuthContext()
 
+  console.log(user)
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,15 +36,15 @@ function App() {
             />
             <Route
               path="/admin"
-              element={!user ? <Login/> : (user && user.user.role === "admin") ? <Admin/> : <Home/>}
+              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <Admin/> : <Home/>}
             />
             <Route
               path="/update-cat"
-              element={!user ? <Login/> : (user && user.user.role === "admin") ? <CatUpdate/> : <Home/>}
+              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <CatUpdate/> : <Home/>}
             />
             <Route
               path="/update-dog"
-              element={!user ? <Login/> : (user && user.user.role === "admin") ? <DogUpdate/> : <Home/>}
+              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <DogUpdate/> : <Home/>}
             />
           </Routes>
         </div>

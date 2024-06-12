@@ -67,7 +67,7 @@ const Navbar = () => {
               </Link>
             </div>
           )}
-          {user && user.user.role === "admin" && (
+          {user && user.user && user.user.role === "admin" && (
             <div className="d-flex">
               <Link className="btn btn-outline-warning ms-2" to="/admin">
                 Admin Page
