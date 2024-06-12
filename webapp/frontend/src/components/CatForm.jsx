@@ -19,23 +19,23 @@ const CatForm = () => {
     }
 
     const initialFormState = {
-        Breed: null,
-        length: null,
-        origin: null,
-        min_life_expectancy: null,
-        max_life_expectancy: null,
-        min_weight: null,
-        max_weight: null,
-        family_friendly: null,
-        shedding: null,
-        general_health: null,
-        playfulness: null,
-        children_friendly: null,
-        grooming: null,
-        intelligence: null,
-        other_pets_friendly: null,
-        friendly_toward_strangers: null,
-        tendency_to_vocalize: null
+        Breed: '',
+        length: '',
+        origin: '',
+        min_life_expectancy: '',
+        max_life_expectancy: '',
+        min_weight: '',
+        max_weight: '',
+        family_friendly: '',
+        shedding: '',
+        general_health: '',
+        playfulness: '',
+        children_friendly: '',
+        grooming: '',
+        intelligence: '',
+        other_pets_friendly: '',
+        friendly_toward_strangers: '',
+        tendency_to_vocalize: ''
       };
 
     const [formData, setFormData] = useState(initialFormState);
@@ -57,6 +57,9 @@ const CatForm = () => {
             setError('You must be logged in')
             return
         }
+
+        if (!formData.length) formData.length = null
+        if (!formData.origin) formData.origin = null
 
         const response = await fetch('/api/cats/', {
             method: 'POST',

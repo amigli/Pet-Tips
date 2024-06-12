@@ -11,20 +11,19 @@ const CatUpdate = () => {
     const { dispatch } = useCatContext()
 
     const labelStyle = {
-    fontSize: '1.2em',
-  }
+        fontSize: '1.2em',
+    }
 
-  const formStyle = {
+    const formStyle = {
         backgroundColor: '#e3f2fd',
         margin: '20px',
         padding: '20px',
         borderRadius: '10px'
     }
 
-
     // cat attributes
-    const [Length, setLength] = useState(cat ? cat.length : "");
-    const [Origin, setOrigin] = useState(cat ? cat.origin : "");
+    const [Length, setLength] = useState(cat ? cat.length : null);
+    const [Origin, setOrigin] = useState(cat ? cat.origin : null);
     const [Min_Life_Expectancy, setMinLifeExpectancy] = useState(cat ? cat.min_life_expectancy : null);
     const [Max_Life_Expectancy, setMaxLifeExpectancy] = useState(cat ? cat.max_life_expectancy : null);
     const [Min_Weight, setMinWeight] = useState(cat ? cat.min_weight : null);
@@ -75,6 +74,10 @@ const CatUpdate = () => {
             tendency_to_vocalize: Tendency_To_Vocalize
         }
 
+        // update dogForm when the fields is deleted
+        if (!catForm.length) catForm.length = null
+        if (!catForm.origin) catForm.origin = null
+
         const response = await fetch('/api/cats/' + cat._id, {
             method: 'PATCH',
             body: JSON.stringify(catForm),
@@ -87,53 +90,30 @@ const CatUpdate = () => {
         const json = await response.json()
 
         if (!response.ok){
-            setError(json.error)
+            setCorrect(null)
+            setError(json.error);
         }
 
         if (response.ok){
-            setCorrect('ok')
-            setLength(catForm.length)
-            setOrigin(catForm.origin)
-            setMinLifeExpectancy(catForm.min_life_expectancy)
-            setMaxLifeExpectancy(catForm.max_life_expectancy)
-            setMinWeight(catForm.min_weight)
-            setMaxWeight(catForm.max_weight)
-            setFamilyFriendly(catForm.family_friendly)
-            setShedding(catForm.shedding)
-            setGeneralHealth(catForm.general_health)
-            setPlayfulness(catForm.playfulness)
-            setChildrenFriendly(catForm.children_friendly)
-            setGrooming(catForm.grooming)
-            setIntelligence(catForm.intelligence)
-            setOtherPetsFriendly(catForm.other_pets_friendly)
-            setFriendlyTowardStrangers(catForm.friendly_toward_strangers)
-            setTendencyToVocalize(catForm.tendency_to_vocalize)
-
+            setError(null)
+            setCorrect('Cat updated successfully!')
             console.log('update cat: ', json)
             dispatch({type: 'UPDATE_CATS', payload: json})
         }
 
     }
 
-    const showError = (error) => {
-        let errorMessage = ''
-        if (error){
-            errorMessage = <div className="error"> {error} </div>
-        }
-
-        return errorMessage
-    }
-
     return (
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{marginBottom: "20px"}}>{cat.Breed}</h1>
-                {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+                {error && <div className="alert alert-danger error" role="alert">{error}</div>}
+                {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Length</label>
             <input
-                type="text" class="form-control"
+                type="text" className="form-control"
                 onChange={(e) => setLength(e.target.value)}
                 value={Length}
             />
@@ -141,7 +121,7 @@ const CatUpdate = () => {
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Origin</label>
             <input
-                type="text" class="form-control"
+                type="text" className="form-control"
                 onChange={(e) => setOrigin(e.target.value)}
                 value={Origin}
             />
@@ -149,7 +129,7 @@ const CatUpdate = () => {
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Min Life Expectancy</label>
             <input
-                type="number" class="form-control"
+                type="number" className="form-control"
                 onChange={(e) => setMinLifeExpectancy(e.target.value)}
                 value={Min_Life_Expectancy}
             />
@@ -157,7 +137,7 @@ const CatUpdate = () => {
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Max Life Expectancy</label>
             <input
-                type="number" class="form-control"
+                type="number" className="form-control"
                 onChange={(e) => setMaxLifeExpectancy(e.target.value)}
                 value={Max_Life_Expectancy}
             />
@@ -165,7 +145,7 @@ const CatUpdate = () => {
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Min Weight</label>
             <input
-                type="number" class="form-control"
+                type="number" className="form-control"
                 onChange={(e) => setMinWeight(e.target.value)}
                 value={Min_Weight}
             />
@@ -173,7 +153,7 @@ const CatUpdate = () => {
             <div className="col-md-2">
             <label htmlFor="inputState" className="form-label">Max Weight</label>
             <input
-                type="number" class="form-control"
+                type="number" className="form-control"
                 onChange={(e) => setMaxWeight(e.target.value)}
                 value={Max_Weight}
             />
@@ -182,7 +162,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Family Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setFamilyFriendly(e.target.value)}
                 value={Family_Friendly}>
-                <option selected>{Family_Friendly}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -194,7 +174,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Shedding</label>
             <select id="inputState" className="form-select" onChange={(e) => setShedding(e.target.value)}
                 value={Shedding}>
-                <option selected>{Shedding}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -206,7 +186,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">General Health</label>
             <select id="inputState" className="form-select" onChange={(e) => setGeneralHealth(e.target.value)}
                 value={General_Health}>
-                <option selected>{General_Health}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -218,7 +198,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Playfulness</label>
             <select id="inputState" className="form-select" onChange={(e) => setPlayfulness(e.target.value)}
                 value={Playfulness}>
-                <option selected>{Playfulness}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -230,7 +210,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Children Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setChildrenFriendly(e.target.value)}
                 value={Children_Friendly}>
-                <option selected>{Children_Friendly}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -242,7 +222,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Grooming</label>
             <select id="inputState" className="form-select" onChange={(e) => setGrooming(e.target.value)}
                 value={Grooming}>
-                <option selected>{Grooming}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -254,7 +234,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Intelligence</label>
                 <select id="inputState" className="form-select" onChange={(e) => setIntelligence(e.target.value)}
                 value={Intelligence}>
-                <option selected>{Intelligence}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -266,7 +246,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Other Pets Friendly</label>
             <select id="inputState" className="form-select" onChange={(e) => setOtherPetsFriendly(e.target.value)}
                 value={Other_Pets_Friendly}>
-                <option selected>{Other_Pets_Friendly}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -278,7 +258,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Friendly Toward Strangers</label>
             <select id="inputState" className="form-select" onChange={(e) => setFriendlyTowardStrangers(e.target.value)}
                 value={Friendly_Toward_Strangers}>
-                <option selected>{Friendly_Toward_Strangers}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -290,7 +270,7 @@ const CatUpdate = () => {
             <label htmlFor="inputState" className="form-label">Tendency To Vocalize</label>
                 <select id="inputState" className="form-select" onChange={(e) => setTendencyToVocalize(e.target.value)}
                 value={Tendency_To_Vocalize}>
-                <option selected>{Tendency_To_Vocalize}</option>
+                <option selected></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -302,7 +282,6 @@ const CatUpdate = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button type="submit" className="btn btn-primary" style={labelStyle}>Update Cat</button>
             </div>
-            {correct && <div className={correct} class="alert alert-success" role="alert">Cat updated!</div>}
         </form>
     );
 }

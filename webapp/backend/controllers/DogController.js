@@ -47,10 +47,6 @@ const insertDog = async (req, res) => {
         return res.status(400).json({error: 'Please fill the Breed field', emptyFields})
     }
 
-    if (Congenital_Ailments){
-        Number_of_Congenital_Ailments = Congenital_Ailments.split(',').length
-    }
-
     try {
         const dog = await Dog.create({ Breed, All_Around_Friendliness, Adaptability, Exercise_Needs, Health_Grooming, Trainability,
             Adapts_Well_to_Apartment_Living, Affectionate_with_Family, Amount_Of_Shedding, Dog_Friendly,
@@ -90,13 +86,13 @@ const updateDogById = async (req, res) => {
     const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(400).json({error: "Invalid Dog ID (deleteDogById)"})
+        return res.status(400).json({error: "Invalid Dog ID (updateDogById)"})
     }
 
     const dog = await Dog.findOneAndUpdate({_id: id}, {...req.body}, {new: true})
 
     if (!dog){
-        return res.status(404).json({error: "No such dog (deleteDogById)"})
+        return res.status(404).json({error: "No such dog (updateDogById)"})
     }
 
     return res.status(200).json(dog)
