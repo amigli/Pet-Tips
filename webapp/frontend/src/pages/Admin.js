@@ -17,7 +17,6 @@ const Admin = () => {
     // active when the page is rendered
     useEffect(() => {
 
-        console.log(cats, dogs)
         const fetchDogs = async () => {
 
             const response = await fetch('/api/dogs/', {

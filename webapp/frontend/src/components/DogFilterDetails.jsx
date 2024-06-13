@@ -1,4 +1,5 @@
 import {useAuthContext} from "../hooks/useAuthContext";
+import {Link} from "react-router-dom";
 
 const DogFilterDetails = ({dog}) => {
 
@@ -52,7 +53,9 @@ const DogFilterDetails = ({dog}) => {
             <div className="card">
                 <div className="card-body">
                     <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
-                        <h5 className="card-title">{dog.Breed}</h5>
+                        <Link to="/dogFullDetails" style={{color: "#000000", textDecoration: "none"}} state={{dog}}>
+                            <h5 className="card-title">{dog.Breed}</h5>
+                        </Link>
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>

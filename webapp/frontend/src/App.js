@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar"
 import CatUpdate from "./pages/CatUpdate";
 import DogUpdate from "./pages/DogUpdate";
 import Footer from "./components/Footer";
+import DogFullDetails from "./pages/DogFullDetails";
+import CatFullDetails from "./pages/CatFullDetails";
 
 function App() {
 
@@ -46,6 +48,14 @@ function App() {
             <Route
               path="/update-dog"
               element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <DogUpdate/> : <Home/>}
+            />
+            <Route
+              path="/dogFullDetails"
+              element={<DogFullDetails/>}
+            />
+            <Route
+              path="/catFullDetails"
+              element={<CatFullDetails/>}
             />
           </Routes>
         </div>

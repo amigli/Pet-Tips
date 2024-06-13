@@ -14,7 +14,7 @@ const Login = () => {
     const formStyle = {
         backgroundColor: '#DFD0B8',
         marginTop: '2%',
-        marginBottom: '60%',
+        marginBottom: '58%',
         padding: '20px',
         borderRadius: '10px',
         marginLeft: '0px',

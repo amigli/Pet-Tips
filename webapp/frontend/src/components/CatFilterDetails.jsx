@@ -1,4 +1,5 @@
 import {useAuthContext} from "../hooks/useAuthContext";
+import {Link} from "react-router-dom";
 
 const CatFilterDetails = ({cat}) => {
 
@@ -50,7 +51,9 @@ const CatFilterDetails = ({cat}) => {
             <div className="card">
                 <div className="card-body">
                     <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
-                        <h5 className="card-title">{cat.Breed}</h5>
+                        <Link to="/catFullDetails" style={{color: "#000000", textDecoration: "none"}} state={{cat}}>
+                            <h5 className="card-title">{cat.Breed}</h5>
+                        </Link>
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>

@@ -17,10 +17,6 @@ const CatForm = () => {
         marginRight: '0px'
     }
 
-    const labelStyle = {
-        fontSize: '1.2em',
-    }
-
     const initialFormState = {
         Breed: '',
         length: '',
