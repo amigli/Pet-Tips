@@ -48,8 +48,8 @@ const DogFilterForm = () => {
 
         const json = await response.json()
 
-        console.log(dog)
-        console.log(json)
+        console.log("dog filter form" + dog)
+        console.log("response filter" + json)
 
         if (!response.ok) {
             setIsFiltered(false)

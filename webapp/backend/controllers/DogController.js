@@ -142,7 +142,7 @@ const filterDogByAttributes = async (req, res) => {
         query.Tolerates_Being_Alone = Tolerates_Being_Alone;
     if (Tolerates_Cold_Weather !== undefined && Tolerates_Cold_Weather !== null && Tolerates_Cold_Weather !== "")
         query.Tolerates_Cold_Weather = Tolerates_Cold_Weather;
-    if (Tolerates_Hot_Weather !== undefined && Tolerates_Hot_Weather !== null && Tolerates_Cold_Weather !== "")
+    if (Tolerates_Hot_Weather !== undefined && Tolerates_Hot_Weather !== null && Tolerates_Hot_Weather !== "")
         query.Tolerates_Hot_Weather = Tolerates_Hot_Weather;
     if (Type !== undefined && Type !== null && Type !== "")
         query.Type = Type;
