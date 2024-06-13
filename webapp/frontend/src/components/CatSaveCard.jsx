@@ -50,13 +50,13 @@ const CatSaveCard = ({cat}) => {
         <div className="col-md-3 mb-3">
             <div className="card">
                 <div className="card-body">
-                    <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
-                        <Link to="/catFullDetails" style={{color: "#000000", textDecoration: "none"}} state={{cat}}>
+                    <div className="col-md-12 breedcard">
+                        <Link to="/catFullDetails" className="breedlink" state={{cat}}>
                             <h5 className="card-title">{cat.Breed}</h5>
                         </Link>
                     </div>
                     <div className="card-body">
-                        <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
+                        <div className="col-md-12 breedcard">
                             {user && user.user && !user.user.favourite_cats.includes(cat._id) &&
                                 <button onClick={handleSaveCat} type="button"
                                         className="btn btn-light btn-lg">Save</button>

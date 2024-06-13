@@ -5,16 +5,6 @@ const DogFullDetails = () => {
     const location = useLocation();
     const {dog} = location.state || {};
 
-    const divStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        marginBottom: '12.5%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-    }
-
     if (!dog) {
         return <Navigate to="/" replace/>;
     }
@@ -63,11 +53,12 @@ const DogFullDetails = () => {
 
     return (
         <div className="container">
+
+        <div className="row g-3 formstyle" id="formstyle_dog_details">
             <div className="col-md-12" style={{ textAlign: "center" }}>
-                    <h1 className="display-4" style={{marginTop: "2%", marginBottom: "2%" }}>{stateAttribute.Breed}</h1>
-                </div>
-        <div className="row g-3" style={divStyle}>
-            <div className="row">
+                    <h1 className="display-4 formtitle">{stateAttribute.Breed}</h1>
+            </div>
+
             {Object.keys(stateAttribute).map((key) => (
                 key !== "Breed" &&
                 <div className="col-md-2" key={key}>
@@ -76,7 +67,7 @@ const DogFullDetails = () => {
                     <label htmlFor={key} className="form-label">{stateAttribute[key]}</label>
                 </div>
             ))}
-            </div>
+
 
         </div>
         </div>

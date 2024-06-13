@@ -1,18 +1,9 @@
 import { Navigate, useLocation } from "react-router-dom";
 
 const CatFullDetails = () => {
+
     const location = useLocation();
     const { cat } = location.state || {};
-
-    const divStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        marginBottom: '32.2%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-    };
 
     if (!cat) {
         return <Navigate to="/" replace />;
@@ -40,11 +31,10 @@ const CatFullDetails = () => {
 
     return (
         <div className="container">
-            <div className="col-md-12" style={{ textAlign: "center" }}>
-                    <h1 className="display-4" style={{marginTop: "2%", marginBottom: "2%" }}>{stateAttribute.Breed}</h1>
+            <div className="row g-3 formstyle" id="formstyle_cat_details">
+                <div className="col-md-12" style={{ textAlign: "center" }}>
+                    <h1 className="display-4 formtitle">{stateAttribute.Breed}</h1>
                 </div>
-            <div className="row g-3" style={divStyle}>
-                <div className="row">
                     {Object.keys(stateAttribute).map((key) => (
                         key !== "Breed" &&
                         <div className="col-md-2" key={key}>
@@ -53,7 +43,6 @@ const CatFullDetails = () => {
                             <label htmlFor={key} className="form-label">{stateAttribute[key]}</label>
                         </div>
                     ))}
-                </div>
             </div>
         </div>
     );

@@ -4,15 +4,9 @@ import catsdogsimg from "../images/cats-dogs.jpeg"
 
 const Home = () => {
 
-    const foreground = {
-        marginTop: '2%',
-        width: '100%',
-        borderRadius: '10px'
-    }
-
     return (
         <div className="container">
-            <img src={catsdogsimg} alt="..." style={foreground}/>
+            <img src={catsdogsimg} alt="..." id="img_home"/>
             <DogFilterForm/>
             <CatFilterForm/>
         </div>

@@ -11,31 +11,17 @@ const Login = () => {
         await login(email, password)
     }
 
-    const formStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        marginBottom: '58%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-    }
-
-    const labelStyle = {
-        fontSize: '1.2em',
-    }
-
     return (
         <div className="container">
             <div className="row justify-content-center">
                  <div className="col-md-12" style={{ textAlign: "center" }}>
-                    <h1 className="display-4" style={{ margin: "0 auto", marginTop: "2%" }}>Login</h1>
+                    <h1 className="display-4 formtitlelog">Login</h1>
                 </div>
                 <div className="col-md-6">
-                    <form onSubmit={handleSubmit} className="row g-3" style={formStyle}>
+                    <form onSubmit={handleSubmit} className="row g-3 formstyle" id="formstyle_log">
                         <div className="col-md-12">
                             {error && <div className="alert alert-danger error" role="alert">{error}</div>}
-                            <label htmlFor="inputEmail4" className="form-label" style={labelStyle}>Email</label>
+                            <label htmlFor="inputEmail4" className="form-label labelstyle">Email</label>
                             <input
                                 type="email"
                                 className="form-control"
@@ -45,7 +31,7 @@ const Login = () => {
                             />
                         </div>
                     <div className="col-md-12">
-                        <label htmlFor="inputPassword4" className="form-label" style={labelStyle}>Password</label>
+                        <label htmlFor="inputPassword4" className="form-label labelstyle">Password</label>
                         <input
                             type="password"
                             className="form-control"

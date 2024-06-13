@@ -3,15 +3,6 @@ import DogSaveCard from "./DogSaveCard";
 
 const DogFilterForm = () => {
 
-    const formStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-    }
-
     // dog attributes
     const [Adapts_Well_to_Apartment_Living, setAdapts_Well_to_Apartment_Living] = useState(null)
     const [Affectionate_with_Family, setAffectionateWithFamily] = useState(null)
@@ -76,9 +67,9 @@ const DogFilterForm = () => {
 
     return (
         <div id="filterDogs">
-        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+        <form className="row g-3 formstyle" onSubmit={handleSubmit}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
-                <h1 className="display-4" style={{ margin: "0 auto" , marginBottom: '1%'}}>Filter dogs</h1>
+                <h1 className="display-4 formtitle">Filter dogs</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
             </div>
 
@@ -295,7 +286,7 @@ const DogFilterForm = () => {
                 <label htmlFor="inputEmail4" className="form-label">Tendency To Bark Or Howl</label>
                 <select id="inputState" className="form-select" onChange={(e) => setTendencyToBarkOrHowl(e.target.value)}
                 value={Tendency_To_Bark_Or_Howl}>
-                    <option disabled value="" selected>Select a value...</option>
+                    <option value="" selected>Select a value...</option>
                     <optgroup label="Low">
                         <option value="1">1</option>
                         <option value="2">2</option>

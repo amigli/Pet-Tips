@@ -7,16 +7,6 @@ const CatAddedForm = () => {
     const { user } = useAuthContext()
     const {dispatch} = useCatContext()
 
-    const formStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        marginBottom: '2%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-    }
-
     const initialFormState = {
         Breed: '',
         length: '',
@@ -103,9 +93,9 @@ const CatAddedForm = () => {
       );
 
     return (
-        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+        <form className="row g-3 formstyle" onSubmit={handleSubmit}>
             <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{margin: "0 auto", marginBottom: "1%"}}>Add a new cat</h1>
+                <h1 className="display-4 formtitle">Add a new cat</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                 {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>

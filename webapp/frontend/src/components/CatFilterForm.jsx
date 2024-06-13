@@ -3,16 +3,6 @@ import CatSaveCard from "./CatSaveCard";
 
 const CatFilterForm = () => {
 
-    const formStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px',
-        marginBottom: '2%'
-    }
-
     // cat attributes
     const [family_friendly, setFamilyFriendly] = useState(null)
     const [playfulness, setPlayfulness] = useState(null)
@@ -65,9 +55,9 @@ const CatFilterForm = () => {
 
     return (
         <div id="filterCats">
-        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+        <form className="row g-3 formstyle" onSubmit={handleSubmit}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
-                <h1 className="display-4" style={{ margin: "0 auto", marginBottom: '1%'}}>Filter cats</h1>
+                <h1 className="display-4 formtitle">Filter cats</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
             </div>
 

@@ -53,13 +53,13 @@ const DogSaveCard = ({dog}) => {
         <div className="col-md-3 mb-3">
             <div className="card">
                 <div className="card-body">
-                    <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
-                        <Link to="/dogFullDetails" style={{color: "#000000", textDecoration: "none"}} state={{dog}}>
+                    <div className="col-md-12 breedcard">
+                        <Link to="/dogFullDetails" className="breedlink" state={{dog}}>
                             <h5 className="card-title">{dog.Breed}</h5>
                         </Link>
                     </div>
                     <div className="card-body">
-                        <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
+                        <div className="col-md-12 breedcard">
                             {user && user.user && !user.user.favourite_dogs.includes(dog._id) &&
                                 <button onClick={handleSaveDog} type="button"
                                         className="btn btn-light btn-lg">Save</button>

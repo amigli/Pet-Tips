@@ -40,11 +40,11 @@ const DogUpdateDeleteCard = ({dog}) => {
         <div className="col-md-3 mb-3">
             <div className="card">
                 <div className="card-body">
-                    <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
+                    <div className="col-md-12 breedcard">
                         <h5 className="card-title">{dog.Breed}</h5>
                     </div>
                     <div className="card-body">
-                        <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
+                        <div className="col-md-12 breedcard">
                         <button onClick={handleClick} type="button" className="btn btn-light btn-lg" style={{margin: "10px"}}>Delete</button>
                         <button onClick={updateClick} type="button" className="btn btn-light btn-lg">Update</button>
                         </div>

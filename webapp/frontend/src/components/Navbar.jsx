@@ -8,58 +8,27 @@ const Navbar = () => {
     const { user } = useAuthContext()
     const navigate = useNavigate()
 
-    const navStyle = {
-        backgroundColor: '#DFD0B8'
-    }
-
-    const linkStyle = {
-        fontSize: '1.5em',
-    }
-
-    const brandStyle = {
-        fontFamily: "'Comic Sans MS', cursive, sans-serif",
-        display: 'flex'
-    }
-
-    const additionalBrandStyle = {
-        marginLeft: '8px'
-    };
-
-    const combinedBrandStyle = {
-        ...brandStyle,
-        ...additionalBrandStyle
-    };
-
-    console.log(user)
-
     const handleClick = () => {
         logout()
         navigate("/")
     }
 
     return (
-    <nav className="navbar navbar-expand-lg" style={navStyle}>
+    <nav className="navbar navbar-expand-lg background">
       <div className="container-fluid container">
-        <Link className="navbar-brand" to="/" style={brandStyle}>
-            <span className="material-symbols-outlined icon" style={linkStyle}>pets</span>
-          <h1 className="brand-text" style={combinedBrandStyle}>PetTips</h1>
+        <Link className="navbar-brand brandstyle" to="/">
+            <span className="material-symbols-outlined icon" id="spanstyle">pets</span>
+            <h1 className="brand-text brandstyle" id="pettips">PetTips</h1>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
         <div className="d-flex">
-          {user && (
+          {user && user.user && (
               <Link className="btn btn-light me-2 btn-lg" onClick={handleClick}>
                 Logout
               </Link>

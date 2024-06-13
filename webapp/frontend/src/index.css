@@ -1,4 +1,73 @@
 * {
-    font-family: "Arial"
+    font-family: "Arial", serif;
 }
 
+.background {
+    background-color: #DFD0B8
+}
+
+#spanstyle {
+    font-size: 1.5em;
+}
+
+.brandstyle {
+    font-family: "Comic Sans MS", serif;
+    display: flex;
+}
+
+#pettips {
+    margin-left: 8px;
+}
+
+.formstyle {
+    background-color: #DFD0B8 !important;
+    margin: 2% 0 !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+}
+
+#formstyle_cat_update {
+    margin-bottom: 21% !important;
+}
+
+#formstyle_log {
+    margin-bottom: 58% !important;
+}
+
+#formstyle_cat_details {
+    margin-bottom: 28% !important;
+}
+
+#formstyle_dog_details {
+    margin-bottom: 12.5% !important;
+}
+
+.formtitle {
+    margin: 0 auto !important;
+    margin-bottom: 1% !important;
+}
+
+.formtitlelog {
+    margin: 0 auto !important;
+    margin-top: 2% !important;
+}
+
+.labelstyle {
+    font-size: 1.2em;
+}
+
+#img_home {
+    margin-top: 2%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.breedcard {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.breedlink {
+    text-decoration: none;
+    color: #000000;
+}

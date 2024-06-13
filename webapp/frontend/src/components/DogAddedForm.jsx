@@ -7,16 +7,6 @@ const DogAddedForm = () => {
       const { user } = useAuthContext();
       const { dispatch } = useDogContext();
 
-      const formStyle = {
-        backgroundColor: '#DFD0B8',
-        marginTop: '2%',
-        marginBottom: '2%',
-        padding: '20px',
-        borderRadius: '10px',
-        marginLeft: '0px',
-        marginRight: '0px'
-      }
-
       const initialFormState = {
         Breed: '',
         Adaptability: '',
@@ -132,9 +122,9 @@ const DogAddedForm = () => {
       );
 
       return (
-        <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
+        <form className="row g-3 formstyle" onSubmit={handleSubmit}>
           <div className="col-md-12" style={{ textAlign: 'center' }}>
-            <h1 className="display-4" style={{ margin: '0 auto', marginBottom: '1%'}}>
+            <h1 className="display-4 formtitle">
               Add a new dog
             </h1>
             {error && (
