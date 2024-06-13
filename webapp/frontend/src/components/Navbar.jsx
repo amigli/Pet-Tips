@@ -9,7 +9,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     const navStyle = {
-        backgroundColor: '#e3f2fd'
+        backgroundColor: '#DFD0B8'
     }
 
     const linkStyle = {
@@ -21,6 +21,12 @@ const Navbar = () => {
         display: 'flex'
     }
 
+    const brandStyleh1 = {
+        fontFamily: "'Comic Sans MS', cursive, sans-serif",
+        display: 'flex',
+        marginLeft: 8,
+    }
+
     console.log(user)
 
     const handleClick = () => {
@@ -30,10 +36,10 @@ const Navbar = () => {
 
     return (
     <nav className="navbar navbar-expand-lg" style={navStyle}>
-      <div className="container-fluid">
+      <div className="container-fluid container">
         <Link className="navbar-brand" to="/" style={brandStyle}>
             <span className="material-symbols-outlined icon" style={linkStyle}>pets</span>
-          <h1 className="brand-text" style={{marginLeft: 8}}>PetTips</h1>
+          <h1 className="brand-text" style={brandStyleh1}>PetTips</h1>
         </Link>
         <button
           className="navbar-toggler"
@@ -48,29 +54,26 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
           </ul>
+        <div className="d-flex">
           {user && (
-            <div className="d-flex align-items-center">
-              <button className="btn btn-outline-danger" onClick={handleClick}>
+              <Link className="btn btn-light me-2 btn-lg" onClick={handleClick}>
                 Logout
-              </button>
-            </div>
-          )}
-          {!user && (
-            <div className="d-flex">
-              <Link className="btn btn-outline-primary me-2" to="/login" style={linkStyle}>
-                Login
               </Link>
-              <Link className="btn btn-outline-secondary" to="/signup" style={linkStyle}>
-                Signup
-              </Link>
-            </div>
           )}
           {user && user.user && user.user.role === "admin" && (
-            <div className="d-flex">
-              <Link className="btn btn-outline-warning ms-2" to="/admin">
+              <Link className="btn btn-light btn-lg" to="/admin">
                 Admin Page
+              </Link>
+          )}
+        </div>
+          {!user && (
+            <div className="d-flex">
+              <Link className="btn btn-light me-2 btn-lg" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-light btn-lg" to="/signup">
+                Signup
               </Link>
             </div>
           )}

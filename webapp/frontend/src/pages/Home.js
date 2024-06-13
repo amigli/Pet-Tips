@@ -1,13 +1,19 @@
 import DogFilterForm from "../components/DogFilterForm";
 import CatFilterForm from "../components/CatFilterForm";
+import catsdogsimg from "../images/cats-dogs.jpeg"
+import Footer from "../components/Footer";
 
 const Home = () => {
 
+    const foreground = {
+        marginTop: '2%',
+        width: '100%',
+        borderRadius: '10px'
+    }
+
     return (
-        <div>
-            <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "20px"}}>Home</h1>
-            </div>
+        <div class="container">
+            <img src={catsdogsimg} alt="..." style={foreground}/>
             <DogFilterForm/>
             <CatFilterForm/>
         </div>

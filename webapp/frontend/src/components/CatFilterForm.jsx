@@ -8,10 +8,13 @@ const CatFilterForm = () => {
     const { user } = useAuthContext()
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
         padding: '20px',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        marginLeft: '0px',
+        marginRight: '0px',
+        marginBottom: '2%'
     }
 
     const labelStyle = {
@@ -32,7 +35,11 @@ const CatFilterForm = () => {
 
     const [cats, setCats] = useState(null)
 
+    const [isFiltered, setIsFiltered] = useState(false)
+
     const handleSubmit = async (e) => {
+        setIsFiltered(false)
+
         e.preventDefault()
 
         const cat = {family_friendly, playfulness, children_friendly, grooming, intelligence, other_pets_friendly,
@@ -51,11 +58,13 @@ const CatFilterForm = () => {
         const json = await response.json()
 
         if (!response.ok) {
+            setIsFiltered(false)
             setCats(null)
             setError(json.error)
         }
 
         if (response.ok){
+            setIsFiltered(true)
             setError(null)
             setCats(json)
             console.log(json)
@@ -63,10 +72,10 @@ const CatFilterForm = () => {
     }
 
     return (
-        <div>
+        <div id="filterCats">
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
-                <h1 className="display-4" style={{ margin: "0 auto" }}>Filter cats</h1>
+                <h1 className="display-4" style={{ margin: "0 auto", marginBottom: '1%'}}>Filter cats</h1>
                 {error && <div className={error} class="alert alert-danger" role="alert">{error}</div>}
             </div>
 
@@ -223,20 +232,26 @@ const CatFilterForm = () => {
             </div>
 
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary" style={labelStyle}>Filter</button>
+                <button type="submit" className="btn btn-light btn-lg me-2" style={{marginTop: '1%'}}>Filter</button>
+                {isFiltered && <button className="btn btn-light btn-lg" style={{marginTop: '1%'}}
+                                       onClick={()=>setIsFiltered(false)}>Close List</button>}
             </div>
         </form>
+            {isFiltered &&
             <div className="Cats">
                 <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "20px" }}>Cat List</h1>
+                <h1 className="display-4" style={{marginBottom: "2%"}}>Cat List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
                 {cats && cats.map((cat) => ( <CatFilterDetails key={cat._id} cat={cat}/> ))}
                 </div>
             </div>
-
+            }
         </div>
+
+
     );
+
 }
 
 export default CatFilterForm

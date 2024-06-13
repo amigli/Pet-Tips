@@ -15,7 +15,8 @@ const Login = () => {
         backgroundColor: '#e3f2fd',
         marginTop: '20px',
         padding: '20px',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        marginBottom: '70%'
     }
 
     const labelStyle = {

@@ -9,6 +9,7 @@ import Admin from "./pages/Admin"
 import Navbar from "./components/Navbar"
 import CatUpdate from "./pages/CatUpdate";
 import DogUpdate from "./pages/DogUpdate";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
             />
           </Routes>
         </div>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

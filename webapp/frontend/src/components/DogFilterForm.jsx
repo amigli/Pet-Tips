@@ -8,14 +8,12 @@ const DogFilterForm = () => {
     const { user } = useAuthContext()
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
         padding: '20px',
-        borderRadius: '10px'
-    }
-
-    const labelStyle = {
-        fontSize: '1.2em',
+        borderRadius: '10px',
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     // dog attributes
@@ -41,7 +39,11 @@ const DogFilterForm = () => {
 
     const [dogs, setDogs] = useState(null)
 
+    const [isFiltered, setIsFiltered] = useState(false)
+
     const handleSubmit = async (e) => {
+        setIsFiltered(false)
+
         e.preventDefault()
 
         const dog = { Adapts_Well_to_Apartment_Living, Affectionate_with_Family, Dog_Friendly, Easy_To_Groom, Easy_To_Train,
@@ -63,11 +65,13 @@ const DogFilterForm = () => {
         console.log(json)
 
         if (!response.ok) {
+            setIsFiltered(false)
             setDogs(null)
             setError(json.error)
         }
 
         if (response.ok){
+            setIsFiltered(true)
             setError(null)
             setDogs(json)
             console.log(json)
@@ -75,15 +79,15 @@ const DogFilterForm = () => {
     }
 
     return (
-        <div>
+        <div id="filterDogs">
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
-                <h1 className="display-4" style={{ margin: "0 auto" }}>Filter dogs</h1>
+                <h1 className="display-4" style={{ margin: "0 auto" , marginBottom: '1%'}}>Filter dogs</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
             </div>
 
             <div className="col-md-2">
-                <label htmlFor="inputEmail4" className="form-label">Adapts Well To Apartment Living</label>
+                <label htmlFor="inputEmail4" className="form-label">Adapts To Apartment</label>
                 <select id="inputState" className="form-select"
                         onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}>
                     <option value="" selected>Select a value...</option>
@@ -197,7 +201,7 @@ const DogFilterForm = () => {
             </div>
 
             <div className="col-md-2">
-                <label htmlFor="inputEmail4" className="form-label">Incredibly Kid Friendly Dogs</label>
+                <label htmlFor="inputEmail4" className="form-label">Kid Friendly Dogs</label>
                 <select id="inputState" className="form-select" onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
                 value={Incredibly_Kid_Friendly_Dogs}>
                     <option value="" selected>Select a value...</option>
@@ -394,18 +398,21 @@ const DogFilterForm = () => {
             </div>
 
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary" style={labelStyle}>Filter</button>
+                <button type="submit" className="btn btn-light btn-lg me-2" style={{marginTop: '1%'}}>Filter</button>
+                {isFiltered && <button className="btn btn-light btn-lg" style={{marginTop: '1%'}}
+                                       onClick={()=>setIsFiltered(false)}>Close List</button>}
             </div>
         </form>
+            {isFiltered &&
             <div className="Dogs">
                 <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "20px" }}>Dog List</h1>
+                <h1 className="display-4" style={{marginBottom: "2%", marginTop: "2%" }}>Dog List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
                 {dogs && dogs.map((dog) => ( <DogFilterDetails key={dog._id} dog={dog}/> ))}
                 </div>
             </div>
-
+            }
         </div>
     );
 }
