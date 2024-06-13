@@ -26,7 +26,7 @@ const DogUpdate = () => {
     const [Exercise_Needs, setExerciseNeeds] = useState(dog ? dog.Exercise_Needs : null);
     const [Health_Grooming, setHealthGrooming] = useState(dog ? dog.Health_Grooming : null);
     const [Trainability, setTrainability] = useState(dog ? dog.Trainability : null);
-    const [Adapts_Well_to_Apartment_Living, setAdapts_Well_to_Apartment_Living] = useState(dog ? dog.Adapts_Well_To_Apartment_Living : null);
+    const [Adapts_Well_to_Apartment_Living, setAdapts_Well_to_Apartment_Living] = useState(dog ? dog.Adapts_Well_to_Apartment_Living : null);
     const [Affectionate_with_Family, setAffectionateWithFamily] = useState(dog ? dog.Affectionate_with_Family : null);
     const [Amount_Of_Shedding, setAmountOfShedding] = useState(dog ? dog.Amount_Of_Shedding : null);
     const [Dog_Friendly, setDogFriendly] = useState(dog ? dog.Dog_Friendly : null);
