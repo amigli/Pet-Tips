@@ -19,11 +19,13 @@ const CatSaveCard = ({cat}) => {
 
         const json = await response.json()
 
+        const token = user.token
+
         // update user
         dispatch({type: 'UPDATE', payload: json})
 
         // update localStorage
-        localStorage.setItem('user', JSON.stringify(json))
+        localStorage.setItem('user', JSON.stringify({ user: json, token}))
     }
 
     const handleRemoveSavedCat = async (e) => {
@@ -39,11 +41,13 @@ const CatSaveCard = ({cat}) => {
 
         const json = await response.json()
 
+        const token = user.token
+
         // update user
         dispatch({type: 'UPDATE', payload: json})
 
         // update localStorage
-        localStorage.setItem('user', JSON.stringify(json))
+        localStorage.setItem('user', JSON.stringify({ user: json, token}))
     }
 
     return (

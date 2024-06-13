@@ -48,9 +48,6 @@ const DogFilterForm = () => {
 
         const json = await response.json()
 
-        console.log("dog filter form" + dog)
-        console.log("response filter" + json)
-
         if (!response.ok) {
             setIsFiltered(false)
             setDogs(null)
@@ -393,7 +390,7 @@ const DogFilterForm = () => {
             {isFiltered &&
             <div className="Dogs">
                 <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "2%", marginTop: "2%" }}>Dog List</h1>
+                <h1 className="display-4" style={{marginBottom: "2%"}}>Dog List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
                 {dogs && dogs.map((dog) => ( <DogSaveCard key={dog._id} dog={dog}/> ))}

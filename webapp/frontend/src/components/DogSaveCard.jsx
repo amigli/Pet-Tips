@@ -20,13 +20,13 @@ const DogSaveCard = ({dog}) => {
 
         const json = await response.json()
 
-        console.log(json)
+        const token = user.token
 
         // update user
         dispatch({type: 'UPDATE', payload: json})
 
         // update localStorage
-        localStorage.setItem('user', JSON.stringify(json))
+        localStorage.setItem('user', JSON.stringify({ user: json, token}))
     }
 
     const handleRemoveSavedDog = async (e) => {
@@ -42,11 +42,13 @@ const DogSaveCard = ({dog}) => {
 
         const json = await response.json()
 
+        const token = user.token
+
         // update user
         dispatch({type: 'UPDATE', payload: json})
 
         // update localStorage
-        localStorage.setItem('user', JSON.stringify(json))
+        localStorage.setItem('user', JSON.stringify({ user: json, token}))
     }
 
     return (
