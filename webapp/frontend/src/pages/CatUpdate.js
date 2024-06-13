@@ -10,15 +10,14 @@ const CatUpdate = () => {
     const { user } = useAuthContext()
     const { dispatch } = useCatContext()
 
-    const labelStyle = {
-        fontSize: '1.2em',
-    }
-
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '22%',
         padding: '20px',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     // cat attributes
@@ -104,9 +103,10 @@ const CatUpdate = () => {
     }
 
     return (
+        <div className="container">
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "20px"}}>{cat.Breed}</h1>
+                <h1 className="display-4" style={{marginBottom: "1%"}}>{cat.Breed}</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                 {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>
@@ -286,9 +286,10 @@ const CatUpdate = () => {
             </div>
 
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary" style={labelStyle}>Update Cat</button>
+                <button type="submit" className="btn btn-light btn-lg" style={{marginTop: '1%'}}>Update Cat</button>
             </div>
         </form>
+        </div>
     );
 }
 

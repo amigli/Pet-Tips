@@ -58,7 +58,7 @@ const Admin = () => {
     }, [dispatchDogs, dispatchCats, user])
 
     return (
-        <section>
+        <div className="container">
             <DogForm/>
 
             <div className="Dogs">
@@ -83,7 +83,7 @@ const Admin = () => {
                 </div>
             </div>
 
-        </section>
+        </div>
     )
 }
 

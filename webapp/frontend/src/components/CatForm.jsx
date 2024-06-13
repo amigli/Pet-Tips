@@ -8,10 +8,13 @@ const CatForm = () => {
     const {dispatch} = useCatContext()
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '2%',
         padding: '20px',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     const labelStyle = {
@@ -89,7 +92,7 @@ const CatForm = () => {
 
     const SelectField = ({ label, name, value }) => (
         <div className="col-md-2">
-          <label htmlFor={name} className="form-label" style={labelStyle}>
+          <label htmlFor={name} className="form-label">
             {label}
           </label>
           <select id={name} name={name} className="form-select" onChange={handleChange} value={value}>
@@ -106,12 +109,12 @@ const CatForm = () => {
     return (
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{margin: "0 auto"}}>Add a new cat</h1>
+                <h1 className="display-4" style={{margin: "0 auto", marginBottom: "1%"}}>Add a new cat</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                 {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>
             <div className="col-md-2">
-                <label htmlFor="Breed" className="form-label" style={labelStyle}>
+                <label htmlFor="Breed" className="form-label">
                   Breed
                 </label>
                 <input
@@ -124,7 +127,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="length" className="form-label" style={labelStyle}>
+                <label htmlFor="length" className="form-label">
                   Length
                 </label>
                 <input
@@ -137,7 +140,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="origin" className="form-label" style={labelStyle}>
+                <label htmlFor="origin" className="form-label">
                   Origin
                 </label>
                 <input
@@ -150,7 +153,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="min_life_expectancy" className="form-label" style={labelStyle}>
+                <label htmlFor="min_life_expectancy" className="form-label">
                   Min Life Expectancy
                 </label>
                 <input
@@ -163,7 +166,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="max_life_expectancy" className="form-label" style={labelStyle}>
+                <label htmlFor="max_life_expectancy" className="form-label">
                   Max Life Expectancy
                 </label>
                 <input
@@ -176,7 +179,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="min_weight" className="form-label" style={labelStyle}>
+                <label htmlFor="min_weight" className="form-label">
                   Min Weight
                 </label>
                 <input
@@ -189,7 +192,7 @@ const CatForm = () => {
                 />
             </div>
             <div className="col-md-2">
-                <label htmlFor="max_weight" className="form-label" style={labelStyle}>
+                <label htmlFor="max_weight" className="form-label">
                   Max Weight
                 </label>
                 <input
@@ -253,7 +256,7 @@ const CatForm = () => {
             />
 
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary" style={labelStyle}>Submit</button>
+                <button type="submit" className="btn btn-light btn-lg" style={{marginTop: '1%'}}>Submit</button>
             </div>
         </form>
     );

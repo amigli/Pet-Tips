@@ -8,15 +8,14 @@ const DogForm = () => {
       const { dispatch } = useDogContext();
 
       const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '2%',
         padding: '20px',
         borderRadius: '10px',
-      };
-
-      const labelStyle = {
-        fontSize: '1.2em',
-      };
+        marginLeft: '0px',
+        marginRight: '0px'
+      }
 
       const initialFormState = {
         Breed: '',
@@ -118,7 +117,7 @@ const DogForm = () => {
 
       const SelectField = ({ label, name, value }) => (
         <div className="col-md-2">
-          <label htmlFor={name} className="form-label" style={labelStyle}>
+          <label htmlFor={name} className="form-label">
             {label}
           </label>
           <select id={name} name={name} className="form-select" onChange={handleChange} value={value}>
@@ -135,7 +134,7 @@ const DogForm = () => {
       return (
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
           <div className="col-md-12" style={{ textAlign: 'center' }}>
-            <h1 className="display-4" style={{ margin: '0 auto' }}>
+            <h1 className="display-4" style={{ margin: '0 auto', marginBottom: '1%'}}>
               Add a new dog
             </h1>
             {error && (
@@ -150,7 +149,7 @@ const DogForm = () => {
             )}
           </div>
           <div className="col-md-2">
-            <label htmlFor="Breed" className="form-label" style={labelStyle}>
+            <label htmlFor="Breed" className="form-label">
               Breed
             </label>
             <input
@@ -172,7 +171,7 @@ const DogForm = () => {
           <SelectField label="Health Grooming" name="Health_Grooming" value={formData.Health_Grooming} />
           <SelectField label="Trainability" name="Trainability" value={formData.Trainability} />
           <SelectField
-            label="Adapts Well to Apartment Living"
+            label="Adapts To Apartment"
             name="Adapts_Well_to_Apartment_Living"
             value={formData.Adapts_Well_to_Apartment_Living}
           />
@@ -202,29 +201,29 @@ const DogForm = () => {
           />
           <SelectField label="General Health" name="General_Health" value={formData.General_Health} />
           <SelectField
-            label="Good For Novice Owners"
+            label="Good For Novice"
             name="Good_For_Novice_Owners"
             value={formData.Good_For_Novice_Owners}
           />
           <SelectField
-            label="Incredibly Kid Friendly Dogs"
+            label="Kid Friendly Dogs"
             name="Incredibly_Kid_Friendly_Dogs"
             value={formData.Incredibly_Kid_Friendly_Dogs}
           />
           <SelectField label="Intelligence" name="Intelligence" value={formData.Intelligence} />
           <SelectField label="Intensity" name="Intensity" value={formData.Intensity} />
           <SelectField
-            label="Potential For Mouthiness"
+            label="Mouthiness"
             name="Potential_For_Mouthiness"
             value={formData.Potential_For_Mouthiness}
           />
           <SelectField
-            label="Potential For Playfulness"
+            label="Playfulness"
             name="Potential_For_Playfulness"
             value={formData.Potential_For_Playfulness}
           />
           <SelectField
-            label="Potential For Weight Gain"
+            label="Weight Gain"
             name="Potential_For_Weight_Gain"
             value={formData.Potential_For_Weight_Gain}
           />
@@ -261,7 +260,7 @@ const DogForm = () => {
             value={formData.Wanderlust_Potential}
           />
           <div className="col-md-2">
-            <label htmlFor="Type" className="form-label" style={labelStyle}>
+            <label htmlFor="Type" className="form-label">
               Type
             </label>
             <select id="Type" name="Type" className="form-select" onChange={handleChange} value={formData.Type}>
@@ -276,7 +275,7 @@ const DogForm = () => {
             </select>
           </div>
           <div className="col-md-2">
-            <label htmlFor="Congenital_Ailments" className="form-label" style={labelStyle}>
+            <label htmlFor="Congenital_Ailments" className="form-label">
               Congenital Ailments
             </label>
             <input
@@ -289,7 +288,7 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Lifetime_Cost" className="form-label" style={labelStyle}>
+            <label htmlFor="Lifetime_Cost" className="form-label">
               Lifetime Cost
             </label>
             <input
@@ -302,7 +301,7 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Longevity_Years" className="form-label" style={labelStyle}>
+            <label htmlFor="Longevity_Years" className="form-label">
               Longevity Years
             </label>
             <input
@@ -315,8 +314,8 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Number_Of_Congenital_Ailments" className="form-label" style={labelStyle}>
-              Number Of Congenital Ailments
+            <label htmlFor="Number_Of_Congenital_Ailments" className="form-label">
+              N. Congenital Ailments
             </label>
             <input
               type="number"
@@ -328,7 +327,7 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Purchase_Price" className="form-label" style={labelStyle}>
+            <label htmlFor="Purchase_Price" className="form-label">
               Purchase Price
             </label>
             <input
@@ -341,7 +340,7 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Food_Costs_Per_Year" className="form-label" style={labelStyle}>
+            <label htmlFor="Food_Costs_Per_Year" className="form-label">
               Food Costs Per Year
             </label>
             <input
@@ -354,7 +353,7 @@ const DogForm = () => {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="Grooming_Frequency" className="form-label" style={labelStyle}>
+            <label htmlFor="Grooming_Frequency" className="form-label">
               Grooming Frequency
             </label>
               <select id="Grooming_Frequency" name="Grooming_Frequency" className="form-select" onChange={handleChange} value={formData.Grooming_Frequency}>
@@ -365,7 +364,7 @@ const DogForm = () => {
             </select>
           </div>
           <div className="col-md-12" style={{ textAlign: 'center' }}>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-light btn-lg" style={{marginTop: '1%'}}>
               Submit
             </button>
           </div>

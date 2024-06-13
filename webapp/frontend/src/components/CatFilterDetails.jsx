@@ -56,11 +56,11 @@ const CatFilterDetails = ({cat}) => {
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
                             {user && user.user && !user.user.favourite_cats.includes(cat._id) &&
                                 <button onClick={handleSaveCat} type="button"
-                                        className="btn btn-primary">Save</button>
+                                        className="btn btn-light btn-lg">Save</button>
                             }
                             {user && user.user && user.user.favourite_cats.includes(cat._id) &&
                                 <button onClick={handleRemoveSavedCat} type="button"
-                                        className="btn btn-primary">Remove</button>
+                                        className="btn btn-light btn-lg">Remove</button>
                             }
                         </div>
                     </div>

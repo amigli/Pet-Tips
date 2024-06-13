@@ -12,11 +12,13 @@ const Signup = () => {
     }
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        marginTop: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '60%',
         padding: '20px',
         borderRadius: '10px',
-        marginBottom: '70%'
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     const labelStyle = {
@@ -27,12 +29,12 @@ const Signup = () => {
         <div className="container">
             <div className="row justify-content-center">
                  <div className="col-md-12" style={{ textAlign: "center" }}>
-                    <h1 className="display-4" style={{ margin: "0 auto" }}>Sign up</h1>
+                    <h1 className="display-4" style={{ margin: "0 auto", marginTop: "2%"}}>Sign up</h1>
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit} className="row g-3" style={formStyle}>
                         <div className="col-md-12">
-                            {error && <div className={error} className="alert alert-danger" role="alert">{error}</div>}
+                            {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                             <label htmlFor="inputEmail4" className="form-label" style={labelStyle}>Email</label>
                             <input
                                 type="email"
@@ -54,7 +56,7 @@ const Signup = () => {
                         />
                     </div>
                     <div className="col-12 d-flex justify-content-center">
-                        <button type="submit" className="btn btn-primary text-center" disabled={isLoading} style={labelStyle}>Sign up</button>
+                        <button type="submit" className="btn btn-light btn-lg" disabled={isLoading} style={{marginTop: '1%'}}>Sign up</button>
                     </div>
                     </form>
                 </div>

@@ -12,11 +12,13 @@ const Login = () => {
     }
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        marginTop: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '60%',
         padding: '20px',
         borderRadius: '10px',
-        marginBottom: '70%'
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     const labelStyle = {
@@ -27,7 +29,7 @@ const Login = () => {
         <div className="container">
             <div className="row justify-content-center">
                  <div className="col-md-12" style={{ textAlign: "center" }}>
-                    <h1 className="display-4" style={{ margin: "0 auto" }}>Login</h1>
+                    <h1 className="display-4" style={{ margin: "0 auto", marginTop: "2%" }}>Login</h1>
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit} className="row g-3" style={formStyle}>
@@ -53,7 +55,7 @@ const Login = () => {
                         />
                     </div>
                     <div className="col-12 d-flex justify-content-center">
-                        <button type="submit" className="btn btn-primary text-center" disabled={isLoading} style={labelStyle}>Login</button>
+                        <button type="submit" className="btn btn-light btn-lg" disabled={isLoading} style={{marginTop: '1%'}}>Login</button>
                     </div>
                     </form>
                 </div>

@@ -10,14 +10,13 @@ const DogUpdate = () => {
     const {dispatch} = useDogContext();
 
     const formStyle = {
-        backgroundColor: '#e3f2fd',
-        margin: '20px',
+        backgroundColor: '#DFD0B8',
+        marginTop: '2%',
+        marginBottom: '2%',
         padding: '20px',
-        borderRadius: '10px'
-    }
-
-    const labelStyle = {
-        fontSize: '1.2em',
+        borderRadius: '10px',
+        marginLeft: '0px',
+        marginRight: '0px'
     }
 
     // dog attributes
@@ -151,9 +150,10 @@ const DogUpdate = () => {
     };
 
     return (
+        <div className="container">
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{textAlign: "center"}}>
-                <h1 className="display-4" style={{marginBottom: "20px"}}>{dog.Breed}</h1>
+                <h1 className="display-4" style={{margin: '0 auto', marginBottom: "1%"}}>{dog.Breed}</h1>
                 {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                 {correct && <div className="alert alert-success correct" role="alert">{correct}</div>}
             </div>
@@ -219,7 +219,7 @@ const DogUpdate = () => {
             </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Adapts Well To Apartment Living</label>
+            <label htmlFor="inputState" className="form-label">Adapts To Apartment</label>
             <select id="inputState" className="form-select" onChange={(e) => setAdapts_Well_to_Apartment_Living(e.target.value)}
                 value={Adapts_Well_to_Apartment_Living}>
                 <option value="" selected>Select a value...</option>
@@ -351,7 +351,7 @@ const DogUpdate = () => {
             </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Incredibly Kid Friendly Dogs</label>
+            <label htmlFor="inputState" className="form-label">Kid Friendly Dogs</label>
             <select id="inputState" className="form-select" onChange={(e) => setIncrediblyKidFriendlyDogs(e.target.value)}
                 value={Incredibly_Kid_Friendly_Dogs}>
                 <option value="" selected>Select a value...</option>
@@ -519,7 +519,7 @@ const DogUpdate = () => {
             </select>
             </div>
             <div className="col-md-2">
-            <label htmlFor="Type" className="form-label" style={labelStyle}>
+            <label htmlFor="Type" className="form-label">
               Type
             </label>
             <select id="Type" name="Type" className="form-select" onChange={(e) => setType(e.target.value)} value={Type}>
@@ -564,7 +564,7 @@ const DogUpdate = () => {
             />
             </div>
             <div className="col-md-2">
-            <label htmlFor="inputState" className="form-label">Number Of Congenital Ailments</label>
+            <label htmlFor="inputState" className="form-label">N. Congenital Ailments</label>
             <input
                 type="number" className="form-control"
                 onChange={(e) => setNumberofCongenitalAilments(e.target.value)}
@@ -603,9 +603,10 @@ const DogUpdate = () => {
             </select>
           </div>
             <div className="col-12 d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary">Update Dog</button>
+                <button type="submit" className="btn btn-light btn-lg" style={{marginTop: '1%'}}>Update Dog</button>
             </div>
         </form>
+        </div>
     );
 
 }

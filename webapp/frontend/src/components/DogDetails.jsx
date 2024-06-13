@@ -45,8 +45,8 @@ const DogDetails = ({dog}) => {
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{ textAlign: "center", marginTop: "20px" }}>
-                        <button onClick={handleClick} type="button" className="btn btn-primary" style={{margin: "10px"}}>Delete</button>
-                        <button onClick={updateClick} type="button" className="btn btn-primary">Update</button>
+                        <button onClick={handleClick} type="button" className="btn btn-light btn-lg" style={{margin: "10px"}}>Delete</button>
+                        <button onClick={updateClick} type="button" className="btn btn-light btn-lg">Update</button>
                         </div>
                         {isClickUpdate && <Navigate to="/update-dog" state={{ dog }} />}
                     </div>

@@ -45,10 +45,10 @@ const CatDetails = ({cat}) => {
                     </div>
                     <div className="card-body">
                         <div className="col-md-12" style={{textAlign: "center", marginTop: "20px"}}>
-                            <button onClick={handleClick} type="button" className="btn btn-primary"
+                            <button onClick={handleClick} type="button" className="btn btn-light btn-lg"
                                     style={{margin: "10px"}}>Delete
                             </button>
-                            <button onClick={updateClick} type="button" className="btn btn-primary">Update</button>
+                            <button onClick={updateClick} type="button" className="btn btn-light btn-lg">Update</button>
                         </div>
                         {isClickUpdate && <Navigate to="/update-cat" state={{cat}}/>}
                     </div>
