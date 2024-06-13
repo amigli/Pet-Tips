@@ -1,11 +1,7 @@
 import { useState } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import DogFilterDetails from "./DogFilterDetails";
-import CatFilterDetails from "./CatFilterDetails";
+import DogSaveCard from "./DogSaveCard";
 
 const DogFilterForm = () => {
-
-    const { user } = useAuthContext()
 
     const formStyle = {
         backgroundColor: '#DFD0B8',
@@ -409,7 +405,7 @@ const DogFilterForm = () => {
                 <h1 className="display-4" style={{marginBottom: "2%", marginTop: "2%" }}>Dog List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
-                {dogs && dogs.map((dog) => ( <DogFilterDetails key={dog._id} dog={dog}/> ))}
+                {dogs && dogs.map((dog) => ( <DogSaveCard key={dog._id} dog={dog}/> ))}
                 </div>
             </div>
             }

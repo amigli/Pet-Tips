@@ -1,11 +1,7 @@
 import { useState } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
-import CatFilterDetails from "./CatFilterDetails";
-import CatDetails from "./CatDetails";
+import CatSaveCard from "./CatSaveCard";
 
 const CatFilterForm = () => {
-
-    const { user } = useAuthContext()
 
     const formStyle = {
         backgroundColor: '#DFD0B8',
@@ -15,10 +11,6 @@ const CatFilterForm = () => {
         marginLeft: '0px',
         marginRight: '0px',
         marginBottom: '2%'
-    }
-
-    const labelStyle = {
-        fontSize: '1.2em',
     }
 
     // cat attributes
@@ -76,7 +68,7 @@ const CatFilterForm = () => {
         <form className="row g-3" onSubmit={handleSubmit} style={formStyle}>
             <div className="col-md-12" style={{ textAlign: "center" }}>
                 <h1 className="display-4" style={{ margin: "0 auto", marginBottom: '1%'}}>Filter cats</h1>
-                {error && <div className={error} class="alert alert-danger" role="alert">{error}</div>}
+                {error && <div className="alert alert-danger error" role="alert">{error}</div>}
             </div>
 
             <div className="col-md-2">
@@ -243,7 +235,7 @@ const CatFilterForm = () => {
                 <h1 className="display-4" style={{marginBottom: "2%"}}>Cat List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
-                {cats && cats.map((cat) => ( <CatFilterDetails key={cat._id} cat={cat}/> ))}
+                {cats && cats.map((cat) => ( <CatSaveCard key={cat._id} cat={cat}/> ))}
                 </div>
             </div>
             }

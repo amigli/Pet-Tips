@@ -1,7 +1,7 @@
 import {useAuthContext} from "../hooks/useAuthContext";
 import {Link} from "react-router-dom";
 
-const DogFilterDetails = ({dog}) => {
+const DogSaveCard = ({dog}) => {
 
     const { user, dispatch } = useAuthContext()
 
@@ -21,6 +21,7 @@ const DogFilterDetails = ({dog}) => {
         const json = await response.json()
 
         console.log(json)
+
         // update user
         dispatch({type: 'UPDATE', payload: json})
 
@@ -76,4 +77,4 @@ const DogFilterDetails = ({dog}) => {
 
 }
 
-export default DogFilterDetails
+export default DogSaveCard

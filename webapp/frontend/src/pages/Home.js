@@ -1,7 +1,6 @@
 import DogFilterForm from "../components/DogFilterForm";
 import CatFilterForm from "../components/CatFilterForm";
 import catsdogsimg from "../images/cats-dogs.jpeg"
-import Footer from "../components/Footer";
 
 const Home = () => {
 
@@ -12,7 +11,7 @@ const Home = () => {
     }
 
     return (
-        <div class="container">
+        <div className="container">
             <img src={catsdogsimg} alt="..." style={foreground}/>
             <DogFilterForm/>
             <CatFilterForm/>

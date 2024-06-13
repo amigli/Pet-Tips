@@ -2,7 +2,7 @@ import {useState} from "react";
 import { useCatContext } from "../hooks/useCatContext";
 import { useAuthContext} from "../hooks/useAuthContext";
 
-const CatForm = () => {
+const CatAddedForm = () => {
 
     const { user } = useAuthContext()
     const {dispatch} = useCatContext()
@@ -258,4 +258,4 @@ const CatForm = () => {
     );
 }
 
-export default CatForm
+export default CatAddedForm

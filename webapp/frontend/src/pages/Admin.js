@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDogContext } from '../hooks/useDogContext'
 import { useCatContext} from '../hooks/useCatContext'
 
-import DogDetails from "../components/DogDetails";
-import CatDetails from "../components/CatDetails";
+import DogUpdateDeleteCard from "../components/DogUpdateDeleteCard";
+import CatUpdateDeleteCard from "../components/CatUpdateDeleteCard";
 import {useAuthContext} from "../hooks/useAuthContext";
-import DogForm from "../components/DogForm";
-import CatForm from "../components/CatForm";
+import DogAddedForm from "../components/DogAddedForm";
+import CatAddedForm from "../components/CatAddedForm";
 
 const Admin = () => {
 
@@ -58,7 +58,7 @@ const Admin = () => {
 
     return (
         <div className="container">
-            <DogForm/>
+            <DogAddedForm/>
 
             <div className="Dogs">
                 <div className="col-md-12" style={{ textAlign: "center" }}>
@@ -66,18 +66,18 @@ const Admin = () => {
                 </div>
                 <div className="row" style={{margin: "20px"}}>
                     {dogs && dogs.map((dog) => (
-                        <DogDetails key={dog._id} dog={dog} />
+                        <DogUpdateDeleteCard key={dog._id} dog={dog} />
                     ))}
                 </div>
             </div>
-            <CatForm/>
+            <CatAddedForm/>
             <div className="Cats">
                 <div className="col-md-12" style={{textAlign: "center"}}>
                 <h1 className="display-4" style={{marginBottom: "20px" }}>Cat List</h1>
                 </div>
                 <div className="row" style={{margin: "20px"}}>
                 {cats && cats.map((cat) => (
-                    <CatDetails key={cat._id} cat={cat}/>
+                    <CatUpdateDeleteCard key={cat._id} cat={cat}/>
                 ))}
                 </div>
             </div>

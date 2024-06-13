@@ -34,7 +34,7 @@ const Login = () => {
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit} className="row g-3" style={formStyle}>
                         <div className="col-md-12">
-                            {error && <div className={error} class="alert alert-danger" role="alert">{error}</div>}
+                            {error && <div className="alert alert-danger error" role="alert">{error}</div>}
                             <label htmlFor="inputEmail4" className="form-label" style={labelStyle}>Email</label>
                             <input
                                 type="email"

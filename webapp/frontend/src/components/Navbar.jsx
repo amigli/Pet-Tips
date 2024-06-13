@@ -21,11 +21,14 @@ const Navbar = () => {
         display: 'flex'
     }
 
-    const brandStyleh1 = {
-        fontFamily: "'Comic Sans MS', cursive, sans-serif",
-        display: 'flex',
-        marginLeft: 8,
-    }
+    const additionalBrandStyle = {
+        marginLeft: '8px'
+    };
+
+    const combinedBrandStyle = {
+        ...brandStyle,
+        ...additionalBrandStyle
+    };
 
     console.log(user)
 
@@ -39,7 +42,7 @@ const Navbar = () => {
       <div className="container-fluid container">
         <Link className="navbar-brand" to="/" style={brandStyle}>
             <span className="material-symbols-outlined icon" style={linkStyle}>pets</span>
-          <h1 className="brand-text" style={brandStyleh1}>PetTips</h1>
+          <h1 className="brand-text" style={combinedBrandStyle}>PetTips</h1>
         </Link>
         <button
           className="navbar-toggler"

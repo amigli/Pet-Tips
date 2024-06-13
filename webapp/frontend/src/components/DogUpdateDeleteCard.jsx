@@ -3,7 +3,7 @@ import {useAuthContext} from "../hooks/useAuthContext";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 
-const DogDetails = ({dog}) => {
+const DogUpdateDeleteCard = ({dog}) => {
 
     const {dispatch: dispatchDogs} = useDogContext()
     const {user} = useAuthContext()
@@ -56,4 +56,4 @@ const DogDetails = ({dog}) => {
     )
 }
 
-export default DogDetails
+export default DogUpdateDeleteCard

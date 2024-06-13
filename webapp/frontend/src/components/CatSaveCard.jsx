@@ -1,7 +1,7 @@
 import {useAuthContext} from "../hooks/useAuthContext";
 import {Link} from "react-router-dom";
 
-const CatFilterDetails = ({cat}) => {
+const CatSaveCard = ({cat}) => {
 
     const { user, dispatch } = useAuthContext()
 
@@ -74,4 +74,4 @@ const CatFilterDetails = ({cat}) => {
 
 }
 
-export default CatFilterDetails
+export default CatSaveCard

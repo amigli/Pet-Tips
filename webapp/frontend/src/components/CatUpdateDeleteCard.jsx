@@ -3,7 +3,7 @@ import {useAuthContext} from "../hooks/useAuthContext";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 
-const CatDetails = ({cat}) => {
+const CatUpdateDeleteCard = ({cat}) => {
 
     const {dispatch: dispatchCats} = useCatContext()
     const {user} = useAuthContext()
@@ -58,4 +58,4 @@ const CatDetails = ({cat}) => {
     )
 }
 
-export default CatDetails
+export default CatUpdateDeleteCard

@@ -2,7 +2,7 @@ import {useState} from "react";
 import { useDogContext } from "../hooks/useDogContext";
 import { useAuthContext} from "../hooks/useAuthContext";
 
-const DogForm = () => {
+const DogAddedForm = () => {
 
       const { user } = useAuthContext();
       const { dispatch } = useDogContext();
@@ -372,4 +372,4 @@ const DogForm = () => {
       );
     };
 
-export default DogForm;
+export default DogAddedForm;
