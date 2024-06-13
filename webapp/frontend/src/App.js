@@ -12,6 +12,7 @@ import DogUpdate from "./pages/DogUpdate";
 import Footer from "./components/Footer";
 import DogFullDetails from "./pages/DogFullDetails";
 import CatFullDetails from "./pages/CatFullDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -39,15 +40,15 @@ function App() {
             />
             <Route
               path="/admin"
-              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <Admin/> : <Home/>}
+              element={(user && user.user && user.user.role === "admin") ? <Admin/> : <Navigate to="/"/>}
             />
             <Route
               path="/update-cat"
-              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <CatUpdate/> : <Home/>}
+              element={(user && user.user && user.user.role === "admin") ? <CatUpdate/> : <Navigate to="/"/>}
             />
             <Route
               path="/update-dog"
-              element={!user ? <Login/> : (user && user.user && user.user.role === "admin") ? <DogUpdate/> : <Home/>}
+              element={(user && user.user && user.user.role === "admin") ? <DogUpdate/> : <Navigate to="/"/>}
             />
             <Route
               path="/dogFullDetails"
@@ -56,6 +57,10 @@ function App() {
             <Route
               path="/catFullDetails"
               element={<CatFullDetails/>}
+            />
+            <Route
+                path="*"
+                element={<NotFound/>}
             />
           </Routes>
         </div>
