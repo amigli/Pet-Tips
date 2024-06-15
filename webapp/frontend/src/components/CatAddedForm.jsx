@@ -62,6 +62,7 @@ const CatAddedForm = () => {
         const json = await response.json()
 
         if (!response.ok) {
+            setFormData(initialFormState);
             setCorrect(null);
             setError(json.error);
         }

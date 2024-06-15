@@ -90,7 +90,6 @@ const DogAddedForm = () => {
 
         if (!response.ok) {
           setFormData(initialFormState);
-          console.log("formData no", formData)
           setCorrect(null);
           setError(json.error);
         }
@@ -99,7 +98,6 @@ const DogAddedForm = () => {
           setError(null);
           setCorrect('Dog inserted successfully!');
           setFormData(initialFormState);
-          console.log(formData)
           console.log('new dog added: ', json);
           dispatch({ type: 'INSERT_DOG', payload: json });
         }
