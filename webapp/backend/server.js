@@ -14,10 +14,10 @@ const dogOperationsRoutes = require('./routes/dogOperations')
 const catOperationsRoutes = require('./routes/catOperations')
 
 // connect to DB
-mongoose.connect(process.env.MONGO_URI) // return a promise
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         app.listen(process.env.PORT, () => {
-            console.log("Connect to DB & listening on port 4001")
+            console.log("Connect to DB & listening on port " + process.env.PORT)
         })
     })
     .catch((error) => {

@@ -5,7 +5,7 @@
 library(utils)
 
 #Si legge il file Excel
-data <- read.csv("cleaned_datasets\cat_breeds.csv")
+data <- read.csv("../dataset/cleaned_datasets/cat_breeds.csv")
 View(data)
 
 #________________________________________________________________________

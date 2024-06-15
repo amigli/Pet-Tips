@@ -1,6 +1,6 @@
 library(utils)
 
-data <- read.csv("cleaned_datasets/dog_breeds.csv")
+data <- read.csv("../dataset/cleaned_datasets/dog_breeds.csv")
 View(data)
 
 #________________________________________________________________________
