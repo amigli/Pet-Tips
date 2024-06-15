@@ -3,9 +3,8 @@
 Project of course *Basi di Dati II* - University of Salerno.
 
 ## Introduction
-*Which side are you on? Dogs or cats ?* :dog: :cat:  
-With **Pet Tips** there is no difference! Filter the dogs or cats according to your needs and add it to your favourite collection.  
-You will be surprised at how many dog and cat breeds exist :eyes:.
+*Which side are you on? Dogs or cats?* :dog: :cat:  
+With **Pet Tips** there is no difference! Filter the dogs or cats according to your needs and add it to your favourite collection. You will be surprised at how many dog and cat breeds exist :eyes:.
 
 ## Repository contents
 This repository contains:
