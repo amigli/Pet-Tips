@@ -1,10 +1,25 @@
 import {useState} from 'react'
 import {useSignup} from "../hooks/useSignup";
+import {useAuthContext} from "../hooks/useAuthContext";
+import {Navigate} from "react-router-dom";
 
 const Signup = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const {signup, error, isLoading} = useSignup()
+
+    const {user, loading} = useAuthContext();
+
+    if (loading) {
+        console.log("Loading...")
+        return;
+    }
+
+    // check if user exists
+    if (user && user.user){
+        console.log("User found")
+        return <Navigate to="/" replace />;
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()

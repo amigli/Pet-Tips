@@ -7,7 +7,7 @@ const CatUpdate = () => {
 
     const location = useLocation();
     const { cat } = location.state || {};
-    const { user } = useAuthContext()
+    const { user, loading } = useAuthContext()
     const { dispatch } = useCatContext()
 
     // cat attributes
@@ -32,7 +32,24 @@ const CatUpdate = () => {
     const [error, setError] = useState(null)
     const [correct, setCorrect] = useState(null)
 
+    // attends the loading of AuthContext
+    if (loading) {
+        console.log("Loading...")
+        return;
+    }
+
+    // check if user exists or user is admin
+    if (!user){
+        console.log("User not found")
+        return <Navigate to="/" replace />;
+    }
+    if (user && user.user && user.user.role !== "admin") {
+        console.log("User is not admin")
+        return <Navigate to="/" replace />;
+    }
+
     if (!cat) {
+        console.log("Cat not found")
         return <Navigate to="/admin" replace />;
     }
 

@@ -1,4 +1,4 @@
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import {useLogout} from "../hooks/useLogout";
 import {useAuthContext} from "../hooks/useAuthContext";
 
@@ -7,16 +7,38 @@ const Navbar = () => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
     const navigate = useNavigate()
+    const location = useLocation()
 
-    const handleClick = () => {
+    const handleClickLogout = () => {
         logout()
         navigate("/")
+        window.location.reload();
+    }
+
+    const handleClickAdmin = () => {
+        if (location.pathname === "/admin")
+            window.location.reload()
+    }
+
+    const handleClickLogin = () => {
+        if (location.pathname === "/login")
+            window.location.reload()
+    }
+
+    const handleClickSignup = () => {
+        if (location.pathname === "/signup")
+            window.location.reload()
+    }
+
+    const handleClickHome = () => {
+        if (location.pathname === "/")
+            window.location.reload()
     }
 
     return (
     <nav className="navbar navbar-expand-lg background">
       <div className="container-fluid container">
-        <Link className="navbar-brand brandstyle" to="/">
+        <Link className="navbar-brand brandstyle" to="/" onClick={handleClickHome}>
             <span className="material-symbols-outlined icon" id="spanstyle">pets</span>
             <h1 className="brand-text brandstyle" id="pettips">PetTips</h1>
         </Link>
@@ -29,22 +51,22 @@ const Navbar = () => {
           </ul>
         <div className="d-flex">
           {user && user.user && (
-              <Link className="btn btn-light me-2 btn-lg" onClick={handleClick}>
+              <Link className="btn btn-light me-2 btn-lg" onClick={handleClickLogout}>
                 Logout
               </Link>
           )}
           {user && user.user && user.user.role === "admin" && (
-              <Link className="btn btn-light btn-lg" to="/admin">
+              <Link className="btn btn-light btn-lg" to="/admin" onClick={handleClickAdmin}>
                 Admin Page
               </Link>
           )}
         </div>
           {!user && (
             <div className="d-flex">
-              <Link className="btn btn-light me-2 btn-lg" to="/login">
+              <Link className="btn btn-light me-2 btn-lg" to="/login" onClick={handleClickLogin}>
                 Login
               </Link>
-              <Link className="btn btn-light btn-lg" to="/signup">
+              <Link className="btn btn-light btn-lg" to="/signup" onClick={handleClickSignup}>
                 Signup
               </Link>
             </div>

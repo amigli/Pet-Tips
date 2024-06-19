@@ -7,15 +7,17 @@ import CatUpdateDeleteCard from "../components/CatUpdateDeleteCard";
 import {useAuthContext} from "../hooks/useAuthContext";
 import DogAddedForm from "../components/DogAddedForm";
 import CatAddedForm from "../components/CatAddedForm";
+import {Navigate} from "react-router-dom";
 
 const Admin = () => {
 
     const {dogs, dispatch: dispatchDogs} = useDogContext()
     const {cats, dispatch: dispatchCats} = useCatContext()
-    const {user} = useAuthContext()
+    const {user, loading} = useAuthContext()
 
     // active when the page is rendered
     useEffect(() => {
+        if (!user) return;
 
         const fetchDogs = async () => {
 
@@ -55,6 +57,23 @@ const Admin = () => {
         }
 
     }, [dispatchDogs, dispatchCats, user])
+
+    // attends the loading of AuthContext
+    if (loading) {
+        console.log("Loading...")
+        return;
+    }
+
+    // check if user exists or user is admin
+    if (!user){
+        console.log("User not found")
+        return <Navigate to="/" replace />;
+    }
+    if (user && user.user && user.user.role !== "admin") {
+        console.log("User is not admin")
+        return <Navigate to="/" replace />;
+    }
+
 
     return (
         <div className="container">
