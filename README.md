@@ -2,6 +2,11 @@
 
 Project of course **Basi di Dati II** - University of Salerno.
 
+## Contributors
+<a href="https://github.com/amigli/Pet-Tips/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=amigli/Pet-Tips" />
+</a>
+
 ## Introduction
 *Which side are you on? Dogs or cats?* :dog: :cat:  
 With **Pet Tips** there is no difference! Filter the dogs or cats according to your needs and add it to your favourite collection. You will be surprised at how many dog and cat breeds exist :eyes:.
