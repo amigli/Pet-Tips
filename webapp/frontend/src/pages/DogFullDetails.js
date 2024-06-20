@@ -45,7 +45,7 @@ const DogFullDetails = () => {
         Congenital_Ailments: dog.Congenital_Ailments ? dog.Congenital_Ailments: '',
         Lifetime_Cost: dog.Lifetime_Cost ? dog.Lifetime_Cost: '',
         Longevity_Years: dog.Longevity_Years ? dog.Longevity_Years: '',
-        N_Congenital_Ailments: dog.Number_of_Congenital_Ailments ? dog.Number_of_Congenital_Ailments: '',
+        N_Congenital_Ailments: dog?.Number_of_Congenital_Ailments >= 0 ? dog.Number_of_Congenital_Ailments: '',
         Purchase_Price: dog.Purchase_Price ? dog.Purchase_Price: '',
         Food_Costs_Per_Year: dog.Food_Costs_Per_Year ? dog.Food_Costs_Per_Year: '',
         Grooming_Frequency: dog.Grooming_Frequency ? dog.Grooming_Frequency: '',

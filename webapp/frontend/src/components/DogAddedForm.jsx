@@ -70,7 +70,9 @@ const DogAddedForm = () => {
         }
 
         if (formData.Congenital_Ailments){
-            formData.Number_of_Congenital_Ailments = formData.Congenital_Ailments.split(',').length
+            if (formData.Congenital_Ailments === "none")
+                formData.Number_of_Congenital_Ailments = 0
+            else formData.Number_of_Congenital_Ailments = formData.Congenital_Ailments.split(',').length
         }
 
         if (!formData.Type) formData.Type = null

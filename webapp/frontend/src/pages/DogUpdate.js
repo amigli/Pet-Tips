@@ -545,7 +545,8 @@ const DogUpdate = () => {
             <input
                 type="text" className="form-control"
                 onChange={(e) => { setCongenitalAilments(e.target.value);
-                    if (e.target.value !== "") setNumberofCongenitalAilments(e.target.value.split(",").length);
+                    if (e.target.value !== "" && e.target.value !== "none") setNumberofCongenitalAilments(e.target.value.split(",").length);
+                    else if (e.target.value === "none") setNumberofCongenitalAilments(0)
                     else setNumberofCongenitalAilments('')
                 }}
                 value={Congenital_Ailments}
